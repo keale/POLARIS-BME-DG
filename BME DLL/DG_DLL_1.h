@@ -36,7 +36,7 @@
 	#define CC
 #endif
 
-
+#include "..\BME_G0x\PlxRout.h"
 
 // define the constants for the different delay generator products
 
@@ -128,31 +128,31 @@ _declspec (dllexport) long CC SaveParameters(DG_BME_State* p_DGS, int NoDelayGen
 
 _declspec (dllexport) long CC ReadParameters(DG_BME_State* p_DGS, int* p_module,
 														 BOOL* p_CalibrateTiming, unsigned long* p_CalibrationLevel, char* FileName);
+
 //
 // long Initialize_DG_BME(long base, long Product, long DG_Number);
 //
-//		call this function individually for each delay generator to tell the driver:
-//
-//					base:				base adress jumpered on the ISA delay generator PC board or
-//											slot number of a PCI delay generator board
-//					Product:		product code (BME_G02, BME_G03, BME_G04)
-//					DG_Number:	number of this delay generator (counting starts from zero!)
-//
-_declspec (dllexport) long CC Initialize_DG_BME(long base, long Product, long DG_Number);
-
 //
 // long Initialize_Bus_DG_BME(long BusNumber, long base, long Product, long DG_Number);
 //
+//
+// long Initialize_Ethernet_DG_BME(long BusNumber, long base, char* p_ip_address, long Product, long DG_Number);
+//
 //		call this function individually for each delay generator to tell the driver:
 //
-//					BusNumber:	number of the PCI bus, where the delay generator is located
-//					base:				base adress jumpered on the ISA delay generator PC board or
-//											slot number of a PCI delay generator board
-//					Product:		product code (BME_G02, BME_G03, BME_G04)
-//					DG_Number:	number of this delay generator (counting starts from zero!)
+//					BusNumber:		number of the PCI bus, where the delay generator is located
+//					base:					base adress jumpered on the ISA delay generator PC board or
+//												slot number of a PCI delay generator board
+//					p_ip_address: pointer to the ethernet address
+//					Product:			product code (BME_G02, BME_G03)
+//					DG_Number:		number of this delay generator (counting starts from zero!)
 //
+_declspec (dllexport) long CC Initialize_DG_BME(long base, long Product, long DG_Number);
 
 _declspec (dllexport) long CC Initialize_Bus_DG_BME(long BusNumber, long base, long Product, long DG_Number);
+
+_declspec (dllexport) long CC Initialize_Ethernet_DG_BME(long BusNumber, long base, char* p_ip_address, long Product, long DG_Number);
+
 
 //
 // long Set_DG_BME(DG_BME_Registers* p_pdg, long DG_Number);
@@ -232,6 +232,49 @@ _declspec (dllexport) long CC ResetOutputModuloCounters(long DG_Number);
 
 _declspec (dllexport) long CC ResetAllOutputModuloCounters();
 
+
+//
+// long JumpStartAllLists();
+//
+//		call this function to set the memory read pointers of all delay generators to
+//		the beginning of the delay lists
+//
+//
+
+_declspec (dllexport) long CC JumpStartAllLists();
+
+//
+// long ResetCounter(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList, long DG_Number);
+//
+//		call this function to set selected counters to zero synchronuously
+//
+//					b_EventCounter:		set this flag TRUE to reset the event counter
+//					b_ModuloCounter:	set this flag TRUE to reset the modulo counter for all channels
+//														of this delay generator
+//					b_TimeList:				set this flag TRUE to set all memory read pointers of this delay generator
+//														to the beginning of the delay lists
+//					DG_Number:				number of this delay generator (counting starts from zero!)
+//
+//
+
+_declspec (dllexport) long CC ResetCounter(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList, long DG_Number);
+
+//
+// long ResetCounterAllCards(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList);
+//
+//		call this function to set selected counters to zero synchronuously on the individual card,
+//					sequentially from one card to the next
+//
+//					b_EventCounter:		set this flag TRUE to reset the event counter
+//					b_ModuloCounter:	set this flag TRUE to reset the modulo counter for all channels
+//														of this delay generator
+//					b_TimeList:				set this flag TRUE to set all memory read pointers of this delay generator
+//														to the beginning of the delay lists
+//
+//
+
+_declspec (dllexport) long CC ResetCounterAllCards(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList);
+
 //
 // unsigned long ReadTriggerCounter(long DG_Number);
 //
@@ -244,6 +287,27 @@ _declspec (dllexport) long CC ResetAllOutputModuloCounters();
 
 _declspec (dllexport) unsigned long CC ReadTriggerCounter(long DG_Number);
 
+//
+// long Read64bitTriggerCounter(_int64* p_result, long DG_Number);
+//
+//		this function returns the numnber of Trigger-Events since last calling 
+//		the function "ResetEventCounter"
+//
+//					DG_Number:	number of this delay generator (counting starts from zero!)
+//
+
+
+_declspec (dllexport) long CC Read64BitTriggerCounter(_int64* p_result, long DG_Number);
+
+//
+// long ReadFrequencyCounter(double* p_Frequency, long DG_Number);
+//
+//		this function returns the frequency of th internal clock signal
+//
+//					DG_Number:	number of this delay generator (counting starts from zero!)
+//
+
+_declspec (dllexport) long CC ReadFrequencyCounter(double* p_Frequency, long DG_Number);
 
 //
 // long SoftwareTrigger_DG_BME(long DG_Number);
@@ -344,6 +408,16 @@ _declspec (dllexport) long CC ResetRegisters(DG_BME_Registers* p_DGState);
 
 _declspec (dllexport) long CC ResetControl(DG_BME_Control* p_DGControl);
 
+//
+// long ResetState(DG_BME_State* p_DGS);
+//
+//		use this function to initialize the variable p_DGS to a known state.
+//
+//					p_DGS:					structure of type DG_BME_State that is passed to the
+//													functions SaveParameters or ReadParameters
+//
+
+_declspec (dllexport) long CC ResetState(DG_BME_State* p_DGS);
 
 //
 // long CopyControl(DG_BME_Control* p_Control, DG_BME_Control_V1* p_Control_V1);
@@ -355,24 +429,32 @@ _declspec (dllexport) long CC ResetControl(DG_BME_Control* p_DGControl);
 //													function SetDelayGenerator
 //					p_Control_V1:  	structure of type DG_BME_Control_V1 that is passed to the
 //													function SetDelayGenerator
+//					p_Control_V2:  	structure of type DG_BME_Control_V2 that is passed to the
+//													function SetDelayGenerator
+//					p_Control_V3:  	structure of type DG_BME_Control_V3 that is passed to the
+//													function SetDelayGenerator
+//					p_Control_V4:  	structure of type DG_BME_Control_V4 that is passed to the
+//													function SetDelayGenerator
 //
 
 _declspec (dllexport) long CC CopyControl(DG_BME_Control* p_Control, DG_BME_Control_V1* p_Control_V1);
-
-//
-// long CopyControl(DG_BME_Control* p_Control, DG_BME_Control_V2* p_Control_V2);
-//
-//		use this function to convert data from the old structure DG_BME_Control_V2
-//    to the new structure DG_BME_Control
-//
-//					p_Control:	  	structure of type DG_BME_Control that is passed to the
-//													function SetDelayGenerator
-//					p_Control_V2:  	structure of type DG_BME_Control_V2 that is passed to the
-//													function SetDelayGenerator
-//
-
 _declspec (dllexport) long CC CopyControl_V2(DG_BME_Control* p_Control, DG_BME_Control_V2* p_Control_V2);
+_declspec (dllexport) long CC CopyControl_V3(DG_BME_Control* p_Control, DG_BME_Control_V3* p_Control_V3);
+_declspec (dllexport) long CC CopyControl_V4(DG_BME_Control* p_Control, DG_BME_Control_V4* p_Control_V4);
+
+//
+// long CopyState(DG_BME_State* p_DGS, DG_BME_State_V1* p_DGS_V1);
+//
+//		use this function to convert data from the old structure DG_BME_State_V1
+//    to the new structure DG_BME_State
+//
+//
 	
+_declspec (dllexport) long CC CopyState_V1(DG_BME_State* p_DGS, DG_BME_State_V1* p_DGS_V1);
+_declspec (dllexport) long CC CopyState_V2(DG_BME_State* p_DGS, DG_BME_State_V2* p_DGS_V2);
+_declspec (dllexport) long CC CopyState_V3(DG_BME_State* p_DGS, DG_BME_State_V3* p_DGS_V3);
+_declspec (dllexport) long CC CopyState_V4(DG_BME_State* p_DGS, DG_BME_State_V4* p_DGS_V4);
+
 //
 // unsigned ModifyAction(DG_BME_Control* p_BDG, long DG_Number);
 //
@@ -449,6 +531,43 @@ _declspec (dllexport) unsigned long CC Modify_DG_V2(unsigned long OutputModulo_T
 													long DG_Number);
 
 //
+// unsigned long Modify_G08(..................., long DG_Number);
+//
+//		call this function to find out for each delay generator the required actions
+//		before calling 
+//									SetDelayGenerator(...), Set_G0X_Delay(...), etc.
+//
+//					DG_Number:	number of this delay generator (counting starts from zero!)
+//
+//		Return values:
+//					bit 0 TRUE: it is necessary to call the function Deactivate_DG_BME(...)
+//					bit 1 TRUE: it is necessary to call the function ResetEventCounter(...)
+//					bit 2 TRUE: it is necessary to call the function ResetOutputModuloCounters(...)
+//
+//    Note: This function is similar to the function Modify_DG(...), it applies to the
+//          SG08 versions of the delay generators.
+
+
+_declspec (dllexport) unsigned long CC Modify_G08(unsigned long OutputModulo_A, unsigned long OutputOffset_A, unsigned long GoSignal_A,
+													BOOL Positive_A, BOOL Terminate_A,
+													unsigned long OutputModulo_B, unsigned long OutputOffset_B, unsigned long GoSignal_B,
+													BOOL Positive_B, BOOL Terminate_B,
+													unsigned long OutputModulo_C, unsigned long OutputOffset_C, unsigned long GoSignal_C,
+													BOOL Positive_C, BOOL Terminate_C,
+													unsigned long OutputModulo_D, unsigned long OutputOffset_D, unsigned long GoSignal_D,
+													BOOL Positive_D, BOOL Terminate_D,
+													unsigned long OutputModulo_E, unsigned long OutputOffset_E, unsigned long GoSignal_E,
+													BOOL Positive_E, BOOL Terminate_E, BOOL Disconnect_E, BOOL OntoMsBus_E, BOOL InputPositive_E,
+													unsigned long OutputModulo_F, unsigned long OutputOffset_F, unsigned long GoSignal_F,
+													BOOL Positive_F, BOOL Terminate_F, BOOL Disconnect_F, BOOL OntoMsBus_F, BOOL InputPositive_F,
+													BOOL TriggerTerminate, BOOL GateTerminate, BOOL ClockEnable,
+													unsigned long PresetValue, unsigned long ClockSource, unsigned long GateDivider,
+													unsigned long MS_Bus, BOOL PositiveGate, BOOL SynchronizeGate, BOOL InternalTrigger,
+													BOOL RisingEdge, BOOL StopOnPreset, BOOL ResetWhenDone, BOOL TriggerEnable,
+													long DG_Number);
+
+
+//
 // long SetDelayGenerator(DG_BME_Control* p_BDG, long DG_Number);
 //
 //		call this function to individually set each delay generator to the desired parameters:
@@ -470,17 +589,27 @@ _declspec (dllexport) long CC SetDelayGenerator(DG_BME_Control* p_BDG, long DG_N
 //					X:					2,3,4, depending on model of delay generator
 //
 //  delay generators can be set immediatly after calling "Initialize_DG_BME"
-
-_declspec (dllexport) long CC Set_BME_G06(double FireFirst_T0, double SetBack_T0, unsigned long OutputModulo_T0,
-													BOOL Active_T0, BOOL Positive_T0, BOOL Terminate_T0, BOOL HighDrive_T0,
-													double FireFirst_A, double SetBack_A, unsigned long OutputModulo_A,
-													BOOL Active_A, BOOL Positive_A, BOOL Terminate_A, BOOL HighDrive_A,
-													double FireFirst_B, double SetBack_B, unsigned long OutputModulo_B,
-													BOOL Active_B, BOOL Positive_B, BOOL Terminate_B, BOOL HighDrive_B,
-													BOOL Gate_AB, unsigned long OutputLevel, BOOL TriggerTerminate, BOOL ClockEnable,
-													double InternalClock, double TriggerLevel, unsigned long PresetValue, 
-													unsigned long DivideBy, unsigned long ClockSource, unsigned long GateDivider,
-													BOOL PositiveGate, BOOL InternalTrigger, BOOL InternalArm, BOOL SoftwareTrigger,
+_declspec (dllexport) long CC Set_BME_G08(double FireFirst_A, double PulseWidth_A, unsigned long OutputModulo_A,
+													unsigned long OutputOffset_A, unsigned long GoSignal_A, BOOL Positive_A, BOOL Terminate_A, 
+													double FireFirst_B, double PulseWidth_B, unsigned long OutputModulo_B,
+													unsigned long OutputOffset_B, unsigned long GoSignal_B, BOOL Positive_B, BOOL Terminate_B, 
+													double FireFirst_C, double PulseWidth_C, unsigned long OutputModulo_C,
+													unsigned long OutputOffset_C, unsigned long GoSignal_C, BOOL Positive_C, BOOL Terminate_C, 
+													double FireFirst_D, double PulseWidth_D, unsigned long OutputModulo_D,
+													unsigned long OutputOffset_D, unsigned long GoSignal_D, BOOL Positive_D, BOOL Terminate_D, 
+													double FireFirst_E, double PulseWidth_E, unsigned long OutputModulo_E,
+													unsigned long OutputOffset_E, unsigned long GoSignal_E, BOOL Positive_E, BOOL Terminate_E, 
+													BOOL Disconnect_E, BOOL OntoMsBus_E, BOOL InputPositive_E,
+													double FireFirst_F, double PulseWidth_F, unsigned long OutputModulo_F,
+													unsigned long OutputOffset_F, unsigned long GoSignal_F, BOOL Positive_F, BOOL Terminate_F, 
+													BOOL Disconnect_F, BOOL OntoMsBus_F, BOOL InputPositive_F,
+													unsigned long GateFunction, BOOL ClockEnable, unsigned long OscillatorDivider,
+													unsigned long TriggerDivider,  unsigned long TriggerMultiplier,
+													unsigned long ClockSource, BOOL TriggerTerminate, BOOL GateTerminate,
+													double TriggerLevel, double GateLevel, double GateDelay, unsigned long MS_Bus,
+													double InternalClock, unsigned long PresetValue, unsigned long GateDivider,
+													double ForceTrigger, double StepBackTime, unsigned long BurstCounter,
+													BOOL PositiveGate, BOOL InternalTrigger, BOOL IgnoreGate, BOOL SynchronizeGate,
 													BOOL RisingEdge, BOOL StopOnPreset, BOOL ResetWhenDone, BOOL TriggerEnable,
 													long DG_Number);
 
@@ -489,19 +618,6 @@ _declspec (dllexport) long CC Set_BME_G05(double FireFirst_T0, unsigned long Out
 													double FireFirst_A, unsigned long OutputModulo_A,
 													BOOL Active_A, BOOL Positive_A, BOOL Terminate_A, BOOL HighDrive_A,
 													double FireFirst_B, unsigned long OutputModulo_B,
-													BOOL Active_B, BOOL Positive_B, BOOL Terminate_B, BOOL HighDrive_B,
-													BOOL Gate_AB, unsigned long OutputLevel, BOOL TriggerTerminate, BOOL ClockEnable,
-													double InternalClock, double TriggerLevel, unsigned long PresetValue, 
-													unsigned long DivideBy, unsigned long ClockSource, unsigned long GateDivider,
-													BOOL PositiveGate, BOOL InternalTrigger, BOOL InternalArm, BOOL SoftwareTrigger,
-													BOOL RisingEdge, BOOL StopOnPreset, BOOL ResetWhenDone, BOOL TriggerEnable,
-													long DG_Number);
-
-_declspec (dllexport) long CC Set_BME_G04(double FireFirst_T0, double SetBack_T0,  double FireSecond_T0,
-													BOOL Active_T0, BOOL Positive_T0, BOOL Terminate_T0, BOOL HighDrive_T0,
-													double FireFirst_A, double SetBack_A,  double FireSecond_A,
-													BOOL Active_A, BOOL Positive_A, BOOL Terminate_A, BOOL HighDrive_A,
-													double FireFirst_B, double SetBack_B,  double FireSecond_B,
 													BOOL Active_B, BOOL Positive_B, BOOL Terminate_B, BOOL HighDrive_B,
 													BOOL Gate_AB, unsigned long OutputLevel, BOOL TriggerTerminate, BOOL ClockEnable,
 													double InternalClock, double TriggerLevel, unsigned long PresetValue, 
@@ -559,15 +675,30 @@ _declspec (dllexport) long CC Set_TriggerParameters(BOOL TriggerTerminate, doubl
 
 _declspec (dllexport) long CC Set_V2_TriggerParameters(BOOL IgnoreGate, BOOL SynchronizeGate, double ForceTrigger, 
 																			 unsigned long MS_Bus, long DG_Number);
+//
+// long Set_G08_TriggerParameters(............., long DG_Number);
+//
+//		call this function to set the additional trigger parameters of the BME_SG08P1 delay generator;
+//
+
+_declspec (dllexport) long CC Set_G08_TriggerParameters(BOOL GateTerminate, double GateLevel, double GateDelay,
+													BOOL IgnoreGate, BOOL SynchronizeGate, double ForceTrigger,
+													double StepBackTime, unsigned long BurstCounter, unsigned long MS_Bus, long DG_Number);
+
 		
 //
 // long Set_ClockParameters(............., long DG_Number);
 //
-//		call this function to set the clock parameters of the delay generator;
+//		call these functions to set the clock parameters of the delay generator;
 //
 
 _declspec (dllexport) long CC Set_ClockParameters(BOOL ClockEnable, unsigned long DivideBy, unsigned long ClockSource, 
 													long DG_Number);
+
+_declspec (dllexport) long CC Set_G08_ClockParameters(BOOL ClockEnable, unsigned long OscillatorDivider, 
+																				unsigned long TriggerDivider, unsigned long TriggerMultiplier, 
+																				unsigned long ClockSource, long DG_Number);
+
 //
 // long Set_Gate_AB(BOOL Gate_AB, long DG_Number);
 //
@@ -576,6 +707,15 @@ _declspec (dllexport) long CC Set_ClockParameters(BOOL ClockEnable, unsigned lon
 //
 
 _declspec (dllexport) long CC Set_Gate_AB(BOOL Gate_AB, long DG_Number);
+
+//
+// long Set_GateFunction(unsigned long GateFunction, long DG_Number);
+//
+//		call this function to define, whether outputs AB, CD, EF should be
+//		independent or gated
+//
+
+_declspec (dllexport) long CC Set_GateFunction(unsigned long GateFunction, long DG_Number);
 
 //
 // long Set_OutputLevel(unsigned long OutputLevel, unsigned long PulseWidth, long DG_Number);
@@ -607,11 +747,6 @@ _declspec (dllexport) long CC Set_G03_Delay(unsigned long Channel,
 													double FireFirst, double SetBack,
 													BOOL Active, BOOL Positive, BOOL Terminate, BOOL HighDrive,
 													long DG_Number);
-	
-_declspec (dllexport) long CC Set_G04_Delay(unsigned long Channel, 
-													double FireFirst, double SetBack, double FireSecond,
-													BOOL Active, BOOL Positive, BOOL Terminate, BOOL HighDrive,
-													long DG_Number);
 
 _declspec (dllexport) long CC Set_G05_Delay(unsigned long Channel, double FireFirst, unsigned long OutputModulo,
 													BOOL Active, BOOL Positive, BOOL Terminate, BOOL HighDrive,
@@ -621,10 +756,20 @@ _declspec (dllexport) long CC Set_G05P2_Delay(unsigned long Channel, double Fire
 															unsigned long GoSignal, unsigned long DoneSignal,
 															BOOL Positive, BOOL Terminate, BOOL HighDrive, long DG_Number);
 
-_declspec (dllexport) long CC Set_G06_Delay(unsigned long Channel, 
-													double FireFirst, double SetBack, unsigned long OutputModulo,
-													BOOL Active, BOOL Positive, BOOL Terminate, BOOL HighDrive,
-													long DG_Number);
+
+_declspec (dllexport) long CC Set_G08_Delay(unsigned long Channel, double FireFirst, double PulseWidth, 
+															unsigned long OutputModulo, unsigned long OutputOffset, 
+															unsigned long GoSignal, BOOL Positive, BOOL Terminate, 
+															BOOL Disconnect, BOOL OntoMsBus, BOOL InputPositive, long DG_Number);
+
+//
+// long Set_DelayList(unsigned long CalibrationLevel, long DG_Number);
+//
+//		call this function to load a list of delay values into the FPGA of the delay generator
+//								
+	
+_declspec (dllexport) long CC Set_DelayList(unsigned long Channel, double* p_DelayTime, double* p_PulseWidth, 
+															unsigned long* p_StepBack, signed long ListLength, long DG_Number);
 
 
 //
@@ -666,9 +811,9 @@ _declspec (dllexport) long CC Test_BME_G02(long DG_Number);
 
 _declspec (dllexport) long CC Test_BME_G03(long DG_Number);
 
-_declspec (dllexport) long CC Test_BME_G04(long DG_Number);
-
 _declspec (dllexport) long CC Test_BME_G05(long DG_Number);
+
+_declspec (dllexport) long CC Test_BME_G08(long DG_Number);
 
 //
 // long ReadCalibrationConstants();
@@ -775,12 +920,40 @@ _declspec (dllexport) long CC DelayLimit(double* p_out, double InValue, long DG_
 _declspec (dllexport) long CC RoundT0(double* p_out, double InValue, long DG_Number);
 
 //
+// long RoundWidth(double* p_out, double InValue, long DG_Number);
+//
+//		uses the calibration defined by the calibration routines, to calculate
+//		the legal Width value that is nearest to InValue.
+//		This routine calculates the width for all channels of the delay generators.
+//
+//					p_out:			memory location (double), where the result is placed
+//					InValue:		delay value (in usec) for which the nearest legal value has to be found
+//					DG_Number:	number of this delay generator (counting starts from zero!)
+//
+
+_declspec (dllexport) long CC RoundWidth(double* p_out, double InValue, long DG_Number);
+
+//
+// long RoundGateDelay(double* p_out, double InValue, long DG_Number);
+//
+//		uses the calibration defined by the calibration routines, to calculate
+//		the legal Gate Delay that is nearest to InValue.
+//		This routine calculates the width for all channels of the delay generators.
+//
+//					p_out:			memory location (double), where the result is placed
+//					InValue:		delay value (in usec) for which the nearest legal value has to be found
+//					DG_Number:	number of this delay generator (counting starts from zero!)
+//
+
+_declspec (dllexport) long CC RoundGateDelay(double* p_out, double InValue, long DG_Number);
+
+//
 // long RoundSetBack(double* p_out, double InValue, long DG_Number);
 //
 //		uses the calibration defined by the calibration routines, to calculate
 //		the legal Setback delay value that is nearest to InValue.
 //		This routine calculates the delay values for the Setback function 
-//		of the BME_G03 or BME_G04 delay generators.
+//		of the BME_G03 delay generators.
 //
 //					p_out:			memory location (double), where the result is placed
 //					InValue:		delay value (in usec) for which the nearest legal value has to be found
@@ -788,22 +961,6 @@ _declspec (dllexport) long CC RoundT0(double* p_out, double InValue, long DG_Num
 //
 
 _declspec (dllexport) long CC RoundSetBack(double* p_out, double InValue, long DG_Number);
-
-//
-// long RoundFireSecond(double* p_out, double InValue, double FireFirst, long DG_Number);
-//
-//		uses the calibration defined by the calibration routines, to calculate
-//		the legal Setback delay value that is nearest to InValue.
-//		This routine calculates the delay values for the Fire Second function 
-//		of the BME_G04 delay generators.
-//
-//					p_out:			memory location (double), where the result is placed
-//					InValue:		delay value (in usec) for which the nearest legal value has to be found
-//					FireFirst:	delay value (in usec) for the already defined Fire First delay of this channel
-//					DG_Number:	number of this delay generator (counting starts from zero!)
-//
-
-_declspec (dllexport) long CC RoundFireSecond(double* p_out, double InValue, double FireFirst, long DG_Number);
 
 //
 // long RoundRepCounter(double* p_out, double InValue, long DG_Number);
@@ -829,32 +986,36 @@ _declspec (dllexport) long CC RoundRepCounter(double* p_out, double InValue, lon
 _declspec (dllexport) long CC DetectPciDelayGenerators(long* p_Error);
 
 //
-// long GetPciDelayGenerator(long* p_DG_Product, long* p_SlotNumber, BOOL* p_Master, long DG_Number);
+// long AddEthernetDelayGenerators(long* p_Error, char* p_IpAddr);
 //
-//		use this function to sequentially recall the parameters of delay generators 
-//	  detected on the PCI bus by the routine 'DetectPciDelayGenerators()'
+//		this function returns the number of delay generators installed on the PCI bus
 //
-//					p_DG_Product:		pointer to a memory location for storing the product
-//	                        code of the delay generator. The product codes are
-//													defined in the file ''DG_Data.h''
-//					p_SlotNumber:		pointer to a memory location for storing the slot
-//	                        number of the delay generator
-//					p_Master:				pointer to a memory location for storing the boolean
-//	                        value that defines a master or slave
-//					DG_Number:			number of this delay generator (counting starts from zero!)
+//					p_Error:		pointer to a memory location for storing the (plx) error code
+//					p_IpAddr:		pointer to a memory location for storing the Ethernet Address
 //
-	
-_declspec (dllexport) long CC GetPciDelayGenerator(long* p_DG_Product, long* p_SlotNumber, BOOL* p_Master, long DG_Number);
+
+_declspec (dllexport) long CC AddEthernetDelayGenerators(long* p_Error, char* p_IpAddr);
+
 
 //
 // long GetPciDelayGenerator(long* p_DG_Product, long* p_SlotNumber, BOOL* p_Master, long DG_Number);
 //
+//
+// long GetPciBusDelayGenerator(long* p_DG_Product, long* p_BusNumber, long* p_SlotNumber,
+//                              BOOL* p_Master, long DG_Number);
+//
+//
+// long GetEthernetDelayGenerator(long* p_DG_Product, char* p_IpAddr, long* p_BusNumber, long* p_SlotNumber, 
+//                                    BOOL* p_Master, long DG_Number);
+//
 //		use this function to sequentially recall the parameters of delay generators 
 //	  detected on the PCI bus by the routine 'DetectPciDelayGenerators()'
 //
 //					p_DG_Product:		pointer to a memory location for storing the product
 //	                        code of the delay generator. The product codes are
 //													defined in the file ''DG_Data.h''
+//					p_IpAddr:		    pointer to a memory location for storing the Ethernet Address
+//	                        of the delay generator
 //					p_BusNumber:		pointer to a memory location for storing the bus
 //	                        number of the delay generator
 //					p_SlotNumber:		pointer to a memory location for storing the slot
@@ -863,19 +1024,38 @@ _declspec (dllexport) long CC GetPciDelayGenerator(long* p_DG_Product, long* p_S
 //	                        value that defines a master or slave
 //					DG_Number:			number of this delay generator (counting starts from zero!)
 //
-	
+
+_declspec (dllexport) long CC GetPciDelayGenerator(long* p_DG_Product, long* p_SlotNumber, BOOL* p_Master, long DG_Number);
+
 _declspec (dllexport) long CC GetPciBusDelayGenerator(long* p_DG_Product, long* p_BusNumber, long* p_SlotNumber, 
 																BOOL* p_Master, long DG_Number);
+
+_declspec (dllexport) long CC GetEthernetDelayGenerator(long* p_DG_Product, char* p_IpAddr, long* p_BusNumber, long* p_SlotNumber,
+																			BOOL* p_Master, long DG_Number);
 
 //
 // long GetUnconnectedDelayGenerator(long* p_DG_Product, long* p_SlotNumber, long* p_LineMaster, long DG_Number)
 //
-//		use this function to sequentially recall the parameters of delay generators 
+//
+// long GetUnconnectedBusDelayGenerator(long* p_DG_Product, long* p_BusNumber, long* p_SlotNumber,
+//                                              long* p_LineMaster, long DG_Number)
+//
+//
+// long GetUnconnectedEthernetDelayGenerator(long* p_DG_Product, char* p_IpAddr, long* p_BusNumber, long* p_SlotNumber, 
+//																							long* p_LineMaster, long DG_Number);
+//
+//		use these function to sequentially recall the parameters of delay generators 
 //	  detected on the PCI bus by the routine 'DetectPciDelayGenerators()'
+//    This routine recalls the parameters of delay generators that have not been correctly connected
+//    via the master/slave bus
 //
 //					p_DG_Product:		pointer to a memory location for storing the product
 //	                        code of the delay generator. The product codes are
 //													defined in the file ''DG_Data.h''
+//					p_IpAddr:		    pointer to a memory location for storing the Ethernet Address
+//	                        of the delay generator
+//					p_BusNumber:		pointer to a memory location for storing the bus
+//	                        number of the delay generator
 //					p_SlotNumber:		pointer to a memory location for storing the slot
 //	                        number of the delay generator
 //					p_LineMaster:		pointer to a memory location for storing three long 
@@ -885,27 +1065,11 @@ _declspec (dllexport) long CC GetPciBusDelayGenerator(long* p_DG_Product, long* 
 
 _declspec (dllexport) long CC GetUnconnectedDelayGenerator(long* p_DG_Product, long* p_SlotNumber, long* p_LineMaster, long DG_Number);
 
-//
-// long GetUnconnectedDelayGenerator(long* p_DG_Product, long* p_SlotNumber, long* p_LineMaster, long DG_Number)
-//
-//		use this function to sequentially recall the parameters of delay generators 
-//	  detected on the PCI bus by the routine 'DetectPciDelayGenerators()'
-//
-//					p_DG_Product:		pointer to a memory location for storing the product
-//	                        code of the delay generator. The product codes are
-//													defined in the file ''DG_Data.h''
-//					p_BusNumber:		pointer to a memory location for storing the bus
-//	                        number of the delay generator
-//					p_SlotNumber:		pointer to a memory location for storing the slot
-//	                        number of the delay generator
-//					p_LineMaster:		pointer to a memory location for storing three long 
-//	                        values signifying the master of that specific line
-//					DG_Number:			number of this delay generator (counting starts from zero!)
-//
-
 _declspec (dllexport) long CC GetUnconnectedBusDelayGenerator(long* p_DG_Product, long* p_BusNumber, long* p_SlotNumber, 
 																				long* p_LineMaster, long DG_Number);
 
+_declspec (dllexport) long CC GetUnconnectedEthernetDelayGenerator(long* p_DG_Product, char* p_IpAddr, long* p_BusNumber, long* p_SlotNumber, 
+																							long* p_LineMaster, long DG_Number);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -920,17 +1084,21 @@ typedef struct
   unsigned short CounterControlAddress,InterruptEnableAddress;
   unsigned short InterruptAcknowledgeAddress,InitializeAddress,PrescalerAddress;
 	unsigned short Counter,Counter_N,Counter_K,Counter_J,Counter_cntrl;
-  unsigned short Delay,Delay_T0,Delay_A,Delay_B,Delay_Aux,Delay_cntrl;
-	unsigned short ModuloCounterAddress,TriggerCounterAddress;
+  unsigned short Delay,Delay_T0,Delay_Aux,Delay_cntrl;
+  unsigned short Delay_A,Delay_B,Delay_C,Delay_D,Delay_E,Delay_F;
+  unsigned short Modulo_A,Modulo_B,Modulo_C,Modulo_D,Modulo_E,Modulo_F;
+	unsigned short SecondaryCounterAddress,ModuloCounterAddress;
+	unsigned short TriggerCounterAddress,FrequencyCounterAddress;
   unsigned short Large,Large_T0,Large_A,Large_B,Large_cntrl;
-	unsigned short DAC,DAC_T0,DAC_A,DAC_B;
-	unsigned short CommandRegister,CommandRegisterState,InterruptEnableRegister;
-	unsigned long CounterControlRegister[2];
-	unsigned long CounterControlState[2];
-	unsigned long PrescalerState[2];
+	unsigned short DAC,DAC_T0,DAC_A,DAC_B,Serial_DAC;
+	unsigned short InterruptEnableRegister;
+	unsigned long CommandRegister,CommandRegisterState;
+	unsigned long CounterControlRegister[6];
+	unsigned long CounterControlState[6];
+	unsigned long PrescalerState[4];
 	union
 	{
-		double	IniTime[10];
+		double	IniTime[16];
 		struct
 		{
 			double ZeroTime;
@@ -942,6 +1110,11 @@ typedef struct
 			double A_Increment;
 			double B_Increment;
 			double TriggerIncrement;
+			double C_Increment;
+			double D_Increment;
+			double E_Increment;
+			double F_Increment;
+			double OscillatorIncrement;
 		};
 	};
 	double TenMhzZeroTime;
@@ -957,11 +1130,12 @@ typedef struct
 	DG_BME_Control		DelayControlState;
 	BOOL NtDriverInitialized;
   HANDLE h_DelayGenerator;
+	DelgenType PciDelgen;
+	char ip_address[40];
 	long BusNumber;
 	long SlotNumber;
 	void* p_Master;
 } DG_InternalData;
-
 
 
 	union
@@ -1000,6 +1174,7 @@ typedef struct
 	DG_InternalData* p_Internal;
 	int NoDelayGenerators;
 	int NumberPciDelayGenerators;
+	DelgenType PciDelgen[40];
 
 	void IsaOutByte(unsigned short Address, unsigned char value);
 	unsigned char IsaInByte(unsigned short Address);
@@ -1015,19 +1190,22 @@ typedef struct
 	void SetReferenceControl(unsigned long* p_Prepare, unsigned long* p_FinalValue, 
 																DelayChannel* p_rf, DG_InternalData* p_Present);
 	void Set_Delay_channel(DelayChannel* p_k, DelayChannel* p_m, short int pos, DG_InternalData* p_Present);
+	void Set_Delay_channel_SG05P4(DelayChannel* p_k, DelayChannel* p_ChState, unsigned long* LoadWord,
+																								unsigned short pos, DG_InternalData* p_Present);
 	void SetDelayControl(unsigned long* p_Prepare, unsigned long* p_FinalValue, 
+				DelayChannel* p_k, DelayChannel* p_ChState, short int pos, DG_InternalData* p_Present);
+	void SetDelayControl_SG05P4(unsigned long* p_Prepare, unsigned long* p_FinalValue, 
 				DelayChannel* p_k, DelayChannel* p_ChState, short int pos, DG_InternalData* p_Present);
 	void Synchronize_DG_State(long DG_Number);
 	void HardwareTest_BME_G03(long DG_Number);
 	void HardwareTest_BME_G02(long DG_Number);
 	void LoadPrescaler(unsigned long* p_value, DG_InternalData* p_Present);
-	void LoadCommandRegister(unsigned short value, DG_InternalData* p_Present);
+	void LoadCommandRegister(unsigned long* p_value, DG_InternalData* p_Present);
 	void LoadCounterControl(unsigned long* p_value, DG_InternalData* p_Present);
 	void PrepareCounterControl(DG_BME_Registers* p_pdg, DG_InternalData* p_Present);
 
-	void ActionDC(unsigned long* p_Action, 
-											 DelayChannelData* p_a, DelayChannelData* p_b, unsigned long DG_Product);
-	void ActionDT(unsigned long* p_Action, DelayTriggerData* p_a, DelayTriggerData* p_b);
+	void ActionDC(unsigned long* p_Action, DelayChannelData* p_a, DelayChannelData* p_b, unsigned long DG_Product);
+	void ActionDT(unsigned long* p_Action, DelayTriggerData* p_a, DelayTriggerData* p_b, unsigned long DG_Product);
 	BOOL IsEqualDT(DelayTriggerType* p_a, DelayTriggerType* p_b, unsigned long DG_Product);
 	BOOL IsEqualMC(MainCounterType* p_a, MainCounterType* p_b, unsigned long DG_Product);
 	BOOL IsEqualDC(DelayChannel* p_a, DelayChannel* p_b, unsigned long DG_Product);
@@ -1035,23 +1213,35 @@ typedef struct
 	BOOL IsEqual(DG_BME_Registers* p_a, DG_BME_Registers* p_b, unsigned long DG_Product);
 	void CopyTriggerControl_V1(DelayTriggerData* p_dt, DelayTriggerData_V1* p_dtv1);
 	void CopyTriggerControl_V2(DelayTriggerData* p_dt, DelayTriggerData_V2* p_dtv2);
-	void CopyDelayControl(DelayChannelData* p_dc, DelayChannelData_V2* p_v2);
+	void CopyTriggerControl_V3(DelayTriggerData* p_dt, DelayTriggerData_V3* p_dtv3);
+	void CopyTriggerControl_V4(DelayTriggerData* p_dt, DelayTriggerData_V4* p_dtv4);
+	void CopyDelayControl_V2(DelayChannelData* p_dc, DelayChannelData_V2* p_v2);
+	void CopyDelayControl_V3(DelayChannelData* p_dc, DelayChannelData_V3* p_v3);
+	void DelayChannelTest(DelayChannel* p_dc);
 	void ResetDelayChannel(DelayChannel* p_dc);
 	void ResetMainCounter(MainCounterType* p_mc);
+	void DelayTriggerTest(DelayTriggerType* p_dt);
 	void ResetDelayTrigger(DelayTriggerType* p_dt);
 	void ModifyControlRegister(DG_BME_Registers* p_pdg, DG_InternalData* p_Present);
 	void ResetTriggerControl(DelayTriggerData* p_dt);
 	void ResetDelayControl(DelayChannelData* p_dc);
+	long SetChannel_SG05P4(DelayChannel* p_a, DelayChannelData* p_dl, long DG_Number);
 	long SetChannel(DelayChannel* p_a, DelayChannelData* p_dl, 
 															unsigned long MainCounter, long DG_Number);
 	long SetReference(DelayChannel* p_a, DelayChannelData* p_dl, 
 															unsigned long MainCounter, long DG_Number);
+	long SetTrigger(DG_BME_Registers* p_dgr, DG_BME_Control* p_BDG, long DG_Number);
 	BOOL ReadCalibrationFile(FILE *stream, int* p_module, char* FileName);
 	void InitializeCalibrationConstants();
+	long WidthNumber(unsigned long* p_out, double InValue, long DG_Number);
 	long DelayNumbers(double* p_remainder, unsigned int* p_digital, double InValue, long DG_Number);
 	long T0Numbers(unsigned int* p_digital, double InValue, long DG_Number);
-	BOOL MasterDelayGenerator(HANDLE h_Master, int NumBytes, HANDLE h_Slave);
-	BOOL MasterLineDG(HANDLE h_Master, int NumBytes, HANDLE h_Slave, int LineNo);
+	long DetectEthernetDelayGenerators(long* p_Error, DelgenType* p_DelgenList, char* p_IpAddr);
+	BOOL MasterDelayGenerator(DelgenType* p_PciMaster, DelgenType* p_PciSlave);
+	BOOL MasterLineDG(DelgenType* p_PciMaster, DelgenType* p_PciSlave, int LineNo);
 _declspec (dllexport) long CC ResetPciDelayGenerator(HANDLE h_Delgen);
 _declspec (dllexport) long CC DataOut(unsigned short Address, void* p_data, HANDLE h_Device, int Size);
+_declspec (dllexport) long CC Data32Out(unsigned short Address, void* p_data, HANDLE h_Device, int Size);
 _declspec (dllexport) long CC DataIn(unsigned short Address, void* p_data, HANDLE h_Device, int Size);
+_declspec (dllexport) long CC Data32In(unsigned short Address, void* p_data, HANDLE h_Device, int Size);
+
