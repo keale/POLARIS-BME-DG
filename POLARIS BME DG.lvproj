@@ -116,8 +116,6 @@
 				<Item Name="BME_DG_TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_TriggerSettings.ctl"/>
 				<Item Name="BME_G05P1Settings.ctl" Type="VI" URL="../LV-BME Interface/BME_G05P1Settings.ctl"/>
 				<Item Name="BME_DG_MasterOrSlave.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_MasterOrSlave.ctl"/>
-				<Item Name="512Doubles_Cluster.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/512Doubles_Cluster.ctl"/>
-				<Item Name="512longs_Cluster.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/512longs_Cluster.ctl"/>
 			</Item>
 			<Item Name="Low Level VIs" Type="Folder">
 				<Item Name="BME_DG_Set_G05_Chnl.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Set_G05_Chnl.vi"/>
@@ -150,11 +148,11 @@
 			</Item>
 			<Item Name="DG Classes" Type="Folder">
 				<Item Name="BME_DG_Base.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Base/BME_DG_Base.lvclass"/>
-				<Item Name="BME_DG_G02.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_P02/BME_DG_G02.lvclass"/>
-				<Item Name="BME_DG_G05.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05/BME_DG_G05.lvclass"/>
 				<Item Name="BME_DG_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Chnl/BME_DG_Chnl.lvclass"/>
-				<Item Name="BME_DG_Chnl_Modulo.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Modulo/BME_DG_Chnl_Modulo.lvclass"/>
-				<Item Name="BME_DG_Trigger.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Trigger/BME_DG_Trigger.lvclass"/>
+				<Item Name="BME_DG_G02.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G02/BME_DG_G02.lvclass"/>
+				<Item Name="BME_DG_G02_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G02_Chnl/BME_DG_G02_Chnl.lvclass"/>
+				<Item Name="BME_DG_G05.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05/BME_DG_G05.lvclass"/>
+				<Item Name="BME_DG_G05_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05_Chnl/BME_DG_G05_Chnl.lvclass"/>
 				<Item Name="BME_DG_System.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_System/BME_DG_System.lvclass"/>
 			</Item>
 		</Item>
