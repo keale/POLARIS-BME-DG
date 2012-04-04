@@ -42,7 +42,6 @@
 					<Item Name="Detect Pci Delay Generators.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Detect Pci Delay Generators.vi"/>
 					<Item Name="DG_Info.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/DG_Info.vi"/>
 					<Item Name="DG_Setup.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/DG_Setup.vi"/>
-					<Item Name="Enable Interrupts.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Enable Interrupts.vi"/>
 					<Item Name="Error Converter (ErrCode or Status).vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Error Converter (ErrCode or Status).vi"/>
 					<Item Name="Get Pci Delay Generator.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Get Pci Delay Generator.vi"/>
 					<Item Name="Get Unconnected Delay Generator.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Get Unconnected Delay Generator.vi"/>
@@ -124,6 +123,7 @@
 				<Item Name="BME_DG_activate.vi" Type="VI" URL="../LV-BME Interface/BME_DG_activate.vi"/>
 				<Item Name="BME_DG_SetClock.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetClock.vi"/>
 				<Item Name="BME_Set_OutputLevel.vi" Type="VI" URL="../LV-BME Interface/BME_Set_OutputLevel.vi"/>
+				<Item Name="BME_DG_ResetTriggerCounter.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ResetTriggerCounter.vi"/>
 				<Item Name="BME_DG_ResetModuloCounter.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ResetModuloCounter.vi"/>
 				<Item Name="BME_Set_G05.vi" Type="VI" URL="../LV-BME Interface/BME_Set_G05.vi"/>
 				<Item Name="BME_DG_Deactivate.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Deactivate.vi"/>
@@ -212,6 +212,7 @@
 			<Item Name="MGI Change Detector.vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector.vi"/>
 			<Item Name="MGI Change Detector (T).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (T).vi"/>
 			<Item Name="MGI Change Detector (F).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (F).vi"/>
+			<Item Name="Enable Interrupts.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Enable Interrupts.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
