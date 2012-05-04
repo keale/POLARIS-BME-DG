@@ -119,18 +119,17 @@
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
-		<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-		<Property Name="NI.ClassItem.State" Type="Int">1342972416</Property>
-		<Property Name="NI.LibItem.Scope" Type="Int">3</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1082130944</Property>
 	</Item>
 	<Item Name="Update Card with De and Activate.vi" Type="VI" URL="../Update Card with De and Activate.vi">
-		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;%!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!$*!=!!?!!!8&amp;5*.26^%2V^4?8.U:7UO&lt;(:D&lt;'&amp;T=Q!21EV&amp;8U2(8V.Z=X2F&lt;3"P&gt;81!-E"Q!"Y!!"=61EV&amp;8U2(8V.Z=X2F&lt;3ZM&gt;G.M98.T!""#456@2%&gt;@5XFT&gt;'6N)'FO!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!#Z!=!!?!!!6%U*.26^%2V^$;'ZM,GRW9WRB=X-!$E*.26^%2V^$;'ZM)'FO!!"*!0!!$!!$!!1!"!!%!!1!"1!%!!9!"Q!%!!1!#!-!!(A*!!!!!!!!!!!!$1=!!")!#A!!!!!!%A!!$1!!!!!!#!!!!!!!!!!!!1!*!!!!!!</Property>
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;V!!!!#Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!$*!=!!?!!!8&amp;5*.26^%2V^4?8.U:7UO&lt;(:D&lt;'&amp;T=Q!21EV&amp;8U2(8V.Z=X2F&lt;3"P&gt;81!-E"Q!"Y!!"=61EV&amp;8U2(8V.Z=X2F&lt;3ZM&gt;G.M98.T!""#456@2%&gt;@5XFT&gt;'6N)'FO!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!$&amp;!&amp;A!##V.M98:F=S"P&lt;GRZ$V.M98:F=S!G)%VB=X2F=A!-5G6T:82$&lt;X6O&gt;'6S!!!O1(!!(A!!&amp;2.#456@2%&gt;@1WBO&lt;#ZM&gt;G.M98.T!!Z#456@2%&gt;@1WBO&lt;#"J&lt;A!!31$Q!!Q!!Q!%!!1!"!!%!!5!"!!'!!=!"!!)!!E$!!"Y#1!!!!!!!!!!!!U(!!!3!!I!!!!)!")!!!U!!!!!!!A!!!!!!!!!!!%!#A!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
 		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1107821074</Property>
 	</Item>
 </LVClass>
