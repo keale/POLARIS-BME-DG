@@ -195,6 +195,15 @@
 			<Property Name="NI.ClassItem.State" Type="Int">1074266624</Property>
 		</Item>
 	</Item>
+	<Item Name="CommonTrigger.vi" Type="VI" URL="../CommonTrigger.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;)!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!'5!$!".$&lt;X6O&gt;(.5;7RM1W^N&lt;7^O6(*H!"F!!Q!46(*J:W&gt;F=EVP:(6M&lt;UR$486M&gt;!!O1(!!(A!!&amp;2.#456@2%&gt;@1G&amp;T:3ZM&gt;G.M98.T!!^#456@2%&gt;@1G&amp;T:3"P&gt;81!&amp;5!$!!Z5=GFH:W6S1W^V&lt;H2F=A!!"!!!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!,E"Q!"Y!!"541EV&amp;8U2(8U*B=W5O&lt;(:D&lt;'&amp;T=Q!/1EV&amp;8U2(8U*B=W5A;7Y!!$Q!]!!-!!-!"!!&amp;!!9!"Q!)!!A!#!!*!!A!#!!+!Q!!?!U)#1!*!)U,#1!!!!!!!!!+!!!!!!#1!!!!!!%!#Q!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
+	</Item>
 	<Item Name="Read Interrupt Status.vi" Type="VI" URL="../Read Interrupt Status.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%9!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!"&gt;!"Q!137ZU:8*S&gt;8"U)&amp;.U982V=Q!!,E"Q!"Y!!"541EV&amp;8U2(8U*B=W5O&lt;(:D&lt;'&amp;T=Q!01EV&amp;8U2(8U*B=W5A&lt;X6U!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!,E"Q!"Y!!"541EV&amp;8U2(8U*B=W5O&lt;(:D&lt;'&amp;T=Q!/1EV&amp;8U2(8U*B=W5A;7Y!!$Q!]!!-!!-!"!!&amp;!!9!"!!%!!1!"!!(!!1!"!!)!Q!!?!U)!!!*!)U,!!!!!!!!!!!+!!!!!!#3!!!!!!%!#1!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
