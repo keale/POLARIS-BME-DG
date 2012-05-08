@@ -23,6 +23,15 @@
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
 	</Item>
 	<Item Name="DataMembers access" Type="Folder">
+		<Item Name="Write V2 Trigger Settings.vi" Type="VI" URL="../Write V2 Trigger Settings.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;N!!!!$A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#Z!=!!?!!!6%U*.26^%2V^#98.F,GRW9WRB=X-!$U*.26^%2V^#98.F)'^V&gt;!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!!Z!)1F(982F)&amp;2Z='5!&amp;E!B%&amp;.Z&lt;G.I=G^O;8JF)%&gt;B&gt;'5!!"F!#A!32G^S9W5A6(*J:W&gt;F=C!IN8-J!!!.1!=!"EV4)%*V=Q!!)E"1!!1!"Q!)!!E!#B.7-C"5=GFH:W6S)&amp;.F&gt;(2J&lt;G&gt;T!#Z!=!!?!!!6%U*.26^%2V^#98.F,GRW9WRB=X-!$E*.26^%2V^#98.F)'FO!!!]!0!!$!!$!!1!"!!&amp;!!1!"!!%!!1!"A!%!!M!$!)!!(A.#!!!!!#.#Q!!!!!!!!!!#!!!!!A!E!!!!!!"!!U!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">1073741824</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1107821056</Property>
+		</Item>
 		<Item Name="Write Chnl Obj.vi" Type="VI" URL="../Write Chnl Obj.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%L!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#Z!=!!?!!!6%U*.26^%2V^#98.F,GRW9WRB=X-!$U*.26^%2V^#98.F)'^V&gt;!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!#J!=!!?!!!6%U*.26^%2V^$;'ZM,GRW9WRB=X-!#U*.26^%2V^$;'ZM!#Z!=!!?!!!6%U*.26^%2V^#98.F,GRW9WRB=X-!$E*.26^%2V^#98.F)'FO!!!]!0!!$!!$!!1!"!!&amp;!!1!"!!%!!1!"A!%!!=!#!-!!(A.#!!!!!#.#Q!!!!!!!!!!#A!!!!I!EA!!!!!"!!E!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
