@@ -153,10 +153,10 @@
 				<Item Name="BME_DG_G02_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G02_Chnl/BME_DG_G02_Chnl.lvclass"/>
 				<Item Name="BME_DG_G05.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05/BME_DG_G05.lvclass"/>
 				<Item Name="BME_DG_G05_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05_Chnl/BME_DG_G05_Chnl.lvclass"/>
-				<Item Name="BME_DG_G08.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08/BME_DG_G08.lvclass"/>
-				<Item Name="BME_DG_G08_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08_Chnl/BME_DG_G08_Chnl.lvclass"/>
 				<Item Name="BME_DG_G05P2.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05P2/BME_DG_G05P2.lvclass"/>
 				<Item Name="BME_DG_G05P2_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05P2_Chnl/BME_DG_G05P2_Chnl.lvclass"/>
+				<Item Name="BME_DG_G08.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08/BME_DG_G08.lvclass"/>
+				<Item Name="BME_DG_G08_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08_Chnl/BME_DG_G08_Chnl.lvclass"/>
 				<Item Name="BME_DG_System.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_System/BME_DG_System.lvclass"/>
 			</Item>
 		</Item>
