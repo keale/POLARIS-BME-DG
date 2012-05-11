@@ -135,6 +135,7 @@
 				<Item Name="BME_DG_Gate_AB.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Gate_AB.vi"/>
 				<Item Name="BME_DG_ReadStatus.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadStatus.vi"/>
 				<Item Name="BME_DG_ReadTriggerCounter.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadTriggerCounter.vi"/>
+				<Item Name="BME_DG_ReadTriggerCounter64Bit.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadTriggerCounter64Bit.vi"/>
 				<Item Name="BME_DG_ReadParameterFile.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadParameterFile.vi"/>
 				<Item Name="BME_DG_ReadParameterFile_V2.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadParameterFile_V2.vi"/>
 				<Item Name="BME_DG_ReadCalibrConst_from_File.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadCalibrConst_from_File.vi"/>
@@ -163,6 +164,8 @@
 		<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
 		<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
 		<Item Name="Test Classes.vi" Type="VI" URL="../Test Classes.vi"/>
+		<Item Name="Test Classes 2.vi" Type="VI" URL="../Test Classes 2.vi"/>
+		<Item Name="Test SG08.vi" Type="VI" URL="../Test SG08.vi"/>
 		<Item Name="RunDelay2.vi" Type="VI" URL="../Freiburg_DG/RunDelay2.vi"/>
 		<Item Name="BME_DG_ReadParameterFile_mittels array.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadParameterFile_mittels array.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
