@@ -186,6 +186,7 @@ _declspec (dllexport) long CC Initialize_Ethernet_DG_BME(long BusNumber, long ba
 	case BME_SG05P2:
 	case BME_SG05P3:
 	case BME_SG08P1:
+	case BME_SG08P2:
 		p_Present->base_address = 0x0;
 		p_Present->SlotNumber = base;
 		p_Present->BusNumber = BusNumber;
@@ -233,6 +234,7 @@ _declspec (dllexport) long CC Initialize_Ethernet_DG_BME(long BusNumber, long ba
 	{
 	case SRS_DG135:
 	case BME_SG08P1:
+	case BME_SG08P2:
 		p_Present->CommandRegister = 0x00;
 		break;
 	default:
@@ -264,6 +266,7 @@ _declspec (dllexport) long CC Initialize_Ethernet_DG_BME(long BusNumber, long ba
 	case BME_SG05P2:
 	case BME_SG05P3:
 	case BME_SG08P1:
+	case BME_SG08P2:
 		p_Present->DelayControlState.DT.MS_Bus |= Resynchronize;
 		break;
 	default:
@@ -438,6 +441,8 @@ _declspec (dllexport) long CC SaveParameters(DG_BME_State* p_DGS, int NoDelayGen
 		fwrite(&(b_CalibrateTiming), sizeof(BOOL), 1, stream);
 		fwrite(p_DGS, sizeof(DG_BME_State), NoDelayGenerators, stream);
 		fclose(stream);
+		//int Module[20];
+		//ReadParameters(p_DGS, &(Module[0]), &b_CalibrateTiming, &m_CalibrationLevel, &(FileName[0]));
 		return 0;
 	}
 	else
@@ -452,6 +457,7 @@ _declspec (dllexport) long CC ReadParameters(DG_BME_State* p_DGS, int* p_module,
 	int nVersion,i1;
 	long position;
 	char TestChar;
+	DG_BME_State* p_TGS;
 	DG_BME_State_V1* p_DGS_V1 = NULL;
 	DG_BME_State_V2* p_DGS_V2 = NULL;
 	DG_BME_State_V3* p_DGS_V3 = NULL;
@@ -518,6 +524,8 @@ _declspec (dllexport) long CC ReadParameters(DG_BME_State* p_DGS, int* p_module,
 						break;
 					}
 				}
+				fseek(stream, position, 0);
+				fread(p_DGS, sizeof(DG_BME_State), NoDelayGenerators, stream);
 			break;
 		default:
 			fread(p_DGS, sizeof(DG_BME_State), NoDelayGenerators, stream);
@@ -546,11 +554,12 @@ _declspec (dllexport) long CC ReadParameters(DG_BME_State* p_DGS, int* p_module,
 		}
 		for (i1 = 0; i1 < NoDelayGenerators; i1++)
 		{
+			p_TGS = (p_DGS + i1);
 			if ((p_DGS + i1)->Master)
 				*(p_module + i1) = MasterModule;
 			else
 				*(p_module + i1) = SlaveModule;
-			if (nVersion < 2)
+			if (nVersion < 5)
 				(p_DGS + i1)->BusNumber = -1;
 		}
 		return NoDelayGenerators;
@@ -579,6 +588,7 @@ _declspec (dllexport) long CC CalibrateModule(long DG_Number)
 	case BME_SG05P2:
 	case BME_SG05P3:
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if (p_Present->b_ModuleCalibrated)
 		{
 			if (p_DT->ClockSource == CrystalOscillator)
@@ -711,6 +721,7 @@ _declspec (dllexport) long CC CalibrateModule(long DG_Number)
 	case BME_SG05P2:
 	case BME_SG05P3:
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if (!p_Present->b_ModuleCalibrated)
 		{
 			p_Present->TenMhzZeroTime = CalData.SG02_ZeroTime;
@@ -961,6 +972,7 @@ _declspec (dllexport) long CC CalibratePathGroup(int* p_module, char* Path)
 					case BME_SG05P2:
 					case BME_SG05P3:
 					case BME_SG08P1:
+					case BME_SG08P2:
 						p_Present->TenMhzZeroTime = CalData.SG02_ZeroTime + CalData.TriggerDelay;
 					case BME_G02V1:
 					case BME_SG02V1:
@@ -1056,6 +1068,7 @@ _declspec (dllexport) long CC CalibratePathGroup(int* p_module, char* Path)
 					case BME_SG05P2:
 					case BME_SG05P3:
 					case BME_SG08P1:
+					case BME_SG08P2:
 						p_Present->TenMhzZeroTime = CalData.SG02V1_GoTime + CalData.TriggerDelay;
 					case BME_G02V1:
 					case BME_SG02V1:
@@ -1186,6 +1199,9 @@ _declspec (dllexport) long CC CalibratePathGroup(int* p_module, char* Path)
 				case BME_SG08P1:
 					fprintf(stream, "BME_SG08P1    ");
 					break;
+				case BME_SG08P2:
+					fprintf(stream, "BME_SG08P2    ");
+					break;
 				default:
 					break;
 			}
@@ -1201,6 +1217,7 @@ _declspec (dllexport) long CC CalibratePathGroup(int* p_module, char* Path)
 				case BME_SG05P2:
 				case BME_SG05P3:
 				case BME_SG08P1:
+				case BME_SG08P2:
 					fprintf(stream, "   %8.6f      internal oscillator frequency\n", 
 																						p_Present->InternalOscillatorFrequency);
 					fprintf(stream, "   %8.6f      external oscillator frequency\n", 
@@ -1247,6 +1264,7 @@ _declspec (dllexport) long CC CalibratePathGroup(int* p_module, char* Path)
 				case BME_SG05P2:
 				case BME_SG05P3:
 				case BME_SG08P1:
+				case BME_SG08P2:
 					fprintf(stream, "   %8.6f      direct trigger delay\n", p_Present->ZeroTime);
 				case BME_G02V1:
 				case BME_SG02V1:
@@ -1285,7 +1303,7 @@ _declspec (dllexport) long CC Set_DG_BME(DG_BME_Registers* p_pdg, long DG_Number
 {
 	DG_InternalData* p_Present;
 	unsigned long DG_Product;
-	unsigned long LoadWord;
+	unsigned long* p_LoadWord;
 	if ((DG_Number < 0) || (NoDelayGenerators <= DG_Number))
 		return 2;
 	p_Present = (p_Internal + DG_Number);
@@ -1294,8 +1312,9 @@ _declspec (dllexport) long CC Set_DG_BME(DG_BME_Registers* p_pdg, long DG_Number
 		return 1;
 	//if (DG_Product == BME_G02V3)
 		//printf("CDG_DLL::Set_DG_BME \n");
+	p_LoadWord = &(p_Present->LoadVector);
 	ModifyControlRegister(p_pdg, p_Present);
-	PrepareCounterControl(p_pdg, p_Present);
+	PrepareCounterControl(p_pdg, p_LoadWord, p_Present);
 	switch (DG_Product)
 	{
 	case BME_SG02V4:
@@ -1323,8 +1342,9 @@ _declspec (dllexport) long CC Set_DG_BME(DG_BME_Registers* p_pdg, long DG_Number
 	case BME_SG05P2:
 	case BME_SG05P3:
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if (!IsEqualPS(p_pdg, &(p_Present->DelayGeneratorState), DG_Product))
-			Set_Prescaler(p_pdg, p_Present);
+			Set_Prescaler(p_pdg, p_LoadWord, p_Present);
 		break;
 	default:
 		break;
@@ -1332,23 +1352,21 @@ _declspec (dllexport) long CC Set_DG_BME(DG_BME_Registers* p_pdg, long DG_Number
 	switch (DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if (!IsEqualDT(&(p_pdg->DT), &(p_Present->DelayGeneratorState.DT), DG_Product))
-			Set_Delay_Trigger(&(p_pdg->DT), p_Present);
-		LoadWord = 0x0;
+			Set_Delay_Trigger(&(p_pdg->DT), p_LoadWord, p_Present);
 		if (!IsEqualDC(&(p_pdg->A), &(p_Present->DelayGeneratorState.A), DG_Product))
-			Set_Delay_channel_SG05P4(&(p_pdg->A), &(p_Present->DelayGeneratorState.A), &(LoadWord), 0, p_Present);
+			Set_Delay_channel_SG05P4(&(p_pdg->A), &(p_Present->DelayGeneratorState.A), p_LoadWord, 0, p_Present);
 		if (!IsEqualDC(&(p_pdg->B), &(p_Present->DelayGeneratorState.B), DG_Product))
-			Set_Delay_channel_SG05P4(&(p_pdg->B), &(p_Present->DelayGeneratorState.B), &(LoadWord), 1, p_Present);
+			Set_Delay_channel_SG05P4(&(p_pdg->B), &(p_Present->DelayGeneratorState.B), p_LoadWord, 1, p_Present);
 		if (!IsEqualDC(&(p_pdg->C), &(p_Present->DelayGeneratorState.C), DG_Product))
-			Set_Delay_channel_SG05P4(&(p_pdg->C), &(p_Present->DelayGeneratorState.C), &(LoadWord), 2, p_Present);
+			Set_Delay_channel_SG05P4(&(p_pdg->C), &(p_Present->DelayGeneratorState.C), p_LoadWord, 2, p_Present);
 		if (!IsEqualDC(&(p_pdg->D), &(p_Present->DelayGeneratorState.D), DG_Product))
-			Set_Delay_channel_SG05P4(&(p_pdg->D), &(p_Present->DelayGeneratorState.D), &(LoadWord), 3, p_Present);
+			Set_Delay_channel_SG05P4(&(p_pdg->D), &(p_Present->DelayGeneratorState.D), p_LoadWord, 3, p_Present);
 		if (!IsEqualDC(&(p_pdg->E), &(p_Present->DelayGeneratorState.E), DG_Product))
-			Set_Delay_channel_SG05P4(&(p_pdg->E), &(p_Present->DelayGeneratorState.E), &(LoadWord), 4, p_Present);
+			Set_Delay_channel_SG05P4(&(p_pdg->E), &(p_Present->DelayGeneratorState.E), p_LoadWord, 4, p_Present);
 		if (!IsEqualDC(&(p_pdg->F), &(p_Present->DelayGeneratorState.F), DG_Product))
-			Set_Delay_channel_SG05P4(&(p_pdg->F), &(p_Present->DelayGeneratorState.F), &(LoadWord), 5, p_Present);
-		if (LoadWord != 0x0)
-			Data32Out(p_Present->InitializeAddress, &LoadWord, &(p_Present->PciDelgen), 4);
+			Set_Delay_channel_SG05P4(&(p_pdg->F), &(p_Present->DelayGeneratorState.F), p_LoadWord, 5, p_Present);
 		break;
 	case BME_G02V1:
 	case BME_G02V2:
@@ -1384,7 +1402,7 @@ _declspec (dllexport) long CC Set_DG_BME(DG_BME_Registers* p_pdg, long DG_Number
 	case BME_SG02V3:
 	case BME_SG02V4:
 		if (!IsEqualDT(&(p_pdg->DT), &(p_Present->DelayGeneratorState.DT), DG_Product))
-			Set_Delay_Trigger(&(p_pdg->DT), p_Present);
+			Set_Delay_Trigger(&(p_pdg->DT), p_LoadWord, p_Present);
 	default:
 		if (!IsEqualDC(&(p_pdg->T0), &(p_Present->DelayGeneratorState.T0), DG_Product))
 			Set_Reference_channel(&(p_pdg->T0), p_Present);
@@ -1395,6 +1413,26 @@ _declspec (dllexport) long CC Set_DG_BME(DG_BME_Registers* p_pdg, long DG_Number
 	}
 	if (p_Present->b_DG_Activated)
 		Activate_DG_BME(DG_Number);
+	if (*p_LoadWord != 0x0)
+	{
+		switch (DG_Product)
+		{
+		case BME_SG08P1:
+			*p_LoadWord &= ~0x18;
+			Data32Out(p_Present->InitializeAddress, p_LoadWord, &(p_Present->PciDelgen), 4);
+			*p_LoadWord = 0x0;
+			break;
+		case BME_SG08P2:
+			if (!p_Present->b_DG_Activated)
+			{
+				Data32Out(p_Present->InitializeAddress, p_LoadWord, &(p_Present->PciDelgen), 4);
+				*p_LoadWord = 0x0;
+			}
+			break;
+		default:
+			break;
+		}
+	}
 	return 0;
 }
 
@@ -1433,6 +1471,7 @@ _declspec (dllexport) long CC SetDelayGenerator(DG_BME_Control* p_BDG, long DG_N
 	switch (DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		p_Present->TimeIncrement = p_Present->A_Increment;
 		result = SetChannel_SG05P4(&(dgr.A), &(p_BDG->A), DG_Number);
 		if (result != 0)
@@ -1550,6 +1589,7 @@ _declspec (dllexport) long CC RoundRepCounter(double* p_out, double InValue, lon
 		case BME_SG05P2:
 		case BME_SG05P3:
 		case BME_SG08P1:
+		case BME_SG08P2:
 			ipos = max(1, ipos);
 			break;
 		default:
@@ -3024,6 +3064,7 @@ _declspec (dllexport) long CC Activate_DG_BME(long DG_Number)
 	case BME_SG05P2:
 	case BME_SG05P3:
 	case BME_SG08P1:
+	case BME_SG08P2:
 		LoadCounterControl(p_Present->CounterControlRegister, p_Present);
 	default:
 		LoadCommandRegister(&p_Present->CommandRegister, p_Present);
@@ -3075,6 +3116,7 @@ _declspec (dllexport) long CC SoftwareTrigger_DG_BME(long DG_Number)
 	case BME_SG05P2:
 	case BME_SG05P3:
 	case BME_SG08P1:
+	case BME_SG08P2:
 		cntrl = p_Present->CommandRegister & 0x3F3EFE;
 		LoadCommandRegister(&cntrl, p_Present);
 		cntrl = p_Present->CommandRegister | 0x01;
@@ -3133,6 +3175,7 @@ _declspec (dllexport) long CC ResetAllOutputModuloCounters()
 			case BME_SG05P2:
 			case BME_SG05P3:
 			case BME_SG08P1:
+			case BME_SG08P2:
 				DataOut(p_Present->InitializeAddress, &Value, &(p_Present->PciDelgen), -1);
 				break;
 			default:
@@ -3159,6 +3202,7 @@ _declspec (dllexport) long CC JumpStartAllLists()
 		switch (DG_Product)
 		{
 			case BME_SG08P1:
+			case BME_SG08P2:
 				//result = Read_DG_Status(DG_Number);
 				//len = sprintf(info,"Status      : %x \n", result);
 				//result = ReadCounterControlRegister(DG_Number);
@@ -3185,6 +3229,53 @@ _declspec (dllexport) long CC JumpStartAllLists()
 	return 0;
 }
 
+_declspec (dllexport) long CC LoadCardParameters(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList, long DG_Number)
+{
+	DG_InternalData* p_Present;
+	unsigned long* p_LoadWord;
+	unsigned long DG_Product;
+	if ((DG_Number < 0) || (NoDelayGenerators <= DG_Number))
+		return 2;
+	p_Present = (p_Internal + DG_Number);
+	DG_Product = p_Present->DG_Product;
+	p_LoadWord = &(p_Present->LoadVector);
+	if (b_EventCounter)
+		*p_LoadWord |= 0x01;
+	switch (DG_Product)
+	{
+		case BME_SG08P1:
+			*p_LoadWord &= ~0x18;
+		case BME_SG08P2:
+			if (b_TimeList)
+				*p_LoadWord |= 0x40;
+		case BME_G05V1:
+		case BME_G05V2:
+		case BME_G05V3:
+		case BME_G05P1:
+		case BME_G05P2:
+		case BME_G05P3:
+		case BME_SG05P1:
+		case BME_SG05P2:
+		case BME_SG05P3:
+			if (b_ModuloCounter)
+				*p_LoadWord |= 0x20;
+			break;
+		default:
+			break;
+	}
+	Data32Out(p_Present->InitializeAddress, p_LoadWord, &(p_Present->PciDelgen), 4);
+	*p_LoadWord = 0x0;
+	return 0;
+}
+
+_declspec (dllexport) long CC LoadAllCardParameters(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList)
+{
+	long DG_Number;
+	for (DG_Number = 0; DG_Number < NoDelayGenerators; DG_Number++)
+		LoadCardParameters(b_EventCounter, b_ModuloCounter, b_TimeList, DG_Number);
+	return 0;
+}
+
 _declspec (dllexport) long CC ResetCounter(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList, long DG_Number)
 {
 	DG_InternalData* p_Present;
@@ -3200,6 +3291,7 @@ _declspec (dllexport) long CC ResetCounter(BOOL b_EventCounter, BOOL b_ModuloCou
 	switch (DG_Product)
 	{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			if (b_TimeList)
 				Value |= 0x40;
 		case BME_G05V1:
@@ -3346,6 +3438,7 @@ _declspec (dllexport) long CC Read64BitTriggerCounter(_int64* p_result, long DG_
 			DataIn(p_Present->TriggerCounterAddress, p_result, &(p_Present->PciDelgen), 4);
 			break;
 		case BME_SG08P1:
+		case BME_SG08P2:
 			Data32In(p_Present->TriggerCounterAddress, p_result, &(p_Present->PciDelgen), 8);
 			break;
 		default:
@@ -3368,6 +3461,7 @@ _declspec (dllexport) long CC ReadFrequencyCounter(double* p_Frequency, long DG_
 	switch (DG_Product)
 	{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			Data32In(p_Present->FrequencyCounterAddress, p_result, &(p_Present->PciDelgen), 4);
 			*p_Frequency = ((double)result) / 1000000.0;
 			break;
@@ -3397,6 +3491,7 @@ _declspec (dllexport) unsigned long CC Read_DG_Status(long DG_Number)
 	switch (DG_Product)
 	{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			Data32In(p_Present->CommandAddress, &result, &(p_Present->PciDelgen), 4);
 			break;
 		default:
@@ -3415,6 +3510,7 @@ _declspec (dllexport) unsigned long CC ReadCounterControlRegister(long DG_Number
 	switch (DG_Product)
 	{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			Data32In(p_Present->CounterControlAddress, &result, &(p_Present->PciDelgen), 4);
 			break;
 		default:
@@ -3435,6 +3531,7 @@ _declspec (dllexport) unsigned long CC ReadInterruptStatus(long DG_Number)
 	switch (DG_Product)
 	{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			Data32In(p_Present->InterruptEnableAddress, &(tvl.Value), &(p_Present->PciDelgen), 4);
 			result = (unsigned long)tvl.HighWord;
 			break;
@@ -3458,6 +3555,7 @@ _declspec (dllexport) long CC AcknowledgeInterrupts(unsigned long value, long DG
 	switch (DG_Product)
 	{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			Data32Out(p_Present->InterruptAcknowledgeAddress, &value, &(p_Present->PciDelgen), 4);
 			break;
 		default:
@@ -3760,6 +3858,7 @@ _declspec (dllexport) unsigned long CC ModifyAction(DG_BME_Control* p_BDG, long 
 	switch (p_Present->DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		ActionDC(&Action, &(p_BDG->C), &(p_Present->DelayControlState.C), DG_Product);
 		ActionDC(&Action, &(p_BDG->D), &(p_Present->DelayControlState.D), DG_Product);
 		ActionDC(&Action, &(p_BDG->E), &(p_Present->DelayControlState.E), DG_Product);
@@ -3855,7 +3954,6 @@ _declspec (dllexport) long CC DetectPciDelayGenerators(long* p_Error)
 	return NoDelgen;
 }
 
-
 _declspec (dllexport) long CC DataOut(unsigned short Address, void* p_data, DelgenType* p_PciDelgen, int Size)
 {
 	int i1,NoBytes;
@@ -3949,7 +4047,6 @@ _declspec (dllexport) long CC DataIn(unsigned short Address, void* p_data, Delge
 {
 	int i1,NoBytes;
 	unsigned char* p_Value;
-
 	int Count;
 	U32 PciAddress;
 	U16* p_PciData;
@@ -4041,6 +4138,7 @@ _declspec (dllexport) long CC ResetPciDelayGenerator(DelgenType* p_PciDelgen)
 	switch (dg_type)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		CommandWord = 0x1F003F3F;
 		Data32Out(0x120, &CommandWord, p_PciDelgen, -1);
 		status = 0x10000;
@@ -4100,6 +4198,7 @@ BOOL MasterDelayGenerator(DelgenType* p_PciMaster, DelgenType* p_PciSlave)
 	switch (dg_master)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		NumBytes = 20;
 		MasterDgType = XxDgType0;
 		break;
@@ -4123,6 +4222,7 @@ BOOL MasterDelayGenerator(DelgenType* p_PciMaster, DelgenType* p_PciSlave)
 	switch (dg_slave)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		SlaveDgType = XxDgType0;
 		break;
 	case BME_G05P2:
@@ -4202,6 +4302,7 @@ BOOL MasterLineDG(DelgenType* p_PciMaster, DelgenType* p_PciSlave, int LineNo)
 	switch (dg_master)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		NumBytes = 20;
 		MasterDgType = XxDgType0;
 		break;
@@ -4225,6 +4326,7 @@ BOOL MasterLineDG(DelgenType* p_PciMaster, DelgenType* p_PciSlave, int LineNo)
 	switch (dg_slave)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		SlaveDgType = XxDgType0;
 		break;
 	case BME_G05P2:
@@ -4694,6 +4796,7 @@ void InitializeInternalData(DG_InternalData* p_Present)
 		p_Present->DAC_B = 0xF0;
 		break;
 	case BME_SG08P1:
+	case BME_SG08P2:
 		p_Present->CounterControlAddress = 0x10;
 		p_Present->InterruptEnableAddress = 0x20;
 		p_Present->InterruptAcknowledgeAddress = 0x30;
@@ -4740,6 +4843,7 @@ void InitializeInternalData(DG_InternalData* p_Present)
 		p_Present->ExternalOscillatorFrequency = 80.0;
 		break;
 	case BME_SG08P1:
+	case BME_SG08P2:
 		p_Present->InternalOscillatorFrequency = 160.0;
 		p_Present->ExternalOscillatorFrequency = 80.0;
 		break;
@@ -4839,6 +4943,7 @@ void Synchronize_DG_State(long DG_Number)
 	case BME_SG05P2:
 	case BME_SG05P3:
 	case BME_SG08P1:
+	case BME_SG08P2:
 //		int i1;
 //		while (TRUE)
 //		{
@@ -4856,13 +4961,20 @@ void Synchronize_DG_State(long DG_Number)
 			p_Present->CounterControlState[i1] = 0xFFFFFFFF;
 		}
 		LoadCounterControl(CounterControlValue, p_Present);
+		p_Present->LoadVector = 0x0;
 		Value = 0x1F003F1F;
 		switch (DG_Product)
 		{
 		case BME_SG08P1:
+			Value = 0x1F003F1F;
+			Data32Out(p_Present->InitializeAddress, &Value, &(p_Present->PciDelgen), -1);
+			break;
+		case BME_SG08P2:
+			Value = 0x1F003F07;
 			Data32Out(p_Present->InitializeAddress, &Value, &(p_Present->PciDelgen), -1);
 			break;
 		default:
+			Value = 0x1F003F1F;
 			DataOut(p_Present->InitializeAddress, &Value, &(p_Present->PciDelgen), -1);
 			break;
 		}
@@ -4928,6 +5040,7 @@ void Synchronize_DG_State(long DG_Number)
 		switch (p_Present->DG_Product)
 		{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			dgr.DT.MS_Bus |= Resynchronize;
 			break;
 		case BME_SG02P4:
@@ -5221,6 +5334,7 @@ void LoadPrescaler(unsigned long* p_value, DG_InternalData* p_Present)
 		switch (p_Present->DG_Product)
 		{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			NumBytes = 12;
 			Data32Out(p_Present->PrescalerAddress, &(p_Present->PrescalerState), 
 																							&(p_Present->PciDelgen), NumBytes);
@@ -5278,6 +5392,7 @@ void LoadCounterControl(unsigned long* p_value, DG_InternalData* p_Present)
 	switch (p_Present->DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		different = FALSE;
 		for (i1 = 0; i1 < 5; i1++)
 		{
@@ -5330,6 +5445,7 @@ void LoadCommandRegister(unsigned long* p_value, DG_InternalData* p_Present)
 		switch (p_Present->DG_Product)
 		{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			Data32Out(p_Present->CommandAddress, p_value, &(p_Present->PciDelgen), -1);
 			break;
 		default:
@@ -5705,8 +5821,8 @@ void SetDelayControl_SG05P4(unsigned long* p_Prepare, unsigned long* p_FinalValu
 			*(p_FinalValue + i1) &= ~ModBit;
 		}
 	}
-	p_ChState->GoSignal |= (p_k->GoSignal & ~0x188);
-	p_ChState->GoSignal &= (p_k->GoSignal | 0x188);
+	p_ChState->GoSignal |= (p_k->GoSignal & ~0x8188);
+	p_ChState->GoSignal &= (p_k->GoSignal | 0x8188);
 }
 
 void SetDelayTriggerControl(unsigned long* p_Prepare, unsigned long* p_FinalValue, 
@@ -5721,6 +5837,7 @@ void SetDelayTriggerControl(unsigned long* p_Prepare, unsigned long* p_FinalValu
 	case BME_DP01:
 		break;
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if (p_dt->TriggerEnable)
 		{
 			*p_Prepare &= ~0x80;
@@ -5840,6 +5957,7 @@ void SetDelayTriggerControl(unsigned long* p_Prepare, unsigned long* p_FinalValu
 			*p_FinalValue &= ~0x18;
 		break;
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if ((p_dt->ForceTrigger > 0) || (p_dt->InhibitTrigger > 0) || (p_dt->StepBackCounter > 0))
 			*p_FinalValue |= 0x50000;
 		else
@@ -5924,7 +6042,7 @@ void Set_Main_Counter(MainCounterType* p_mc, DG_InternalData* p_Present)
 	}
 }
 
-void Set_Delay_Trigger(DelayTriggerType* p_dt, DG_InternalData* p_Present)
+void Set_Delay_Trigger(DelayTriggerType* p_dt, unsigned long* p_LoadWord, DG_InternalData* p_Present)
 {
 	int	DG_Product = p_Present->DG_Product;
 	//char info[80];
@@ -5933,6 +6051,7 @@ void Set_Delay_Trigger(DelayTriggerType* p_dt, DG_InternalData* p_Present)
 	switch (DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		//sprintf(info,"Set Delay Trigger");
 		//AfxMessageBox(info, MB_OK, 0);	
 		if ((p_dt->TriggerDAC & 0x0FFF) != (p_Present->DelayGeneratorState.DT.TriggerDAC & 0x0FFF))
@@ -6018,6 +6137,7 @@ void Set_Delay_Trigger(DelayTriggerType* p_dt, DG_InternalData* p_Present)
 		}
 		break;
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if ((p_dt->InhibitTrigger != p_Present->DelayGeneratorState.DT.InhibitTrigger) ||
 								(p_dt->ForceTrigger != p_Present->DelayGeneratorState.DT.ForceTrigger) ||
 								(p_dt->StepBackCounter != p_Present->DelayGeneratorState.DT.StepBackCounter) ||
@@ -6033,6 +6153,7 @@ void Set_Delay_Trigger(DelayTriggerType* p_dt, DG_InternalData* p_Present)
 			Data32Out(p_Present->ModuloCounterAddress, &(p_dt->StepBackCounter), &(p_Present->PciDelgen), 4);
 			p_Present->DelayGeneratorState.DT.BurstCounter = p_dt->BurstCounter;
 			Data32Out(p_Present->ModuloCounterAddress, &(p_dt->BurstCounter), &(p_Present->PciDelgen), 4);
+			*p_LoadWord |= 0x8;
 		}
 		if ((p_dt->InhibitSecondary != p_Present->DelayGeneratorState.DT.InhibitSecondary) ||
 								(p_dt->DelaySecondary != p_Present->DelayGeneratorState.DT.DelaySecondary))
@@ -6043,6 +6164,7 @@ void Set_Delay_Trigger(DelayTriggerType* p_dt, DG_InternalData* p_Present)
 			Data32Out(p_Present->SecondaryCounterAddress, &(p_dt->InhibitSecondary), &(p_Present->PciDelgen), 4);
 			p_Present->DelayGeneratorState.DT.DelaySecondary = p_dt->DelaySecondary;
 			Data32Out(p_Present->SecondaryCounterAddress, &(p_dt->DelaySecondary), &(p_Present->PciDelgen), 4);
+			*p_LoadWord |= 0x8;
 		}
 		break;
 	case BME_G05P2:
@@ -6511,13 +6633,15 @@ void Set_Delay_channel_SG05P4(DelayChannel* p_k, DelayChannel* p_ChState, unsign
 			p_ChState->OutputOffset = p_k->OutputOffset;
 			Data32Out(ModuloAddress, &(p_k->OutputModulo), &(p_Present->PciDelgen), 4);
 			Data32Out(ModuloAddress, &(p_k->OutputOffset), &(p_Present->PciDelgen), 4);
+			*p_LoadWord |= 0x20;
 		}
 	}
 	p_ChState->GoSignal |= (p_k->GoSignal & 0x77);
 	p_ChState->GoSignal &= (p_k->GoSignal | ~0x77);
 }
 
-void PrepareCounterControl(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
+
+void PrepareCounterControl(DG_BME_Registers* p_pdg, unsigned long* p_LoadWord, DG_InternalData* p_Present)
 {
 	unsigned long DG_Product = p_Present->DG_Product;
 	unsigned long cctrl[6];
@@ -6529,6 +6653,7 @@ void PrepareCounterControl(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 	case BME_DP01:
 		break;
 	case BME_SG08P1:
+	case BME_SG08P2:
 		SetDelayTriggerControl(cctrl, p_Present->CounterControlRegister, &(p_pdg->DT), p_Present);
 		SetDelayControl_SG05P4(cctrl, p_Present->CounterControlRegister, &(p_pdg->A), 
 																	&(p_Present->DelayGeneratorState.A), 0, p_Present);
@@ -6542,6 +6667,8 @@ void PrepareCounterControl(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 																	&(p_Present->DelayGeneratorState.E), 4, p_Present);
 		SetDelayControl_SG05P4(cctrl, p_Present->CounterControlRegister, &(p_pdg->F), 
 																	&(p_Present->DelayGeneratorState.F), 5, p_Present);
+		if (memcmp(p_Present->CounterControlRegister, p_Present->CounterControlState, 20) != 0)
+			*p_LoadWord |= 0x8;
 		if (!p_Present->b_DG_Activated)
 			LoadCounterControl(cctrl, p_Present);
 		break;
@@ -6566,6 +6693,7 @@ void ModifyControlRegister(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 	switch (DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		break;
 	default:
 		if (p_pdg->Gate_AB != p_Present->DelayGeneratorState.Gate_AB)
@@ -6627,6 +6755,7 @@ void ModifyControlRegister(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 		}
 		break;
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if ((p_pdg->GateFunction & 0x3F0000) != (p_Present->DelayGeneratorState.GateFunction & 0x3F0000))
 		{
 			p_Present->CommandRegister |= (p_pdg->GateFunction & 0x3F0000);
@@ -6657,7 +6786,6 @@ void ModifyControlRegister(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 	}
 }
 
-
 void ActionDC(unsigned long* p_Action, 
 											 DelayChannelData* p_a, DelayChannelData* p_b, unsigned long DG_Product)
 {
@@ -6681,6 +6809,7 @@ void ActionDC(unsigned long* p_Action,
 	case BME_SG05P3:
 		break;
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if ((p_a->GoSignal & 0x70) != 0x0)
 			BusSelect_A = TRUE;
 		else
@@ -6741,6 +6870,7 @@ void ActionDC(unsigned long* p_Action,
 	case BME_SG05P2:
 	case BME_SG05P3:
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if ((p_a->GoSignal & 0x77) != 0x0)
 		{
 			if (p_a->OutputModulo != p_b->OutputModulo)
@@ -6786,6 +6916,7 @@ void ActionDT(unsigned long* p_Action, DelayTriggerData* p_a, DelayTriggerData* 
 	switch (DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if ((p_a->ClockSource == TriggerInput) ||
 						(p_a->ClockSource == TriggerAndOscillator))
 		{
@@ -6817,6 +6948,7 @@ void ActionDT(unsigned long* p_Action, DelayTriggerData* p_a, DelayTriggerData* 
 	switch (DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		break;
 	default:
 		if ((!p_a->TriggerEnable) && (!p_b->TriggerEnable))
@@ -6843,6 +6975,7 @@ BOOL IsEqualDT(DelayTriggerType* p_a, DelayTriggerType* p_b, unsigned long DG_Pr
 	switch (DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if ((p_a->GateDAC & 0x0FFF) != (p_b->GateDAC & 0x0FFF))
 			return FALSE;
 		if (p_a->BurstCounter != p_b->BurstCounter)
@@ -6962,6 +7095,7 @@ BOOL IsEqualDC(DelayChannel* p_a, DelayChannel* p_b, unsigned long DG_Product)
 		switch (DG_Product)
 		{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			if (p_a->ListLength != p_b->ListLength)
 				return FALSE;
 			for (i1 = 0; i1 < p_a->ListLength; i1++)
@@ -6999,6 +7133,21 @@ BOOL IsEqualPS(DG_BME_Registers* p_a, DG_BME_Registers* p_b, unsigned long DG_Pr
 {
 	switch (DG_Product)
 	{
+	case BME_SG08P2:
+		if ((p_a->DT.MS_Bus & GateBurstSynch) != (p_b->DT.MS_Bus & GateBurstSynch))
+			return FALSE;
+		if ((p_a->A.GoSignal & SynchReload) != (p_b->A.GoSignal & SynchReload))
+			return FALSE;
+		if ((p_a->B.GoSignal & SynchReload) != (p_b->B.GoSignal & SynchReload))
+			return FALSE;
+		if ((p_a->C.GoSignal & SynchReload) != (p_b->C.GoSignal & SynchReload))
+			return FALSE;
+		if ((p_a->D.GoSignal & SynchReload) != (p_b->D.GoSignal & SynchReload))
+			return FALSE;
+		if ((p_a->E.GoSignal & SynchReload) != (p_b->E.GoSignal & SynchReload))
+			return FALSE;
+		if ((p_a->F.GoSignal & SynchReload) != (p_b->F.GoSignal & SynchReload))
+			return FALSE;
 	case BME_SG08P1:
 		if (p_a->DT.ClockSource != p_b->DT.ClockSource)
 			return FALSE;
@@ -7153,7 +7302,7 @@ BOOL IsEqualPS(DG_BME_Registers* p_a, DG_BME_Registers* p_b, unsigned long DG_Pr
 	return TRUE;
 }
 
-void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
+void Set_Prescaler(DG_BME_Registers* p_pdg, unsigned long* p_LoadWord, DG_InternalData* p_Present)
 {
 	unsigned long Value;
 	unsigned long Remainder;
@@ -7173,6 +7322,7 @@ void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 		pscl &= ~0x40000000;
 		break;
 	case BME_SG08P1:
+	case BME_SG08P2:
 	case BME_SG05P3:
 	case BME_SG02P5:
 		if ((p_pdg->DT.MS_Bus & Resynchronize) != (p_state->DT.MS_Bus  & Resynchronize))
@@ -7191,6 +7341,7 @@ void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 	switch (DG_Product)
 	{
 	case BME_SG08P1:
+	case BME_SG08P2:
 		if (p_pdg->DT.UseF != p_state->DT.UseF)
 		{
 			p_state->DT.UseF = p_pdg->DT.UseF;
@@ -7406,6 +7557,15 @@ void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 			else
 				psch &= ~0x01;
 		}
+		if ((p_pdg->A.GoSignal & SynchReload) != (p_state->A.GoSignal & SynchReload))
+		{
+			p_state->A.GoSignal |= (p_pdg->A.GoSignal & SynchReload);
+			p_state->A.GoSignal &= (p_pdg->A.GoSignal | ~SynchReload);
+			if ((p_pdg->A.GoSignal & SynchReload) != 0x0)
+				psct |= 0x10000;
+			else
+				psct &= ~0x10000;
+		}
 		if (p_pdg->B.Positive != p_state->B.Positive)
 		{
 			p_state->B.Positive = p_pdg->B.Positive;
@@ -7421,6 +7581,15 @@ void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 				psch |= 0x02;
 			else
 				psch &= ~0x02;
+		}
+		if ((p_pdg->B.GoSignal & SynchReload) != (p_state->B.GoSignal & SynchReload))
+		{
+			p_state->B.GoSignal |= (p_pdg->B.GoSignal & SynchReload);
+			p_state->B.GoSignal &= (p_pdg->B.GoSignal | ~SynchReload);
+			if ((p_pdg->B.GoSignal & SynchReload) != 0x0)
+				psct |= 0x20000;
+			else
+				psct &= ~0x20000;
 		}
 		if (p_pdg->C.Positive != p_state->C.Positive)
 		{
@@ -7438,6 +7607,15 @@ void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 			else
 				psch &= ~0x04;
 		}
+		if ((p_pdg->C.GoSignal & SynchReload) != (p_state->C.GoSignal & SynchReload))
+		{
+			p_state->C.GoSignal |= (p_pdg->C.GoSignal & SynchReload);
+			p_state->C.GoSignal &= (p_pdg->C.GoSignal | ~SynchReload);
+			if ((p_pdg->C.GoSignal & SynchReload) != 0x0)
+				psct |= 0x40000;
+			else
+				psct &= ~0x40000;
+		}
 		if (p_pdg->D.Positive != p_state->D.Positive)
 		{
 			p_state->D.Positive = p_pdg->D.Positive;
@@ -7453,6 +7631,15 @@ void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 				psch |= 0x08;
 			else
 				psch &= ~0x08;
+		}
+		if ((p_pdg->D.GoSignal & SynchReload) != (p_state->D.GoSignal & SynchReload))
+		{
+			p_state->D.GoSignal |= (p_pdg->D.GoSignal & SynchReload);
+			p_state->D.GoSignal &= (p_pdg->D.GoSignal | ~SynchReload);
+			if ((p_pdg->D.GoSignal & SynchReload) != 0x0)
+				psct |= 0x80000;
+			else
+				psct &= ~0x80000;
 		}
 		if (p_pdg->E.Positive != p_state->E.Positive)
 		{
@@ -7494,6 +7681,15 @@ void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 			else
 				psch &= ~0x1000000;
 		}
+		if ((p_pdg->E.GoSignal & SynchReload) != (p_state->E.GoSignal & SynchReload))
+		{
+			p_state->E.GoSignal |= (p_pdg->E.GoSignal & SynchReload);
+			p_state->E.GoSignal &= (p_pdg->E.GoSignal | ~SynchReload);
+			if ((p_pdg->E.GoSignal & SynchReload) != 0x0)
+				psct |= 0x100000;
+			else
+				psct &= ~0x100000;
+		}
 		if (p_pdg->F.Positive != p_state->F.Positive)
 		{
 			p_state->F.Positive = p_pdg->F.Positive;
@@ -7534,6 +7730,15 @@ void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 			else
 				psch &= ~0x2000000;
 		}
+		if ((p_pdg->F.GoSignal & SynchReload) != (p_state->F.GoSignal & SynchReload))
+		{
+			p_state->F.GoSignal |= (p_pdg->F.GoSignal & SynchReload);
+			p_state->F.GoSignal &= (p_pdg->F.GoSignal | ~SynchReload);
+			if ((p_pdg->F.GoSignal & SynchReload) != 0x0)
+				psct |= 0x200000;
+			else
+				psct &= ~0x200000;
+		}
 		if ((p_pdg->DT.MS_Bus & (GateOnBusPositive | GateOnBusNegative)) != (p_state->DT.MS_Bus  & (GateOnBusPositive | GateOnBusNegative)))
 		{
 			p_state->DT.MS_Bus |= (p_pdg->DT.MS_Bus & (GateOnBusPositive | GateOnBusNegative));
@@ -7549,9 +7754,20 @@ void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 			else
 				psch &= ~0xC000000;
 		}
+		if ((p_pdg->DT.MS_Bus & GateBurstSynch) != (p_state->DT.MS_Bus  & GateBurstSynch))
+		{
+			p_state->DT.MS_Bus |= (p_pdg->DT.MS_Bus & GateBurstSynch);
+			p_state->DT.MS_Bus &= (p_pdg->DT.MS_Bus | ~GateBurstSynch);
+			if ((p_pdg->DT.MS_Bus & GateBurstSynch) != 0x0)
+				psct |= 0x8000;
+			else
+				psct &= ~0x8000;
+		}
 		PrescalerValue[0] = pscl;
 		PrescalerValue[1] = psch;
 		PrescalerValue[2] = psct;
+		if (memcmp(PrescalerValue, p_Present->PrescalerState, 12) != 0)
+			*p_LoadWord |= 0x18;
 		LoadPrescaler(PrescalerValue, p_Present);
 		break;
 	case BME_SG05P1:
@@ -8266,6 +8482,10 @@ BOOL ReadCalibrationFile(FILE *stream, int* p_module, char* FileName)
 					if (_stricmp(word, "BME_SG08P1"))
 						return TRUE;
 					break;
+				case BME_SG08P2:
+					if (_stricmp(word, "BME_SG08P2"))
+						return TRUE;
+					break;
 				default:
 					break;
 			}
@@ -8288,6 +8508,7 @@ BOOL ReadCalibrationFile(FILE *stream, int* p_module, char* FileName)
 			case BME_SG05P2:
 			case BME_SG05P3:
 			case BME_SG08P1:
+			case BME_SG08P2:
 				res1 = fgets((char*)line, 200, stream);
 				if (res1 != NULL)
 				{
@@ -8385,6 +8606,7 @@ BOOL ReadCalibrationFile(FILE *stream, int* p_module, char* FileName)
 				case BME_SG05P2:
 				case BME_SG05P3:
 				case BME_SG08P1:
+				case BME_SG08P2:
 					res1 = fgets((char*)line, 200, stream);
 					if (res1 != NULL)
 						p_Present->TenMhzZeroTime = atof(line);
@@ -8872,6 +9094,7 @@ long SetTrigger(DG_BME_Registers* p_dgr, DG_BME_Control* p_BDG, long DG_Number)
 	switch (p_dgr->DG_Product)
 	{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			if (RoundInt(p_BDG->DT.GateDelay / p_Present->OscillatorIncrement) < 1)
 				InhibitZeroShift = 3;
 			else
@@ -8902,6 +9125,7 @@ long SetTrigger(DG_BME_Registers* p_dgr, DG_BME_Control* p_BDG, long DG_Number)
 	switch (p_dgr->DG_Product)
 	{
 		case BME_SG08P1:
+		case BME_SG08P2:
 			p_dgr->DT.GateTerminate = p_BDG->DT.GateTerminate;
 			p_dgr->DT.UseF = p_BDG->DT.UseF;
 			p_dgr->DT.SynchronizeGate = p_BDG->DT.SynchronizeGate;
@@ -8966,6 +9190,7 @@ long SetTrigger(DG_BME_Registers* p_dgr, DG_BME_Control* p_BDG, long DG_Number)
 		case BME_SG05P2:
 		case BME_SG05P3:
 		case BME_SG08P1:
+		case BME_SG08P2:
 			break;
 		default:
 			p_dgr->DT.RepCounter = max(1, p_dgr->DT.RepCounter);
@@ -9439,7 +9664,7 @@ long DelayNumbers(double* p_remainder, unsigned int* p_digital, double InValue, 
 		DacMax = min( 4095, DacSteps);
 		DacSwitch = (DacMax + DacSteps) / 2;
 		Delta = 0.1 * ((double)DacMax) / 4096.0;
-		if ((p_Present->DG_Product == BME_SG08P1) && ((InValue - ZeroTime) <= 0.035))
+		if (((p_Present->DG_Product == BME_SG08P1) || (p_Present->DG_Product == BME_SG08P2)) && ((InValue - ZeroTime) <= 0.035))
 			*p_remainder = max(0.0, (InValue - ZeroTime));
 		else
 		{
@@ -9494,7 +9719,6 @@ long DelayNumbers(double* p_remainder, unsigned int* p_digital, double InValue, 
 		*p_digital = 0xFFFFFFFF;
 	return 0;
 }
-
 
 long T0Numbers(unsigned int* p_digital, double InValue, long DG_Number)
 {

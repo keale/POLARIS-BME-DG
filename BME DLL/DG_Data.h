@@ -66,6 +66,7 @@
 #define BME_SG02P5								42
 #define BME_SG05P3								43
 #define BME_SG08P1								44
+#define BME_SG08P2								45
 
 #define MasterModule							1
 #define SlaveModule								2
@@ -106,6 +107,7 @@
 #define StepBackLocal							0x1000
 #define StepBackBus								0x2000
 #define RunCircle									0x4000
+#define SynchReload								0x8000
 
 #define EnableFromE								0x10000
 #define EnableFromF								0x20000
@@ -113,6 +115,7 @@
 
 #define GateOnBusPositive					0x100
 #define GateOnBusNegative					0x200
+#define GateBurstSynch						0x800
 
 #define GateXOR										0x0
 #define GateOR										0x1000
@@ -251,6 +254,8 @@
 //							RunCircle			=	 0x4000	:		when this bit is set, the delay lists is not run from start to end, but when
 //																					the end is reached, the next item to be used in the delay list is referenced by the
 //																					step back pointer.
+//							SynchReload		=  0x8000	:		when this bit is set, new operational parameters can only be loaded into the
+//																					delay generator when the modulo counter of this channel has reached zero.
 //							EnableFromE		=	 0x10000:		when this bit is set, the delay channel will only produce an output signal 
 //																					when the signal coming from the E output connector is true.
 //							EnableFromF		=	 0x20000:		when this bit is set, the delay channel will only produce an output signal 
@@ -389,7 +394,8 @@ typedef struct
 // GateDivider:				the external gate signal will be divided by this number.
 //										(This function will be implemented in the next hardware release)
 // MS_Bus:						The bits of this unsigned long variable define which of 
-//										the trigger signals is placed on the master/slave bus.
+//										the trigger signals is placed on the master/slave bus,
+//										or which events must be synchronized for a reload event.
 //										See the definitions of LocalPrimary, LocalSecondary, LocalForce,
 //										GateOnBusPositive, and GateOnBusNegative.
 //										LocalPrimary =			0x1		:		the primary trigger signal is used to 
@@ -402,6 +408,8 @@ typedef struct
 //																									is placed as Start signal on the MS bus with positive polarity
 //										GateOnBusNegative =	0x200	:		a signal, which is high when the trigger system is active
 //																									is placed as Start signal on the MS bus with negative polarity
+//										GateBurstSynch =		0x800	:		when this bit is set, new operational parameters can only be loaded 
+//																									into the delay generator when the direct gate or burst are incative
 // PositiveGate:			set this flag to TRUE, if a positive signal on the gate input
 //										should enable the trigger circuit, otherwise FALSE
 // IgnoreGate:				set this flag to TRUE, if a gate signal should be ignored
@@ -602,6 +610,8 @@ typedef struct
 //							RunCircle			=	 0x4000	:		when this bit is set, the delay lists is not run from start to end, but when
 //																					the end is reached, the next item to be used in the delay list is referenced by the
 //																					step back pointer.
+//							SynchReload		=  0x8000	:		when this bit is set, new operational parameters can only be loaded into the
+//																					delay generator when the modulo counter of this channel has reached zero.
 //							EnableFromE		=	 0x10000:		when this bit is set, the delay channel will only produce an output signal 
 //																					when the signal coming from the E output connector is true.
 //							EnableFromF		=	 0x20000:		when this bit is set, the delay channel will only produce an output signal 
@@ -686,7 +696,8 @@ typedef struct
 //										A nonzero number always means the edge as defined by the
 //										PositiveGate flag.
 // MS_Bus:						The bits of this unsigned long variable define which of 
-//										the trigger signals is placed on the master/slave bus.
+//										the trigger signals is placed on the master/slave bus,
+//										or which events must be synchronized for a reload event.
 //										See the definitions of LocalPrimary, LocalSecondary, LocalForce,
 //										GateOnBusPositive, and GateOnBusNegative.
 //										LocalPrimary =			0x1		:		the primary trigger signal is used to 
@@ -699,6 +710,8 @@ typedef struct
 //																									is placed as Start signal on the MS bus with positive polarity
 //										GateOnBusNegative =	0x200	:		a signal, which is high when the trigger system is active
 //																									is placed as Start signal on the MS bus with negative polarity
+//										GateBurstSynch =		0x800	:		when this bit is set, new operational parameters can only be loaded 
+//																									into the delay generator when the direct gate or burst are incative
 // PositiveGate:			set this flag to TRUE, if a positive signal on the gate input
 //										should enable the trigger circuit, otherwise FALSE
 // IgnoreGate:				set this flag to TRUE, if a gate signal should be ignored
