@@ -141,6 +141,15 @@
 			<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
 		</Item>
 	</Item>
+	<Item Name="Check Delay Dependencies.vi" Type="VI" URL="../Check Delay Dependencies.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!''!!!!$Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!"2!)1Z%:8"F&lt;G2F9WFF=S"03Q!!-E"Q!"Y!!"=61EV&amp;8U2(8V.Z=X2F&lt;3ZM&gt;G.M98.T!"&amp;#456@2%&gt;@5XFT&gt;'6N)'^V&gt;!!11$$`````"F.U=GFO:Q!!(E"!!!(`````!!=25(*P9GRF&lt;3"$;'ZM=S"P&gt;81!(E"!!!(`````!!=15(*P9GRF&lt;3"$;'ZM=S"J&lt;A!!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!01!I!#7ZF&gt;S"%:7RB?1!/1$$`````"%.I&lt;GQ!!$*!=!!?!!!8&amp;5*.26^%2V^4?8.U:7UO&lt;(:D&lt;'&amp;T=Q!11EV&amp;8U2(8V.Z=X2F&lt;3"J&lt;A!!0!$Q!!Q!!Q!%!!5!"A!%!!A!"!!*!!I!#Q!-!!U$!!"Y$1A!!!E!$1M!!!U(!!!+!!I!#!!)!")!!!!!!1!/!!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">16777344</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+	</Item>
 	<Item Name="ReserveMemory.vi" Type="VI" URL="../ReserveMemory.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%B!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!$*!=!!?!!!8&amp;5*.26^%2V^4?8.U:7UO&lt;(:D&lt;'&amp;T=Q!21EV&amp;8U2(8V.Z=X2F&lt;3"P&gt;81!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!,1!-!"#.%2X-!!$*!=!!?!!!8&amp;5*.26^%2V^4?8.U:7UO&lt;(:D&lt;'&amp;T=Q!11EV&amp;8U2(8V.Z=X2F&lt;3"J&lt;A!!31$Q!!Q!!Q!%!!1!"1!%!!1!"!!%!!9!"!!(!!A$!!"Y$1A!!!!!$1M!!!!!!!!!!!I!!!!)!")!!!U!!!!-!!!!!!!!!!!!!!%!#1!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
@@ -303,5 +312,14 @@
 		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+	</Item>
+	<Item Name="Update Delays.vi" Type="VI" URL="../Update Delays.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%X!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!$*!=!!?!!!8&amp;5*.26^%2V^4?8.U:7UO&lt;(:D&lt;'&amp;T=Q!21EV&amp;8U2(8V.Z=X2F&lt;3"P&gt;81!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!O1(!!(A!!&amp;2.#456@2%&gt;@1WBO&lt;#ZM&gt;G.M98.T!!Z#456@2%&gt;@1WBO&lt;#"J&lt;A!!-E"Q!"Y!!"=61EV&amp;8U2(8V.Z=X2F&lt;3ZM&gt;G.M98.T!""#456@2%&gt;@5XFT&gt;'6N)'FO!!!]!0!!$!!$!!1!"!!&amp;!!1!"!!%!!1!"A!%!!=!#!-!!(A.#!!!!!!.#Q!!!!!!!!!!#A!!!!A!%A!!!!!"!!E!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">16777344</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1342972432</Property>
 	</Item>
 </LVClass>

@@ -244,6 +244,38 @@ _declspec (dllexport) long CC ResetAllOutputModuloCounters();
 _declspec (dllexport) long CC JumpStartAllLists();
 
 //
+// long LoadCardParameters(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList, long DG_Number);
+//
+//		call this function to load all modified parameters and to set selected counters to zero synchronuously
+//
+//					b_EventCounter:		set this flag TRUE to reset the event counter
+//					b_ModuloCounter:	set this flag TRUE to reset the modulo counter for all channels
+//														of this delay generator
+//					b_TimeList:				set this flag TRUE to set all memory read pointers of this delay generator
+//														to the beginning of the delay lists
+//					DG_Number:				number of this delay generator (counting starts from zero!)
+//
+//
+
+_declspec (dllexport) long CC LoadCardParameters(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList, long DG_Number);
+
+//
+// long LoadAllCardParameters(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList);
+//
+//		call this function to load all modified parameters and  to set selected counters to zero 
+//					synchronuously on the individual card, sequentially from one card to the next
+//
+//					b_EventCounter:		set this flag TRUE to reset the event counter
+//					b_ModuloCounter:	set this flag TRUE to reset the modulo counter for all channels
+//														of this delay generator
+//					b_TimeList:				set this flag TRUE to set all memory read pointers of this delay generator
+//														to the beginning of the delay lists
+//
+//
+
+_declspec (dllexport) long CC LoadAllCardParameters(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList);
+
+//
 // long ResetCounter(BOOL b_EventCounter, BOOL b_ModuloCounter, BOOL b_TimeList, long DG_Number);
 //
 //		call this function to set selected counters to zero synchronuously
@@ -1126,6 +1158,7 @@ typedef struct
 	BOOL b_DG_Activated,b_ModuleCalibrated;
 	unsigned long CalibrationLevel;
 	unsigned long DG_Product;
+	unsigned long LoadVector;
 	DG_BME_Registers	DelayGeneratorState;
 	DG_BME_Control		DelayControlState;
 	BOOL NtDriverInitialized;
@@ -1176,13 +1209,14 @@ typedef struct
 	int NumberPciDelayGenerators;
 	DelgenType PciDelgen[40];
 
+
 	void IsaOutByte(unsigned short Address, unsigned char value);
 	unsigned char IsaInByte(unsigned short Address);
 	void InitializeInternalData(DG_InternalData* p_Present);
-	void Set_Delay_Trigger(DelayTriggerType* p_dt, DG_InternalData* p_Present); 
+	void Set_Delay_Trigger(DelayTriggerType* p_dt, unsigned long* p_LoadWord, DG_InternalData* p_Present);
 	void SetDelayTriggerControl(unsigned long* p_Prepare, unsigned long* p_FinalValue, 
 																	DelayTriggerType* p_dt, DG_InternalData* p_Present);
-	void Set_Prescaler(DG_BME_Registers* p_pdg, DG_InternalData* p_Present);
+	void Set_Prescaler(DG_BME_Registers* p_pdg, unsigned long* p_LoadWord, DG_InternalData* p_Present);
 	void Set_Main_Counter(MainCounterType* p_mc, DG_InternalData* p_Present);
 	void SetMainCounterControl(unsigned long* p_Prepare, unsigned long* p_FinalValue, 
 																	MainCounterType* p_mc, DG_InternalData* p_Present);
@@ -1202,7 +1236,7 @@ typedef struct
 	void LoadPrescaler(unsigned long* p_value, DG_InternalData* p_Present);
 	void LoadCommandRegister(unsigned long* p_value, DG_InternalData* p_Present);
 	void LoadCounterControl(unsigned long* p_value, DG_InternalData* p_Present);
-	void PrepareCounterControl(DG_BME_Registers* p_pdg, DG_InternalData* p_Present);
+	void PrepareCounterControl(DG_BME_Registers* p_pdg, unsigned long* p_LoadWord, DG_InternalData* p_Present);
 
 	void ActionDC(unsigned long* p_Action, DelayChannelData* p_a, DelayChannelData* p_b, unsigned long DG_Product);
 	void ActionDT(unsigned long* p_Action, DelayTriggerData* p_a, DelayTriggerData* p_b, unsigned long DG_Product);
