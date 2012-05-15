@@ -162,7 +162,6 @@
 			</Item>
 		</Item>
 		<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
-		<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
 		<Item Name="Test Classes.vi" Type="VI" URL="../Test Classes.vi"/>
 		<Item Name="Test Classes 2.vi" Type="VI" URL="../Test Classes 2.vi"/>
 		<Item Name="Test SG08.vi" Type="VI" URL="../Test SG08.vi"/>
