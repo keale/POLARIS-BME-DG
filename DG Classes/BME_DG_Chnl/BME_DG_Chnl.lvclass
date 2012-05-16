@@ -149,13 +149,13 @@
 			<Property Name="NI.LibItem.Scope" Type="Int">4</Property>
 		</Item>
 		<Item Name="Parse DelayFormula.vi" Type="VI" URL="../Parse DelayFormula.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'%!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!$*!=!!?!!!8&amp;5*.26^%2V^4?8.U:7UO&lt;(:D&lt;'&amp;T=Q!21EV&amp;8U2(8V.Z=X2F&lt;3"P&gt;81!,E"Q!"Y!!"541EV&amp;8U2(8U.I&lt;GQO&lt;(:D&lt;'&amp;T=Q!01EV&amp;8U2(8U.I&lt;GQA&lt;X6U!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!&amp;E!Q`````QR%:7RB?5:P=GVV&lt;'%!!#Z!=!!?!!!8&amp;5*.26^%2V^4?8.U:7UO&lt;(:D&lt;'&amp;T=Q!.1EV&amp;8U2(8V.Z=X2F&lt;1!O1(!!(A!!&amp;2.#456@2%&gt;@1WBO&lt;#ZM&gt;G.M98.T!!Z#456@2%&gt;@1WBO&lt;#"J&lt;A!!31$Q!!Q!!Q!%!!5!"A!%!!1!"!!%!!=!#!!*!!I$!!"Y$1A!!!U+$1M!!!!!!!!!!!I!#!!+!")!!!U!!!!-!!!!!!!!!!!!!!%!#Q!!!!!</Property>
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;V!!!!$1!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!$E!Q`````Q2/97VF!!!?1%!!!@````]!""&amp;1=G^C&lt;'6N)%.I&lt;GRT)'^V&gt;!!S1(!!(A!!&amp;R6#456@2%&gt;@5XFT&gt;'6N,GRW9WRB=X-!%5*.26^%2V^4?8.U:7UA&lt;X6U!!1!!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!":!-0````]-2'6M98F'&lt;X*N&gt;7RB!!!O1(!!(A!!&amp;R6#456@2%&gt;@5XFT&gt;'6N,GRW9WRB=X-!$5*.26^%2V^4?8.U:7U!,E"Q!"Y!!"541EV&amp;8U2(8U.I&lt;GQO&lt;(:D&lt;'&amp;T=Q!/1EV&amp;8U2(8U.I&lt;GQA;7Y!!$Q!]!!-!!-!"1!'!!=!"Q!(!!=!"Q!)!!E!#A!,!Q!!?!U)#1!.#A!!!!!!!!!!!!!+!!A!#A!3!!!!!!%!$!!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
 			<Property Name="NI.ClassItem.MethodScope" Type="UInt">4</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1342710291</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1082130960</Property>
 			<Property Name="NI.LibItem.Scope" Type="Int">4</Property>
 		</Item>
 	</Item>
