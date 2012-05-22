@@ -160,6 +160,7 @@
 				<Item Name="BME_DG_G08_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08_Chnl/BME_DG_G08_Chnl.lvclass"/>
 				<Item Name="BME_DG_System.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_System/BME_DG_System.lvclass"/>
 			</Item>
+			<Item Name="BME_DG_Errors.vi" Type="VI" URL="../BME_DG_Errors.vi"/>
 		</Item>
 		<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
 		<Item Name="Test Classes.vi" Type="VI" URL="../Test Classes.vi"/>
@@ -167,6 +168,9 @@
 		<Item Name="Test SG08.vi" Type="VI" URL="../Test SG08.vi"/>
 		<Item Name="RunDelay2.vi" Type="VI" URL="../Freiburg_DG/RunDelay2.vi"/>
 		<Item Name="BME_DG_ReadParameterFile_mittels array.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadParameterFile_mittels array.vi"/>
+		<Item Name="Test Zentral Trigger PC.vi" Type="VI" URL="../Test Zentral Trigger PC.vi"/>
+		<Item Name="ChnlParam.ctl" Type="VI" URL="../ChnlParam.ctl"/>
+		<Item Name="SG05P2 Clock and Trigger Settings.ctl" Type="VI" URL="../DG Classes/BME_DG_G05P2/SG05P2 Clock and Trigger Settings.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Merge Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Merge Errors.vi"/>
@@ -221,7 +225,7 @@
 			<Item Name="MGI Change Detector (T).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (T).vi"/>
 			<Item Name="MGI Change Detector (F).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (F).vi"/>
 			<Item Name="Enable Interrupts.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Enable Interrupts.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../../../../../Programme/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Programme/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
