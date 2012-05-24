@@ -31,6 +31,7 @@
 		<Item Name="BME_DG_TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_TriggerSettings.ctl"/>
 		<Item Name="BME_G05P1Settings.ctl" Type="VI" URL="../LV-BME Interface/BME_G05P1Settings.ctl"/>
 		<Item Name="BME_DG_MasterOrSlave.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_MasterOrSlave.ctl"/>
+		<Item Name="UpdateChnlTask.ctl" Type="VI" URL="../DG Classes/BME_DG_System/UpdateChnlTask.ctl"/>
 	</Item>
 	<Item Name="Low Level VIs" Type="Folder">
 		<Item Name="BME_DG_Set_G05_Chnl.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Set_G05_Chnl.vi"/>
@@ -156,5 +157,7 @@
 	<Item Name="Test Classes 2.vi" Type="VI" URL="../Test Classes 2.vi"/>
 	<Item Name="Test SG08.vi" Type="VI" URL="../Test SG08.vi"/>
 	<Item Name="Test Zentral Trigger PC.vi" Type="VI" URL="../Test Zentral Trigger PC.vi"/>
+	<Item Name="Test SG02P2 und G05P1.vi" Type="VI" URL="../Test SG02P2 und G05P1.vi"/>
 	<Item Name="BME_DG_Errors.vi" Type="VI" URL="../BME_DG_Errors.vi"/>
+	<Item Name="ChnlOutputModulo.ctl" Type="VI" URL="../DG Classes/BME_DG_System/ChnlOutputModulo.ctl"/>
 </Library>
