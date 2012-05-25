@@ -23,6 +23,14 @@
 		<Item Name="CS POLARIS BME DG.i attribute.ctl" Type="VI" URL="../CS POLARIS BME DG.i attribute.ctl"/>
 		<Item Name="CS POLARIS BME DG.i attribute.vi" Type="VI" URL="../CS POLARIS BME DG.i attribute.vi"/>
 		<Item Name="CS POLARIS BME DG.ProcEvents.vi" Type="VI" URL="../CS POLARIS BME DG.ProcEvents.vi"/>
+		<Item Name="CS POLARIS BME DG.configure objects.vi" Type="VI" URL="../CS POLARIS BME DG.configure objects.vi"/>
+		<Item Name="CS POLARIS BME DG.Create DIMServices.vi" Type="VI" URL="../CS POLARIS BME DG.Create DIMServices.vi"/>
+		<Item Name="CS POLARIS BME DG.Delete DIMServices.vi" Type="VI" URL="../CS POLARIS BME DG.Delete DIMServices.vi"/>
+		<Item Name="CS POLARIS BME DG.Update DIMServices.vi" Type="VI" URL="../CS POLARIS BME DG.Update DIMServices.vi"/>
+	</Item>
+	<Item Name="DB" Type="Folder">
+		<Item Name="CS POLARIS BME DG_db.ini" Type="Document" URL="../CS POLARIS BME DG_db.ini"/>
+		<Item Name="CS POLARIS BME DG_mapping.ini" Type="Document" URL="../CS POLARIS BME DG_mapping.ini"/>
 	</Item>
 	<Item Name="CS POLARIS BME DG.Error2XMLFlatted call cluster.vi" Type="VI" URL="../CS POLARIS BME DG.Error2XMLFlatted call cluster.vi"/>
 </Library>
