@@ -19,8 +19,13 @@
 	</Item>
 	<Item Name="private" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
+		<Item Name="CS POLARIS BME DG Client.unfold DIM Data.vi" Type="VI" URL="../CS POLARIS BME DG Client.unfold DIM Data.vi"/>
 		<Item Name="CS POLARIS BME DG Client.i attribute.ctl" Type="VI" URL="../CS POLARIS BME DG Client.i attribute.ctl"/>
 		<Item Name="CS POLARIS BME DG Client.i attribute.vi" Type="VI" URL="../CS POLARIS BME DG Client.i attribute.vi"/>
 		<Item Name="CS POLARIS BME DG Client.ProcEvents.vi" Type="VI" URL="../CS POLARIS BME DG Client.ProcEvents.vi"/>
+	</Item>
+	<Item Name="DB" Type="Folder">
+		<Item Name="CS POLARIS BME DG Client_mapping.ini" Type="Document" URL="../CS POLARIS BME DG Client_mapping.ini"/>
+		<Item Name="CS POLARIS BME DG Client_db.ini" Type="Document" URL="../CS POLARIS BME DG Client_db.ini"/>
 	</Item>
 </Library>
