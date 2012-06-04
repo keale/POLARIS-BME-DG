@@ -160,4 +160,5 @@
 	<Item Name="Test SG02P2 und G05P1.vi" Type="VI" URL="../Test SG02P2 und G05P1.vi"/>
 	<Item Name="BME_DG_Errors.vi" Type="VI" URL="../BME_DG_Errors.vi"/>
 	<Item Name="ChnlOutputModulo.ctl" Type="VI" URL="../DG Classes/BME_DG_System/ChnlOutputModulo.ctl"/>
+	<Item Name="Test Zentral Trigger PC nur Mira Sync.vi" Type="VI" URL="../Test Zentral Trigger PC nur Mira Sync.vi"/>
 </Library>
