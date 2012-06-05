@@ -24,6 +24,9 @@
 			<Item Name="BME_DG_DelayTriggerData_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayTriggerData_V2.ctl"/>
 			<Item Name="BME_DG_BME_Control_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_BME_Control_V2.ctl"/>
 		</Item>
+		<Item Name="Doku" Type="Folder">
+			<Item Name="Bme_g0x.hlp" Type="Document" URL="../LV-BME Interface/Bme_g0x.hlp"/>
+		</Item>
 		<Item Name="ChnlSettings.ctl" Type="VI" URL="../LV-BME Interface/ChnlSettings.ctl"/>
 		<Item Name="ChnlWithModulo.ctl" Type="VI" URL="../LV-BME Interface/ChnlWithModulo.ctl"/>
 		<Item Name="SignalType.ctl" Type="VI" URL="../LV-BME Interface/SignalType.ctl"/>
@@ -31,13 +34,12 @@
 		<Item Name="BME_DG_TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_TriggerSettings.ctl"/>
 		<Item Name="BME_G05P1Settings.ctl" Type="VI" URL="../LV-BME Interface/BME_G05P1Settings.ctl"/>
 		<Item Name="BME_DG_MasterOrSlave.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_MasterOrSlave.ctl"/>
+		<Item Name="DetectDG.ctl" Type="VI" URL="../DetectDG.ctl"/>
 		<Item Name="UpdateChnlTask.ctl" Type="VI" URL="../DG Classes/BME_DG_System/UpdateChnlTask.ctl"/>
 	</Item>
 	<Item Name="Low Level VIs" Type="Folder">
-		<Item Name="BME_DG_Set_G05_Chnl.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Set_G05_Chnl.vi"/>
-		<Item Name="BME_DG_Set_G02_Chnl.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Set_G02_Chnl.vi"/>
-		<Item Name="BME_DG_SetTriggerParameters.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetTriggerParameters.vi"/>
 		<Item Name="BME_DG_activate.vi" Type="VI" URL="../LV-BME Interface/BME_DG_activate.vi"/>
+		<Item Name="BME_DG_SetTriggerParameters.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetTriggerParameters.vi"/>
 		<Item Name="BME_DG_SetClock.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetClock.vi"/>
 		<Item Name="BME_Set_OutputLevel.vi" Type="VI" URL="../LV-BME Interface/BME_Set_OutputLevel.vi"/>
 		<Item Name="BME_DG_ResetTriggerCounter.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ResetTriggerCounter.vi"/>
@@ -60,9 +62,8 @@
 		<Item Name="BME_DG_CalibrateGroup_from_File.vi" Type="VI" URL="../LV-BME Interface/BME_DG_CalibrateGroup_from_File.vi"/>
 		<Item Name="BME_DG_CalibrateModule.vi" Type="VI" URL="../LV-BME Interface/BME_DG_CalibrateModule.vi"/>
 		<Item Name="BME_DG_SetCalibrationLevel.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetCalibrationLevel.vi"/>
-	</Item>
-	<Item Name="Doku" Type="Folder">
-		<Item Name="Bme_g0x.hlp" Type="Document" URL="../LV-BME Interface/Bme_g0x.hlp"/>
+		<Item Name="BME_DG_Set_G02_Chnl.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Set_G02_Chnl.vi"/>
+		<Item Name="BME_DG_Set_G05_Chnl.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Set_G05_Chnl.vi"/>
 	</Item>
 	<Item Name="Applied Energetics Stuff" Type="Folder">
 		<Item Name="SubVI" Type="Folder">
@@ -161,4 +162,6 @@
 	<Item Name="BME_DG_Errors.vi" Type="VI" URL="../BME_DG_Errors.vi"/>
 	<Item Name="ChnlOutputModulo.ctl" Type="VI" URL="../DG Classes/BME_DG_System/ChnlOutputModulo.ctl"/>
 	<Item Name="Test Zentral Trigger PC nur Mira Sync.vi" Type="VI" URL="../Test Zentral Trigger PC nur Mira Sync.vi"/>
+	<Item Name="BME_DG_GetPCIBusDGInfo.vi" Type="VI" URL="../LV-BME Interface/BME_DG_GetPCIBusDGInfo.vi"/>
+	<Item Name="Configure Systems.vi" Type="VI" URL="../Configure Systems.vi"/>
 </Library>
