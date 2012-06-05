@@ -164,4 +164,6 @@
 	<Item Name="Test Zentral Trigger PC nur Mira Sync.vi" Type="VI" URL="../Test Zentral Trigger PC nur Mira Sync.vi"/>
 	<Item Name="BME_DG_GetPCIBusDGInfo.vi" Type="VI" URL="../LV-BME Interface/BME_DG_GetPCIBusDGInfo.vi"/>
 	<Item Name="Configure Systems.vi" Type="VI" URL="../Configure Systems.vi"/>
+	<Item Name="BME_DG_InitializeMultipleBus.vi" Type="VI" URL="../LV-BME Interface/BME_DG_InitializeMultipleBus.vi"/>
+	<Item Name="POLARIS_BME_DG_Read Cnfg File.vi" Type="VI" URL="../POLARIS_BME_DG_Read Cnfg File.vi"/>
 </Library>
