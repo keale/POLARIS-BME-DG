@@ -36,6 +36,7 @@
 		<Item Name="BME_DG_MasterOrSlave.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_MasterOrSlave.ctl"/>
 		<Item Name="DetectDG.ctl" Type="VI" URL="../DetectDG.ctl"/>
 		<Item Name="UpdateChnlTask.ctl" Type="VI" URL="../DG Classes/BME_DG_System/UpdateChnlTask.ctl"/>
+		<Item Name="System DG Selection.ctl" Type="VI" URL="../System DG Selection.ctl"/>
 	</Item>
 	<Item Name="Low Level VIs" Type="Folder">
 		<Item Name="BME_DG_activate.vi" Type="VI" URL="../LV-BME Interface/BME_DG_activate.vi"/>
@@ -163,7 +164,7 @@
 	<Item Name="ChnlOutputModulo.ctl" Type="VI" URL="../DG Classes/BME_DG_System/ChnlOutputModulo.ctl"/>
 	<Item Name="Test Zentral Trigger PC nur Mira Sync.vi" Type="VI" URL="../Test Zentral Trigger PC nur Mira Sync.vi"/>
 	<Item Name="BME_DG_GetPCIBusDGInfo.vi" Type="VI" URL="../LV-BME Interface/BME_DG_GetPCIBusDGInfo.vi"/>
-	<Item Name="Configure Systems.vi" Type="VI" URL="../Configure Systems.vi"/>
 	<Item Name="BME_DG_InitializeMultipleBus.vi" Type="VI" URL="../LV-BME Interface/BME_DG_InitializeMultipleBus.vi"/>
 	<Item Name="POLARIS_BME_DG_Read Cnfg File.vi" Type="VI" URL="../POLARIS_BME_DG_Read Cnfg File.vi"/>
+	<Item Name="Configure Systems.vi" Type="VI" URL="../Configure Systems.vi"/>
 </Library>
