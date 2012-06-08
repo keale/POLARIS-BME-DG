@@ -10,6 +10,9 @@
 		<Item Name="DG_Data.h" Type="Document" URL="../BME DLL/DG_Data.h"/>
 		<Item Name="DelayGenerator.dll" Type="Document" URL="../BME DLL/DelayGenerator.dll"/>
 	</Item>
+	<Item Name="Doku" Type="Folder">
+		<Item Name="Bme_g0x.hlp" Type="Document" URL="../LV-BME Interface/Bme_g0x.hlp"/>
+	</Item>
 	<Item Name="ParameterFiles" Type="Folder">
 		<Item Name="201203-22 Test mit vier DG.g0y" Type="Document" URL="../ParameterFiles/201203-22 Test mit vier DG.g0y"/>
 		<Item Name="parameters bme 201203-18.g0y" Type="Document" URL="../ParameterFiles/parameters bme 201203-18.g0y"/>
@@ -23,9 +26,6 @@
 			<Item Name="BME_DG_DelayChannelData_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayChannelData_V2.ctl"/>
 			<Item Name="BME_DG_DelayTriggerData_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayTriggerData_V2.ctl"/>
 			<Item Name="BME_DG_BME_Control_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_BME_Control_V2.ctl"/>
-		</Item>
-		<Item Name="Doku" Type="Folder">
-			<Item Name="Bme_g0x.hlp" Type="Document" URL="../LV-BME Interface/Bme_g0x.hlp"/>
 		</Item>
 		<Item Name="ChnlSettings.ctl" Type="VI" URL="../LV-BME Interface/ChnlSettings.ctl"/>
 		<Item Name="ChnlWithModulo.ctl" Type="VI" URL="../LV-BME Interface/ChnlWithModulo.ctl"/>
