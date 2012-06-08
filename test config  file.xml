@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>-469762048</Val>
+<Val>67108864</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-873219091</Val>
+<Val>-872958298</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -614,6 +614,238 @@
 <Name>Name</Name>
 <Val>POLARIS</Val>
 </String>
+</Cluster>
+</Array>
+<Array>
+<Name>Card Config</Name>
+<Dimsize>0</Dimsize>
+<Cluster>
+<Name>Card Config</Name>
+<NumElts>5</NumElts>
+<String>
+<Name>Logical Name</Name>
+<Val></Val>
+</String>
+<Cluster>
+<Name>Base Settings</Name>
+<NumElts>16</NumElts>
+<I32>
+<Name>Clock Source</Name>
+<Val></Val>
+</I32>
+<U32>
+<Name> clock devide by</Name>
+<Val></Val>
+</U32>
+<Boolean>
+<Name>TriggerEnabled?</Name>
+<Val></Val>
+</Boolean>
+<I32>
+<Name>Trigger devide by</Name>
+<Val></Val>
+</I32>
+<Boolean>
+<Name>InputTerminated?</Name>
+<Val></Val>
+</Boolean>
+<DBL>
+<Name>Inhibit(탎)</Name>
+<Val></Val>
+</DBL>
+<DBL>
+<Name>TriggerLevel</Name>
+<Val></Val>
+</DBL>
+<I32>
+<Name>PresetValue</Name>
+<Val></Val>
+</I32>
+<Boolean>
+<Name>InternalTrigger?</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>InternalArm?</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>SWTrigger?</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>RisingEdge?</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>StopOnPreset?</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>ResetWhenDone?</Name>
+<Val></Val>
+</Boolean>
+<I32>
+<Name>Gate Divider</Name>
+<Val></Val>
+</I32>
+<Boolean>
+<Name>PositiveGate?</Name>
+<Val></Val>
+</Boolean>
+</Cluster>
+<Cluster>
+<Name>SG08_Settings</Name>
+<NumElts>7</NumElts>
+<Boolean>
+<Name>Gate Terminate</Name>
+<Val></Val>
+</Boolean>
+<DBL>
+<Name>Gate Level</Name>
+<Val></Val>
+</DBL>
+<DBL>
+<Name>Gate Delay (탎)</Name>
+<Val></Val>
+</DBL>
+<DBL>
+<Name>StepBackTime (탎)</Name>
+<Val></Val>
+</DBL>
+<U32>
+<Name>Burst Counter</Name>
+<Val></Val>
+</U32>
+<U32>
+<Name>Trigger Divider</Name>
+<Val></Val>
+</U32>
+<U32>
+<Name>Trigger Multiplier</Name>
+<Val></Val>
+</U32>
+</Cluster>
+<Array>
+<Name>Channel Names</Name>
+<Dimsize>0</Dimsize>
+<String>
+<Name>String</Name>
+<Val></Val>
+</String>
+</Array>
+<Cluster>
+<Name>Advanced Settings</Name>
+<NumElts>4</NumElts>
+<U32>
+<Name>Trigger on MS Bus</Name>
+<Val></Val>
+</U32>
+<DBL>
+<Name>Force Trigger (탎)</Name>
+<Val></Val>
+</DBL>
+<Boolean>
+<Name>Gate Type</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>Synchronize Gate</Name>
+<Val></Val>
+</Boolean>
+</Cluster>
+</Cluster>
+</Array>
+<Array>
+<Name>Chnls</Name>
+<Dimsize>0</Dimsize>
+<Cluster>
+<Name>Cluster</Name>
+<NumElts>3</NumElts>
+<Cluster>
+<Name></Name>
+<NumElts>4</NumElts>
+<String>
+<Name>Chnl Name</Name>
+<Val></Val>
+</String>
+<Cluster>
+<Name>ChnParameter</Name>
+<NumElts>5</NumElts>
+<DBL>
+<Name> Delay (탎)</Name>
+<Val></Val>
+</DBL>
+<Boolean>
+<Name>On?</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>PositiveVoltage?</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>50OhmTerminated? </Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>25OhmOutput?</Name>
+<Val></Val>
+</Boolean>
+</Cluster>
+<I32>
+<Name>OutputModulo</Name>
+<Val></Val>
+</I32>
+<String>
+<Name>DelayFormula</Name>
+<Val></Val>
+</String>
+</Cluster>
+<Cluster>
+<Name>Go and Done Signal</Name>
+<NumElts>2</NumElts>
+<U32>
+<Name>Go Signal</Name>
+<Val></Val>
+</U32>
+<U32>
+<Name>Done Signal</Name>
+<Val></Val>
+</U32>
+</Cluster>
+<Cluster>
+<Name>G08_Chnl_Settings</Name>
+<NumElts>7</NumElts>
+<DBL>
+<Name>Pulse Width (탎)</Name>
+<Val></Val>
+</DBL>
+<U32>
+<Name>Output Offset</Name>
+<Val></Val>
+</U32>
+<Boolean>
+<Name>Disconnect (E,F)</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>Onto MsBus (E,F)</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>Input Positive (E,F)</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>Param Change</Name>
+<Val></Val>
+</Boolean>
+<Boolean>
+<Name>Inhibit internal clock</Name>
+<Val></Val>
+</Boolean>
+</Cluster>
 </Cluster>
 </Array>
 </LVData>
