@@ -12,6 +12,10 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="POLARIS BME DG.lvlib" Type="Library" URL="../POLARIS BME DG.lvlib"/>
 		<Item Name="Card Config.ctl" Type="VI" URL="../Card Config.ctl"/>
+		<Item Name="SG08_Settings.ctl" Type="VI" URL="../SG08_Settings.ctl"/>
+		<Item Name="Go_Done_Chnl_Settings.ctl" Type="VI" URL="../Go_Done_Chnl_Settings.ctl"/>
+		<Item Name="SG08_Chnl_Settings.ctl" Type="VI" URL="../SG08_Chnl_Settings.ctl"/>
+		<Item Name="Chnl Settings Complete.ctl" Type="VI" URL="../Chnl Settings Complete.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read Characters From File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Characters From File.vi"/>
@@ -68,11 +72,11 @@
 				<Item Name="compatOpenFileOperation.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatOpenFileOperation.vi"/>
 				<Item Name="compatCalcOffset.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatCalcOffset.vi"/>
 				<Item Name="Read From XML File(string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File(string).vi"/>
-				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
-				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
 				<Item Name="Write to XML File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File.vi"/>
 				<Item Name="Write to XML File(string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File(string).vi"/>
 				<Item Name="Write to XML File(array).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File(array).vi"/>
+				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
+				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
 			</Item>
 			<Item Name="Falling Edge Change Detector.vi" Type="VI" URL="../Applied Energetics Stuff/Extra/Falling Edge Change Detector.vi"/>
 			<Item Name="Rising Edge Change Detector.vi" Type="VI" URL="../Applied Energetics Stuff/Extra/Rising Edge Change Detector.vi"/>
@@ -81,10 +85,10 @@
 			<Item Name="MGI Change Detector (T).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (T).vi"/>
 			<Item Name="MGI Change Detector (F).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (F).vi"/>
 			<Item Name="Enable Interrupts.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Enable Interrupts.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 			<Item Name="BME_DG_V2TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_V2TriggerSettings.ctl"/>
 			<Item Name="SG05P2 Clock and Trigger Settings.ctl" Type="VI" URL="../DG Classes/BME_DG_G05P2/SG05P2 Clock and Trigger Settings.ctl"/>
 			<Item Name="ChnlParam.ctl" Type="VI" URL="../ChnlParam.ctl"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../../../../../Programme/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
