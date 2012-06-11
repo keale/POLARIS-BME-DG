@@ -88,7 +88,7 @@
 			<Item Name="BME_DG_V2TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_V2TriggerSettings.ctl"/>
 			<Item Name="SG05P2 Clock and Trigger Settings.ctl" Type="VI" URL="../DG Classes/BME_DG_G05P2/SG05P2 Clock and Trigger Settings.ctl"/>
 			<Item Name="ChnlParam.ctl" Type="VI" URL="../ChnlParam.ctl"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../../../../../Programme/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
