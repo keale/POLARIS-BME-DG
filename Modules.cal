@@ -1,9 +1,12 @@
-Master
-   80.000000      internal oscillator frequency
-   75.263734      external oscillator frequency
 BME_SG05P3    Master
    80.000000      internal oscillator frequency
-   18.815932      external oscillator frequency
+   80.000000      external oscillator frequency
+   0.000000      direct trigger delay
+   0.100000      first clock cycle
+   0.200000      second clock cycle
+BME_SG05P3    Master
+   80.000000      internal oscillator frequency
+   80.000000      external oscillator frequency
    0.000000      direct trigger delay
    0.100000      first clock cycle
    0.200000      second clock cycle

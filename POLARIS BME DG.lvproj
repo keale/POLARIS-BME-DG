@@ -11,11 +11,8 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="POLARIS BME DG.lvlib" Type="Library" URL="../POLARIS BME DG.lvlib"/>
-		<Item Name="Card Config.ctl" Type="VI" URL="../Card Config.ctl"/>
-		<Item Name="SG08_Settings.ctl" Type="VI" URL="../SG08_Settings.ctl"/>
-		<Item Name="Go_Done_Chnl_Settings.ctl" Type="VI" URL="../Go_Done_Chnl_Settings.ctl"/>
-		<Item Name="SG08_Chnl_Settings.ctl" Type="VI" URL="../SG08_Chnl_Settings.ctl"/>
-		<Item Name="Chnl Settings Complete.ctl" Type="VI" URL="../Chnl Settings Complete.ctl"/>
+		<Item Name="temp map test params.vi" Type="VI" URL="../DG Classes/BME_DG_System/temp map test params.vi"/>
+		<Item Name="Configure Systems backup data.vi" Type="VI" URL="../Configure Systems backup data.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read Characters From File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Characters From File.vi"/>
@@ -88,7 +85,7 @@
 			<Item Name="BME_DG_V2TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_V2TriggerSettings.ctl"/>
 			<Item Name="SG05P2 Clock and Trigger Settings.ctl" Type="VI" URL="../DG Classes/BME_DG_G05P2/SG05P2 Clock and Trigger Settings.ctl"/>
 			<Item Name="ChnlParam.ctl" Type="VI" URL="../ChnlParam.ctl"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../../../../../Programme/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
