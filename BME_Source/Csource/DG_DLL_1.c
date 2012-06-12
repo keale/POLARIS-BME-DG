@@ -3014,9 +3014,18 @@ _declspec (dllexport) long CC Deactivate_DG_BME(long DG_Number)
 		return 2;
 	p_Present = (p_Internal + DG_Number);
 	DG_Product = p_Present->DG_Product;
-	cntrl = p_Present->CommandRegister & 0x3F3E2B;
-	if ((DG_Product == BME_DP01) || (DG_Product == SRS_DG135))
+	switch (DG_Product)
+	{
+	case BME_DP01:
+	case SRS_DG135:
 		cntrl &= 0x20;
+		break;
+	case BME_SG08P2:
+		cntrl = p_Present->CommandRegister & 0x3FFE7B;
+		break;
+	default:
+		cntrl = p_Present->CommandRegister & 0x3F3E2B;
+	}
 	LoadCommandRegister(&cntrl, p_Present);
 	p_Present->b_DG_Activated = FALSE;
 	return 0;
@@ -3026,6 +3035,7 @@ _declspec (dllexport) long CC Activate_DG_BME(long DG_Number)
 {
 	DG_InternalData* p_Present;
 	unsigned long DG_Product;
+	unsigned long cntrl;
 	if ((DG_Number < 0) || (NoDelayGenerators <= DG_Number))
 		return 2;
 	p_Present = (p_Internal + DG_Number);
@@ -3066,6 +3076,17 @@ _declspec (dllexport) long CC Activate_DG_BME(long DG_Number)
 	case BME_SG08P1:
 	case BME_SG08P2:
 		LoadCounterControl(p_Present->CounterControlRegister, p_Present);
+	default:
+		break;
+	}
+	switch (DG_Product)
+	{
+	case BME_SG08P2:
+		if ((p_Present->CommandRegisterState & 0x80) == 0x0)
+		{
+			cntrl = p_Present->CommandRegister & ~0x80;
+			LoadCommandRegister(&cntrl, p_Present);
+		}
 	default:
 		LoadCommandRegister(&p_Present->CommandRegister, p_Present);
 	}
@@ -3246,6 +3267,7 @@ _declspec (dllexport) long CC LoadCardParameters(BOOL b_EventCounter, BOOL b_Mod
 		case BME_SG08P1:
 			*p_LoadWord &= ~0x18;
 		case BME_SG08P2:
+			*p_LoadWord |= 0x80000000;
 			if (b_TimeList)
 				*p_LoadWord |= 0x40;
 		case BME_G05V1:
@@ -5009,6 +5031,17 @@ void Synchronize_DG_State(long DG_Number)
 		DelayChannelTest(&(dgr.D));
 		DelayChannelTest(&(dgr.E));
 		DelayChannelTest(&(dgr.F));
+		switch (p_Present->DG_Product)
+		{
+		case BME_SG08P2:
+			dgr.DT.MS_Bus |= StepBackOnBus;
+			dgr.DT.MS_Bus |= StartOnBus;
+			dgr.DT.MS_Bus |= InhibitOnBus;
+			dgr.DT.MS_Bus |= LoadDataOnBus;
+			break;
+		default:
+			break;
+		}
 
 		dgr.DT.ClockSource = TriggerInput;
 		Set_DG_BME(&dgr, DG_Number);
@@ -5039,8 +5072,12 @@ void Synchronize_DG_State(long DG_Number)
 		ResetDelayTrigger(&(dgr.DT));
 		switch (p_Present->DG_Product)
 		{
-		case BME_SG08P1:
 		case BME_SG08P2:
+			dgr.DT.MS_Bus |= LocalSecondary;
+			dgr.DT.MS_Bus |= StepBackOnBus;
+			dgr.DT.MS_Bus |= StartOnBus;
+			dgr.DT.MS_Bus |= InhibitOnBus;
+		case BME_SG08P1:
 			dgr.DT.MS_Bus |= Resynchronize;
 			break;
 		case BME_SG02P4:
@@ -6669,6 +6706,8 @@ void PrepareCounterControl(DG_BME_Registers* p_pdg, unsigned long* p_LoadWord, D
 																	&(p_Present->DelayGeneratorState.F), 5, p_Present);
 		if (memcmp(p_Present->CounterControlRegister, p_Present->CounterControlState, 20) != 0)
 			*p_LoadWord |= 0x8;
+		if ((p_Present->CommandRegisterState & 0x3F0011) != (p_Present->CommandRegister & 0x3F0011))
+			*p_LoadWord |= 0x8;
 		if (!p_Present->b_DG_Activated)
 			LoadCounterControl(cctrl, p_Present);
 		break;
@@ -6689,6 +6728,7 @@ void PrepareCounterControl(DG_BME_Registers* p_pdg, unsigned long* p_LoadWord, D
 void ModifyControlRegister(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 {
 	BOOL SetGate_AB;
+	int NoBusLines;
 	unsigned long DG_Product = p_Present->DG_Product;
 	switch (DG_Product)
 	{
@@ -6754,8 +6794,59 @@ void ModifyControlRegister(DG_BME_Registers* p_pdg, DG_InternalData* p_Present)
 			p_Present->DelayGeneratorState.DT.MS_Bus = (p_pdg->DT.MS_Bus & 0x7);
 		}
 		break;
-	case BME_SG08P1:
 	case BME_SG08P2:
+		if ((p_pdg->DT.MS_Bus & 0xF2) != (p_Present->DelayGeneratorState.DT.MS_Bus & 0xF2))
+		{
+			NoBusLines = 0;
+			if ((p_pdg->DT.MS_Bus & LocalSecondary) != 0x0)
+			{
+				p_Present->CommandRegister |= 0x1000000;
+				NoBusLines++;
+			}
+			else
+				p_Present->CommandRegister &= ~0x1000000;
+			if ((p_pdg->DT.MS_Bus & StepBackOnBus) != 0x0)
+			{
+				p_Present->CommandRegister |= 0x2000000;
+				NoBusLines++;
+			}
+			else
+				p_Present->CommandRegister &= ~0x2000000;
+			if ((p_pdg->DT.MS_Bus & StartOnBus) != 0x0)
+			{
+				p_Present->CommandRegister |= 0x4000000;
+				NoBusLines++;
+			}
+			else
+				p_Present->CommandRegister &= ~0x4000000;
+			if ((p_pdg->DT.MS_Bus & InhibitOnBus) != 0x0)
+			{
+				p_Present->CommandRegister |= 0x8000000;
+				NoBusLines++;
+			}
+			else
+				p_Present->CommandRegister &= ~0x8000000;
+			if ((p_pdg->DT.MS_Bus & LoadDataOnBus) != 0x0)
+			{
+				p_Present->CommandRegister |= 0x10000000;
+				NoBusLines++;
+			}
+			else
+				p_Present->CommandRegister &= ~0x10000000;
+			if (NoBusLines == 4)
+			{
+				p_Present->DelayGeneratorState.DT.MS_Bus |= (p_pdg->DT.MS_Bus & 0xF2);
+				p_Present->DelayGeneratorState.DT.MS_Bus &= (p_pdg->DT.MS_Bus | ~0xF2);
+			}
+			else
+			{
+				p_Present->CommandRegister |= 0xF000000;
+				p_Present->CommandRegister &= ~0x10000000;
+				p_Present->DelayGeneratorState.DT.MS_Bus |= 0x72;
+				p_Present->DelayGeneratorState.DT.MS_Bus &= ~0x80;
+			}
+		}
+	case BME_SG08P1:
 		if ((p_pdg->GateFunction & 0x3F0000) != (p_Present->DelayGeneratorState.GateFunction & 0x3F0000))
 		{
 			p_Present->CommandRegister |= (p_pdg->GateFunction & 0x3F0000);
