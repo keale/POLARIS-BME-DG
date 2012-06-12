@@ -113,6 +113,10 @@
 #define EnableFromF								0x20000
 #define EnableFromBus							0x40000
 
+#define StepBackOnBus							0x10
+#define StartOnBus								0x20
+#define InhibitOnBus							0x40
+#define LoadDataOnBus							0x80
 #define GateOnBusPositive					0x100
 #define GateOnBusNegative					0x200
 #define GateBurstSynch						0x800
@@ -397,13 +401,25 @@ typedef struct
 //										the trigger signals is placed on the master/slave bus,
 //										or which events must be synchronized for a reload event.
 //										See the definitions of LocalPrimary, LocalSecondary, LocalForce,
+//										Resynchronize, StepBackOnBus, StartOnBus, InhibitOnBus, LoadDataOnBus
 //										GateOnBusPositive, and GateOnBusNegative.
-//										LocalPrimary =			0x1		:		the primary trigger signal is used to 
-//																									start the channel
-//										LocalSecondary =		0x2		:		the secondary trigger signal is used to 
-//																									start the channel
-//										LocalForce =				0x4		:   the signal from the force trigger counter is 
-//																									used to start the channel
+//										LocalPrimary =			0x1		:		the primary trigger signal is placed
+//																									on the master/slave bus
+//										LocalSecondary =		0x2		:		the secondary trigger signal is placed
+//																									on the master/slave bus
+//										LocalForce =				0x4		:   the signal from the force trigger counter is placed
+//																									on the master/slave bus
+//										Resynchronize =			0x8		:   the internal clock, i.e. prescaler is resynchronized
+//																									with every trigger event
+//										StepBackOnBus =			0x10	:		the step back signal is placed
+//																									on the master/slave bus
+//										StartOnBus =				0x20	:		the start signal is placed
+//																									on the master/slave bus
+//										InhibitOnBus =			0x40	:   the inhibit signal is placed
+//																									on the master/slave bus
+//										LoadDataOnBus =			0x80	:   the signal causing synchronuous activation of data preloaded 
+//																									into the registers of the delay generators is placed
+//																									on the master/slave bus
 //										GateOnBusPositive =	0x100	:		a signal, which is high when the trigger system is active
 //																									is placed as Start signal on the MS bus with positive polarity
 //										GateOnBusNegative =	0x200	:		a signal, which is high when the trigger system is active
@@ -699,13 +715,25 @@ typedef struct
 //										the trigger signals is placed on the master/slave bus,
 //										or which events must be synchronized for a reload event.
 //										See the definitions of LocalPrimary, LocalSecondary, LocalForce,
+//										Resynchronize, StepBackOnBus, StartOnBus, InhibitOnBus, LoadDataOnBus
 //										GateOnBusPositive, and GateOnBusNegative.
-//										LocalPrimary =			0x1		:		the primary trigger signal is used to 
-//																									start the channel
-//										LocalSecondary =		0x2		:		the secondary trigger signal is used to 
-//																									start the channel
-//										LocalForce =				0x4		:   the signal from the force trigger counter is 
-//																									used to start the channel
+//										LocalPrimary =			0x1		:		the primary trigger signal is placed
+//																									on the master/slave bus
+//										LocalSecondary =		0x2		:		the secondary trigger signal is placed
+//																									on the master/slave bus
+//										LocalForce =				0x4		:   the signal from the force trigger counter is placed
+//																									on the master/slave bus
+//										Resynchronize =			0x8		:   the internal clock, i.e. prescaler is resynchronized
+//																									with every trigger event
+//										StepBackOnBus =			0x10	:		the step back signal is placed
+//																									on the master/slave bus
+//										StartOnBus =				0x20	:		the start signal is placed
+//																									on the master/slave bus
+//										InhibitOnBus =			0x40	:   the inhibit signal is placed
+//																									on the master/slave bus
+//										LoadDataOnBus =			0x80	:   the signal causing synchronuous activation of data preloaded 
+//																									into the registers of the delay generators is placed
+//																									on the master/slave bus
 //										GateOnBusPositive =	0x100	:		a signal, which is high when the trigger system is active
 //																									is placed as Start signal on the MS bus with positive polarity
 //										GateOnBusNegative =	0x200	:		a signal, which is high when the trigger system is active
