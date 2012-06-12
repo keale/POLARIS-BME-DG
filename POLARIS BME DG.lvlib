@@ -17,32 +17,6 @@
 		<Item Name="201203-22 Test mit vier DG.g0y" Type="Document" URL="../ParameterFiles/201203-22 Test mit vier DG.g0y"/>
 		<Item Name="parameters bme 201203-18.g0y" Type="Document" URL="../ParameterFiles/parameters bme 201203-18.g0y"/>
 	</Item>
-	<Item Name="TypeDefs" Type="Folder">
-		<Item Name="For ReadParameters" Type="Folder">
-			<Item Name="BME_DG_DelayChannelData.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayChannelData.ctl"/>
-			<Item Name="BME_DG_DelayTriggerData.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayTriggerData.ctl"/>
-			<Item Name="BME_DG_BME_State.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_BME_State.ctl"/>
-			<Item Name="BME_DG_State_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_State_V2.ctl"/>
-			<Item Name="BME_DG_DelayChannelData_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayChannelData_V2.ctl"/>
-			<Item Name="BME_DG_DelayTriggerData_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayTriggerData_V2.ctl"/>
-			<Item Name="BME_DG_BME_Control_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_BME_Control_V2.ctl"/>
-		</Item>
-		<Item Name="ChnlSettings.ctl" Type="VI" URL="../LV-BME Interface/ChnlSettings.ctl"/>
-		<Item Name="ChnlWithModulo.ctl" Type="VI" URL="../LV-BME Interface/ChnlWithModulo.ctl"/>
-		<Item Name="SignalType.ctl" Type="VI" URL="../LV-BME Interface/SignalType.ctl"/>
-		<Item Name="ClockSource.ctl" Type="VI" URL="../LV-BME Interface/ClockSource.ctl"/>
-		<Item Name="BME_DG_TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_TriggerSettings.ctl"/>
-		<Item Name="BME_G05P1Settings.ctl" Type="VI" URL="../LV-BME Interface/BME_G05P1Settings.ctl"/>
-		<Item Name="BME_DG_MasterOrSlave.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_MasterOrSlave.ctl"/>
-		<Item Name="DetectDG.ctl" Type="VI" URL="../DetectDG.ctl"/>
-		<Item Name="UpdateChnlTask.ctl" Type="VI" URL="../DG Classes/BME_DG_System/UpdateChnlTask.ctl"/>
-		<Item Name="System DG Selection.ctl" Type="VI" URL="../System DG Selection.ctl"/>
-		<Item Name="Card Config.ctl" Type="VI" URL="../Card Config.ctl"/>
-		<Item Name="SG08_Settings.ctl" Type="VI" URL="../SG08_Settings.ctl"/>
-		<Item Name="Go_Done_Chnl_Settings.ctl" Type="VI" URL="../Go_Done_Chnl_Settings.ctl"/>
-		<Item Name="SG08_Chnl_Settings.ctl" Type="VI" URL="../SG08_Chnl_Settings.ctl"/>
-		<Item Name="Chnl Settings Complete.ctl" Type="VI" URL="../Chnl Settings Complete.ctl"/>
-	</Item>
 	<Item Name="Low Level VIs" Type="Folder">
 		<Item Name="BME_DG_activate.vi" Type="VI" URL="../LV-BME Interface/BME_DG_activate.vi"/>
 		<Item Name="BME_DG_SetTriggerParameters.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetTriggerParameters.vi"/>
@@ -146,6 +120,36 @@
 		<Item Name="Samle SG05p.vi" Type="VI" URL="../Applied Energetics Stuff/Samle SG05p.vi"/>
 		<Item Name="Delay Generator SG08p.vi" Type="VI" URL="../Applied Energetics Stuff/Delay Generator SG08p.vi"/>
 	</Item>
+	<Item Name="TypeDefs" Type="Folder">
+		<Item Name="For ReadParameters" Type="Folder">
+			<Item Name="BME_DG_DelayChannelData.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayChannelData.ctl"/>
+			<Item Name="BME_DG_DelayTriggerData.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayTriggerData.ctl"/>
+			<Item Name="BME_DG_BME_State.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_BME_State.ctl"/>
+			<Item Name="BME_DG_State_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_State_V2.ctl"/>
+			<Item Name="BME_DG_DelayChannelData_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayChannelData_V2.ctl"/>
+			<Item Name="BME_DG_DelayTriggerData_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayTriggerData_V2.ctl"/>
+			<Item Name="BME_DG_BME_Control_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_BME_Control_V2.ctl"/>
+		</Item>
+		<Item Name="ChnlSettings.ctl" Type="VI" URL="../LV-BME Interface/ChnlSettings.ctl"/>
+		<Item Name="ChnlWithModulo.ctl" Type="VI" URL="../LV-BME Interface/ChnlWithModulo.ctl"/>
+		<Item Name="SignalType.ctl" Type="VI" URL="../LV-BME Interface/SignalType.ctl"/>
+		<Item Name="ClockSource.ctl" Type="VI" URL="../LV-BME Interface/ClockSource.ctl"/>
+		<Item Name="BME_DG_TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_TriggerSettings.ctl"/>
+		<Item Name="BME_G05P1Settings.ctl" Type="VI" URL="../LV-BME Interface/BME_G05P1Settings.ctl"/>
+		<Item Name="BME_DG_MasterOrSlave.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_MasterOrSlave.ctl"/>
+		<Item Name="DetectDG.ctl" Type="VI" URL="../DetectDG.ctl"/>
+		<Item Name="UpdateChnlTask.ctl" Type="VI" URL="../DG Classes/BME_DG_System/UpdateChnlTask.ctl"/>
+		<Item Name="System DG Selection.ctl" Type="VI" URL="../System DG Selection.ctl"/>
+		<Item Name="Card Config.ctl" Type="VI" URL="../Card Config.ctl"/>
+		<Item Name="SG08_Settings.ctl" Type="VI" URL="../SG08_Settings.ctl"/>
+		<Item Name="Go_Done_Chnl_Settings.ctl" Type="VI" URL="../Go_Done_Chnl_Settings.ctl"/>
+		<Item Name="SG08_Chnl_Settings.ctl" Type="VI" URL="../SG08_Chnl_Settings.ctl"/>
+		<Item Name="Chnl Settings Complete.ctl" Type="VI" URL="../Chnl Settings Complete.ctl"/>
+		<Item Name="BME_DG_V2TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_V2TriggerSettings.ctl"/>
+		<Item Name="ChnlOutputModulo.ctl" Type="VI" URL="../DG Classes/BME_DG_System/ChnlOutputModulo.ctl"/>
+		<Item Name="SG05P2 Clock and Trigger Settings.ctl" Type="VI" URL="../DG Classes/BME_DG_G05P2/SG05P2 Clock and Trigger Settings.ctl"/>
+		<Item Name="ChnlParam.ctl" Type="VI" URL="../ChnlParam.ctl"/>
+	</Item>
 	<Item Name="DG Classes" Type="Folder">
 		<Item Name="BME_DG_Base.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Base/BME_DG_Base.lvclass"/>
 		<Item Name="BME_DG_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Chnl/BME_DG_Chnl.lvclass"/>
@@ -160,18 +164,12 @@
 		<Item Name="BME_DG_System.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_System/BME_DG_System.lvclass"/>
 	</Item>
 	<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
-	<Item Name="Test Classes.vi" Type="VI" URL="../Test Classes.vi"/>
-	<Item Name="Test Classes 2.vi" Type="VI" URL="../Test Classes 2.vi"/>
-	<Item Name="Test SG08.vi" Type="VI" URL="../Test SG08.vi"/>
-	<Item Name="Test Zentral Trigger PC.vi" Type="VI" URL="../Test Zentral Trigger PC.vi"/>
-	<Item Name="Test SG02P2 und G05P1.vi" Type="VI" URL="../Test SG02P2 und G05P1.vi"/>
 	<Item Name="BME_DG_Errors.vi" Type="VI" URL="../BME_DG_Errors.vi"/>
-	<Item Name="ChnlOutputModulo.ctl" Type="VI" URL="../DG Classes/BME_DG_System/ChnlOutputModulo.ctl"/>
-	<Item Name="Test Zentral Trigger PC nur Mira Sync.vi" Type="VI" URL="../Test Zentral Trigger PC nur Mira Sync.vi"/>
 	<Item Name="BME_DG_GetPCIBusDGInfo.vi" Type="VI" URL="../LV-BME Interface/BME_DG_GetPCIBusDGInfo.vi"/>
 	<Item Name="BME_DG_InitializeMultipleBus.vi" Type="VI" URL="../LV-BME Interface/BME_DG_InitializeMultipleBus.vi"/>
 	<Item Name="POLARIS_BME_DG_Read Cnfg File.vi" Type="VI" URL="../POLARIS_BME_DG_Read Cnfg File.vi"/>
 	<Item Name="Configure Systems.vi" Type="VI" URL="../Configure Systems.vi"/>
 	<Item Name="Test init from Config file.vi" Type="VI" URL="../Test init from Config file.vi"/>
 	<Item Name="Test Zental PC  from Config file.vi" Type="VI" URL="../Test Zental PC  from Config file.vi"/>
+	<Item Name="replace dot with coma if loc dez poin used.vi" Type="VI" URL="../replace dot with coma if loc dez poin used.vi"/>
 </Library>
