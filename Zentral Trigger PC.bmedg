@@ -1,6 +1,6 @@
 <?xml version='1.0' standalone='yes' ?>
 <LVData>
-<Version>9.0</Version>
+<Version>9.0.1</Version>
 <Timestamp>
 <Name>seconds since 1Jan1904</Name>
 <Cluster>
@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>-1879048192</Val>
+<Val>-374286336</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-872623266</Val>
+<Val>-872605776</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -663,7 +663,7 @@
 </I32>
 <Boolean>
 <Name>InternalTrigger?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>InternalArm?</Name>
@@ -747,7 +747,7 @@
 <NumElts>4</NumElts>
 <U32>
 <Name>Trigger on MS Bus</Name>
-<Val>9</Val>
+<Val>1</Val>
 </U32>
 <DBL>
 <Name>Force Trigger (µs)</Name>
@@ -927,7 +927,7 @@
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <I32>
 <Name>Trigger devide by</Name>
@@ -1071,7 +1071,7 @@
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <I32>
 <Name>Trigger devide by</Name>
@@ -1215,7 +1215,7 @@
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <I32>
 <Name>Trigger devide by</Name>
@@ -1359,7 +1359,7 @@
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <I32>
 <Name>Trigger devide by</Name>
@@ -1503,7 +1503,7 @@
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <I32>
 <Name>Trigger devide by</Name>
@@ -1647,7 +1647,7 @@
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <I32>
 <Name>Trigger devide by</Name>
@@ -1791,7 +1791,7 @@
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <I32>
 <Name>Trigger devide by</Name>
@@ -1935,7 +1935,7 @@
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <I32>
 <Name>Trigger devide by</Name>
@@ -2087,7 +2087,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -2163,7 +2163,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -2171,7 +2171,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -2247,7 +2247,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -2255,7 +2255,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
