@@ -37,6 +37,11 @@
 		<Item Name="DetectDG.ctl" Type="VI" URL="../DetectDG.ctl"/>
 		<Item Name="UpdateChnlTask.ctl" Type="VI" URL="../DG Classes/BME_DG_System/UpdateChnlTask.ctl"/>
 		<Item Name="System DG Selection.ctl" Type="VI" URL="../System DG Selection.ctl"/>
+		<Item Name="Card Config.ctl" Type="VI" URL="../Card Config.ctl"/>
+		<Item Name="SG08_Settings.ctl" Type="VI" URL="../SG08_Settings.ctl"/>
+		<Item Name="Go_Done_Chnl_Settings.ctl" Type="VI" URL="../Go_Done_Chnl_Settings.ctl"/>
+		<Item Name="SG08_Chnl_Settings.ctl" Type="VI" URL="../SG08_Chnl_Settings.ctl"/>
+		<Item Name="Chnl Settings Complete.ctl" Type="VI" URL="../Chnl Settings Complete.ctl"/>
 	</Item>
 	<Item Name="Low Level VIs" Type="Folder">
 		<Item Name="BME_DG_activate.vi" Type="VI" URL="../LV-BME Interface/BME_DG_activate.vi"/>
@@ -167,4 +172,6 @@
 	<Item Name="BME_DG_InitializeMultipleBus.vi" Type="VI" URL="../LV-BME Interface/BME_DG_InitializeMultipleBus.vi"/>
 	<Item Name="POLARIS_BME_DG_Read Cnfg File.vi" Type="VI" URL="../POLARIS_BME_DG_Read Cnfg File.vi"/>
 	<Item Name="Configure Systems.vi" Type="VI" URL="../Configure Systems.vi"/>
+	<Item Name="Test init from Config file.vi" Type="VI" URL="../Test init from Config file.vi"/>
+	<Item Name="Test Zental PC  from Config file.vi" Type="VI" URL="../Test Zental PC  from Config file.vi"/>
 </Library>
