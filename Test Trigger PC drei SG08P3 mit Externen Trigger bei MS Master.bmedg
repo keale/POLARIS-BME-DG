@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>134217728</Val>
+<Val>-1207959552</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-872521935</Val>
+<Val>-872446689</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -242,7 +242,7 @@
 <Val>1</Val>
 </I32>
 <U32>
-<Name> clock devide by</Name>
+<Name> clock modulo</Name>
 <Val>4</Val>
 </U32>
 <Boolean>
@@ -250,7 +250,7 @@
 <Val>1</Val>
 </Boolean>
 <I32>
-<Name>Trigger devide by</Name>
+<Name>trigger modulo </Name>
 <Val>1</Val>
 </I32>
 <Boolean>
@@ -367,7 +367,7 @@
 <NumElts>4</NumElts>
 <U32>
 <Name>Trigger on MS Bus</Name>
-<Val>0</Val>
+<Val>5639</Val>
 </U32>
 <DBL>
 <Name>Force Trigger (탎)</Name>
@@ -395,31 +395,31 @@
 <NumElts>16</NumElts>
 <I32>
 <Name>Clock Source</Name>
-<Val>1</Val>
+<Val>2</Val>
 </I32>
 <U32>
-<Name> clock devide by</Name>
-<Val>16</Val>
+<Name> clock modulo</Name>
+<Val>1</Val>
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
 <Val>1</Val>
 </Boolean>
 <I32>
-<Name>Trigger devide by</Name>
+<Name>trigger modulo </Name>
 <Val>1</Val>
 </I32>
 <Boolean>
 <Name>InputTerminated?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <DBL>
 <Name>Inhibit(탎)</Name>
-<Val>10.00000000000000</Val>
+<Val>100.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>TriggerLevel</Name>
-<Val>1.00000000000000</Val>
+<Val>2.30000000000000</Val>
 </DBL>
 <I32>
 <Name>PresetValue</Name>
@@ -523,7 +523,7 @@
 <NumElts>4</NumElts>
 <U32>
 <Name>Trigger on MS Bus</Name>
-<Val>1</Val>
+<Val>5639</Val>
 </U32>
 <DBL>
 <Name>Force Trigger (탎)</Name>
@@ -554,7 +554,7 @@
 <Val>4</Val>
 </I32>
 <U32>
-<Name> clock devide by</Name>
+<Name> clock modulo</Name>
 <Val>1</Val>
 </U32>
 <Boolean>
@@ -562,7 +562,7 @@
 <Val>1</Val>
 </Boolean>
 <I32>
-<Name>Trigger devide by</Name>
+<Name>trigger modulo </Name>
 <Val>1</Val>
 </I32>
 <Boolean>
@@ -571,11 +571,11 @@
 </Boolean>
 <DBL>
 <Name>Inhibit(탎)</Name>
-<Val>10.00000000000000</Val>
+<Val>1.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>TriggerLevel</Name>
-<Val>1.00000000000000</Val>
+<Val>2.30000000000000</Val>
 </DBL>
 <I32>
 <Name>PresetValue</Name>
@@ -679,7 +679,7 @@
 <NumElts>4</NumElts>
 <U32>
 <Name>Trigger on MS Bus</Name>
-<Val>0</Val>
+<Val>5639</Val>
 </U32>
 <DBL>
 <Name>Force Trigger (탎)</Name>
@@ -743,7 +743,7 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>256</Val>
+<Val>384</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1215,7 +1215,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>0.00000000000000</Val>
+<Val>2.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1247,11 +1247,11 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>17</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>16</Val>
+<Val>0</Val>
 </U32>
 </Cluster>
 <Cluster>
@@ -1299,11 +1299,11 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>0.00000000000000</Val>
+<Val>5.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -1324,18 +1324,18 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>1</Val>
+<Val>2</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>16</Val>
+<Val>17</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>16</Val>
+<Val>0</Val>
 </U32>
 </Cluster>
 <Cluster>
@@ -1807,7 +1807,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
