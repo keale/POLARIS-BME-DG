@@ -163,13 +163,19 @@
 		<Item Name="BME_DG_G08_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08_Chnl/BME_DG_G08_Chnl.lvclass"/>
 		<Item Name="BME_DG_System.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_System/BME_DG_System.lvclass"/>
 	</Item>
+	<Item Name="Config Files" Type="Folder">
+		<Item Name="Zentral Trigger PC.bmedg" Type="Document" URL="../Zentral Trigger PC.bmedg"/>
+		<Item Name="Test Trigger PC nur EinsamerMaster.bmedg" Type="Document" URL="../Test Trigger PC nur EinsamerMaster.bmedg"/>
+		<Item Name="Test Trigger PC drei SG08P3.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3.bmedg"/>
+		<Item Name="Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg"/>
+	</Item>
 	<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
 	<Item Name="BME_DG_Errors.vi" Type="VI" URL="../BME_DG_Errors.vi"/>
 	<Item Name="BME_DG_GetPCIBusDGInfo.vi" Type="VI" URL="../LV-BME Interface/BME_DG_GetPCIBusDGInfo.vi"/>
 	<Item Name="BME_DG_InitializeMultipleBus.vi" Type="VI" URL="../LV-BME Interface/BME_DG_InitializeMultipleBus.vi"/>
 	<Item Name="POLARIS_BME_DG_Read Cnfg File.vi" Type="VI" URL="../POLARIS_BME_DG_Read Cnfg File.vi"/>
-	<Item Name="Configure Systems.vi" Type="VI" URL="../Configure Systems.vi"/>
 	<Item Name="Test init from Config file.vi" Type="VI" URL="../Test init from Config file.vi"/>
 	<Item Name="Test Zental PC  from Config file.vi" Type="VI" URL="../Test Zental PC  from Config file.vi"/>
 	<Item Name="replace dot with coma if loc dez poin used.vi" Type="VI" URL="../replace dot with coma if loc dez poin used.vi"/>
+	<Item Name="Test PC from CnfgFile.vi" Type="VI" URL="../Test PC from CnfgFile.vi"/>
 </Library>
