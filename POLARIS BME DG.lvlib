@@ -149,6 +149,13 @@
 		<Item Name="ChnlOutputModulo.ctl" Type="VI" URL="../DG Classes/BME_DG_System/ChnlOutputModulo.ctl"/>
 		<Item Name="SG05P2 Clock and Trigger Settings.ctl" Type="VI" URL="../DG Classes/BME_DG_G05P2/SG05P2 Clock and Trigger Settings.ctl"/>
 		<Item Name="ChnlParam.ctl" Type="VI" URL="../ChnlParam.ctl"/>
+		<Item Name="MSBus.ctl" Type="VI" URL="../MSBus.ctl"/>
+	</Item>
+	<Item Name="Config Files" Type="Folder">
+		<Item Name="Zentral Trigger PC.bmedg" Type="Document" URL="../Zentral Trigger PC.bmedg"/>
+		<Item Name="Test Trigger PC nur EinsamerMaster.bmedg" Type="Document" URL="../Test Trigger PC nur EinsamerMaster.bmedg"/>
+		<Item Name="Test Trigger PC drei SG08P3.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3.bmedg"/>
+		<Item Name="Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg"/>
 	</Item>
 	<Item Name="DG Classes" Type="Folder">
 		<Item Name="BME_DG_Base.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Base/BME_DG_Base.lvclass"/>
@@ -162,12 +169,6 @@
 		<Item Name="BME_DG_G08.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08/BME_DG_G08.lvclass"/>
 		<Item Name="BME_DG_G08_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08_Chnl/BME_DG_G08_Chnl.lvclass"/>
 		<Item Name="BME_DG_System.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_System/BME_DG_System.lvclass"/>
-	</Item>
-	<Item Name="Config Files" Type="Folder">
-		<Item Name="Zentral Trigger PC.bmedg" Type="Document" URL="../Zentral Trigger PC.bmedg"/>
-		<Item Name="Test Trigger PC nur EinsamerMaster.bmedg" Type="Document" URL="../Test Trigger PC nur EinsamerMaster.bmedg"/>
-		<Item Name="Test Trigger PC drei SG08P3.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3.bmedg"/>
-		<Item Name="Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg"/>
 	</Item>
 	<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
 	<Item Name="BME_DG_Errors.vi" Type="VI" URL="../BME_DG_Errors.vi"/>
