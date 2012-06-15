@@ -176,7 +176,6 @@
 	<Item Name="BME_DG_InitializeMultipleBus.vi" Type="VI" URL="../LV-BME Interface/BME_DG_InitializeMultipleBus.vi"/>
 	<Item Name="POLARIS_BME_DG_Read Cnfg File.vi" Type="VI" URL="../POLARIS_BME_DG_Read Cnfg File.vi"/>
 	<Item Name="Test init from Config file.vi" Type="VI" URL="../Test init from Config file.vi"/>
-	<Item Name="Test Zental PC  from Config file.vi" Type="VI" URL="../Test Zental PC  from Config file.vi"/>
 	<Item Name="replace dot with coma if loc dez poin used.vi" Type="VI" URL="../replace dot with coma if loc dez poin used.vi"/>
 	<Item Name="Test PC from CnfgFile.vi" Type="VI" URL="../Test PC from CnfgFile.vi"/>
 </Library>
