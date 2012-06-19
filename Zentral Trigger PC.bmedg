@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>-872415232</Val>
+<Val>1879048192</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-872349346</Val>
+<Val>-872016168</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -655,7 +655,7 @@
 </DBL>
 <DBL>
 <Name>TriggerLevel</Name>
-<Val>0.19980000000000</Val>
+<Val>-0.10010000000000</Val>
 </DBL>
 <I32>
 <Name>PresetValue</Name>
@@ -787,7 +787,7 @@
 </Boolean>
 <I32>
 <Name>trigger modulo </Name>
-<Val>0</Val>
+<Val>1</Val>
 </I32>
 <Boolean>
 <Name>InputTerminated?</Name>
@@ -795,7 +795,7 @@
 </Boolean>
 <DBL>
 <Name>Inhibit(µs)</Name>
-<Val>99999.98750000000280</Val>
+<Val>99999.98937100000320</Val>
 </DBL>
 <DBL>
 <Name>TriggerLevel</Name>
@@ -891,7 +891,7 @@
 <NumElts>4</NumElts>
 <U32>
 <Name>Trigger on MS Bus</Name>
-<Val>1</Val>
+<Val>9</Val>
 </U32>
 <DBL>
 <Name>Force Trigger (µs)</Name>
@@ -912,7 +912,7 @@
 <NumElts>5</NumElts>
 <String>
 <Name>Logical Name</Name>
-<Val>A2 PP</Val>
+<Val>A2 PP, A2.5</Val>
 </String>
 <Cluster>
 <Name>Base Settings</Name>
@@ -1019,15 +1019,15 @@
 <Dimsize>3</Dimsize>
 <String>
 <Name>String</Name>
-<Val>A2 PP1 On</Val>
+<Val>A2 PP2 Off</Val>
 </String>
 <String>
 <Name>String</Name>
-<Val>A2 PP1 Off</Val>
+<Val>A2.5 LDD</Val>
 </String>
 <String>
 <Name>String</Name>
-<Val>A2 PP2 On</Val>
+<Val>Keppis A3</Val>
 </String>
 </Array>
 <Cluster>
@@ -1355,7 +1355,7 @@
 </I32>
 <U32>
 <Name> clock modulo</Name>
-<Val>1</Val>
+<Val>8</Val>
 </U32>
 <Boolean>
 <Name>TriggerEnabled?</Name>
@@ -1363,7 +1363,7 @@
 </Boolean>
 <I32>
 <Name>trigger modulo </Name>
-<Val>0</Val>
+<Val>1</Val>
 </I32>
 <Boolean>
 <Name>InputTerminated?</Name>
@@ -1375,7 +1375,7 @@
 </DBL>
 <DBL>
 <Name>TriggerLevel</Name>
-<Val>1.00000000000000</Val>
+<Val>1.25000000000000</Val>
 </DBL>
 <I32>
 <Name>PresetValue</Name>
@@ -1920,7 +1920,7 @@
 <NumElts>5</NumElts>
 <String>
 <Name>Logical Name</Name>
-<Val>A2 PP, A2.5</Val>
+<Val>A2 PP</Val>
 </String>
 <Cluster>
 <Name>Base Settings</Name>
@@ -2027,15 +2027,15 @@
 <Dimsize>3</Dimsize>
 <String>
 <Name>String</Name>
-<Val>A2 PP2 Off</Val>
+<Val>A2 PP1 On</Val>
 </String>
 <String>
 <Name>String</Name>
-<Val>A2.5 LDD</Val>
+<Val>A2 PP1 Off</Val>
 </String>
 <String>
 <Name>String</Name>
-<Val>Keppis A3</Val>
+<Val>A2 PP2 On</Val>
 </String>
 </Array>
 <Cluster>
@@ -2111,7 +2111,7 @@
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>1</Val>
+<Val>0</Val>
 </U32>
 </Cluster>
 <Cluster>
@@ -2339,7 +2339,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -2415,7 +2415,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -2423,7 +2423,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -2432,7 +2432,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>Delay Offset +0.819</Val>
+<Val>Delay Offset + 0.819</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -2499,7 +2499,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -2507,7 +2507,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -2583,7 +2583,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -2591,7 +2591,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -2667,7 +2667,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -2684,7 +2684,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>Pulspicker On+0.009</Val>
+<Val>Pulspicker On + 0.0011</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -2751,7 +2751,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -2768,7 +2768,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>A1 PC On+0.516</Val>
+<Val>A1 PC On + 0.516</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -2835,7 +2835,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -2919,7 +2919,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3003,7 +3003,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3087,7 +3087,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3171,7 +3171,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3255,7 +3255,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3339,7 +3339,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3347,7 +3347,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -3423,7 +3423,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3507,7 +3507,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3515,7 +3515,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -3528,7 +3528,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>8</Val>
+<Val>800</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -3591,7 +3591,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3675,7 +3675,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3759,7 +3759,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3843,7 +3843,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3927,7 +3927,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -3948,7 +3948,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>50</Val>
+<Val>10</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -4011,7 +4011,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -4095,7 +4095,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -4179,7 +4179,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -4263,7 +4263,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -4347,7 +4347,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -4368,7 +4368,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>1</Val>
+<Val>400</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -4431,7 +4431,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -4452,7 +4452,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>10</Val>
+<Val>100</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -4515,7 +4515,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -4536,7 +4536,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>40</Val>
+<Val>400</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
