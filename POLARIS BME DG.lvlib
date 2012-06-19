@@ -156,6 +156,8 @@
 		<Item Name="Test Trigger PC nur EinsamerMaster.bmedg" Type="Document" URL="../Test Trigger PC nur EinsamerMaster.bmedg"/>
 		<Item Name="Test Trigger PC drei SG08P3.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3.bmedg"/>
 		<Item Name="Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg"/>
+		<Item Name="Modules.cal" Type="Document" URL="../Modules.cal"/>
+		<Item Name="BME_G0x.cal" Type="Document" URL="../BME_G0x.cal"/>
 	</Item>
 	<Item Name="DG Classes" Type="Folder">
 		<Item Name="BME_DG_Base.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Base/BME_DG_Base.lvclass"/>

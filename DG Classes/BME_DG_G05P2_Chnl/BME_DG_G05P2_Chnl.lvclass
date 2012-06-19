@@ -27,13 +27,13 @@
 	</Item>
 	<Item Name="DataMembers Access" Type="Folder">
 		<Item Name="Read Go Done Signals.vi" Type="VI" URL="../Read Go Done Signals.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;B!!!!#Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!%5!(!!N%&lt;WZF)&amp;.J:WZB&lt;!!01!=!#5&gt;P)&amp;.J:WZB&lt;!"/1(!!(A!!-"214UR"5EF4)%*.23"%2SZM&gt;GRJ9BF#456@2%&gt;@2T!V5$*@1WBO&lt;#ZM&gt;G.M98.T!!!41EV&amp;8U2(8U=Q/&amp;^$;'ZM)'^V&gt;!!%!!!!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1"/1(!!(A!!-"214UR"5EF4)%*.23"%2SZM&gt;GRJ9BF#456@2%&gt;@2T!V5$*@1WBO&lt;#ZM&gt;G.M98.T!!!31EV&amp;8U2(8U=Q/&amp;^$;'ZM)'FO!!!]!0!!$!!$!!1!"1!'!!=!"Q!(!!=!#!!(!!=!#1)!!(A.#!E!#1#.#Q!!!!!!!!!!#!!!!!!!E!!!!!!"!!I!!!!!</Property>
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;F!!!!#Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!%5!(!!N%&lt;WZF)&amp;.J:WZB&lt;!!01!=!#5&gt;P)&amp;.J:WZB&lt;!"11(!!(A!!-"214UR"5EF4)%*.23"%2SZM&gt;GRJ9BF#456@2%&gt;@2T!V5$*@1WBO&lt;#ZM&gt;G.M98.T!!!61EV&amp;8U2(8U=Q.6!S8U.I&lt;GQA&lt;X6U!!1!!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!&amp;"!=!!?!!!Q&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC'5*.26^%2V^(-$61-F^$;'ZM,GRW9WRB=X-!!"2#456@2%&gt;@2T!V5$*@1WBO&lt;#"J&lt;A!!0!$Q!!Q!!Q!%!!5!"A!(!!=!"Q!(!!A!"Q!(!!E#!!"Y$1A*!!E!D1M!!!!!!!!!!!A!!!!!!*!!!!!!!1!+!!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
 			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1082139136</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1342710272</Property>
 		</Item>
 		<Item Name="Write Go Done Signals.vi" Type="VI" URL="../Write Go Done Signals.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;F!!!!#Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!&amp;"!=!!?!!!Q&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC'5*.26^%2V^(-$61-F^$;'ZM,GRW9WRB=X-!!"6#456@2%&gt;@2T!V5$*@1WBO&lt;#"P&gt;81!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!21!=!#U2P&lt;G5A5WFH&lt;G&amp;M!!^!"Q!*2W]A5WFH&lt;G&amp;M!&amp;"!=!!?!!!Q&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC'5*.26^%2V^(-$61-F^$;'ZM,GRW9WRB=X-!!"2#456@2%&gt;@2T!V5$*@1WBO&lt;#"J&lt;A!!0!$Q!!Q!!Q!%!!1!"1!%!!1!"!!%!!9!"Q!)!!E#!!"Y$1A!!!!!D1M!!!!!!!!!!!A!#!!1!*)!!!!!!1!+!!!!!!</Property>
