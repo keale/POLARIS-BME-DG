@@ -179,4 +179,5 @@
 	<Item Name="POLARIS_BME_DG_Read Cnfg File.vi" Type="VI" URL="../POLARIS_BME_DG_Read Cnfg File.vi"/>
 	<Item Name="replace dot with coma if loc dez poin used.vi" Type="VI" URL="../replace dot with coma if loc dez poin used.vi"/>
 	<Item Name="Test PC from CnfgFile.vi" Type="VI" URL="../Test PC from CnfgFile.vi"/>
+	<Item Name="Conditional Error to Warning.vi" Type="VI" URL="../Conditional Error to Warning.vi"/>
 </Library>
