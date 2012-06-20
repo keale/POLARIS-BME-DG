@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>-1006632960</Val>
+<Val>939524096</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-872089087</Val>
+<Val>-871923338</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -1292,6 +1292,90 @@
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
+<Val>mb</Val>
+</String>
+<Cluster>
+<Name>ChnParameter</Name>
+<NumElts>5</NumElts>
+<DBL>
+<Name> Delay (탎)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<Boolean>
+<Name>On?</Name>
+<Val>1</Val>
+</Boolean>
+<Boolean>
+<Name>PositiveVoltage?</Name>
+<Val>1</Val>
+</Boolean>
+<Boolean>
+<Name>50OhmTerminated? </Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>25OhmOutput?</Name>
+<Val>0</Val>
+</Boolean>
+</Cluster>
+<String>
+<Name>DelayFormula</Name>
+<Val>ma-10</Val>
+</String>
+<I32>
+<Name>OutputModulo</Name>
+<Val>1</Val>
+</I32>
+<Cluster>
+<Name>Go and Done Signal</Name>
+<NumElts>2</NumElts>
+<U32>
+<Name>Go Signal</Name>
+<Val>1</Val>
+</U32>
+<U32>
+<Name>Done Signal</Name>
+<Val>0</Val>
+</U32>
+</Cluster>
+<Cluster>
+<Name>G08_Chnl_Settings</Name>
+<NumElts>7</NumElts>
+<DBL>
+<Name>Pulse Width (탎)</Name>
+<Val>1000.00000000000000</Val>
+</DBL>
+<U32>
+<Name>Output Offset</Name>
+<Val>0</Val>
+</U32>
+<Boolean>
+<Name>Disconnect (E,F)</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>Onto MsBus (E,F)</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>Input Positive (E,F)</Name>
+<Val>1</Val>
+</Boolean>
+<Boolean>
+<Name>Param Change</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>Inhibit internal clock</Name>
+<Val>0</Val>
+</Boolean>
+</Cluster>
+</Cluster>
+<Cluster>
+<Name>Cluster</Name>
+<NumElts>6</NumElts>
+<String>
+<Name>Channel Name</Name>
 <Val>mc</Val>
 </String>
 <Cluster>
@@ -1344,90 +1428,6 @@
 <DBL>
 <Name>Pulse Width (탎)</Name>
 <Val>0.10000000000000</Val>
-</DBL>
-<U32>
-<Name>Output Offset</Name>
-<Val>0</Val>
-</U32>
-<Boolean>
-<Name>Disconnect (E,F)</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Onto MsBus (E,F)</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Input Positive (E,F)</Name>
-<Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
-</Boolean>
-</Cluster>
-</Cluster>
-<Cluster>
-<Name>Cluster</Name>
-<NumElts>6</NumElts>
-<String>
-<Name>Channel Name</Name>
-<Val>mb</Val>
-</String>
-<Cluster>
-<Name>ChnParameter</Name>
-<NumElts>5</NumElts>
-<DBL>
-<Name> Delay (탎)</Name>
-<Val>0.00000000000000</Val>
-</DBL>
-<Boolean>
-<Name>On?</Name>
-<Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>PositiveVoltage?</Name>
-<Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>50OhmTerminated? </Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>25OhmOutput?</Name>
-<Val>0</Val>
-</Boolean>
-</Cluster>
-<String>
-<Name>DelayFormula</Name>
-<Val>mc-1000</Val>
-</String>
-<I32>
-<Name>OutputModulo</Name>
-<Val>1</Val>
-</I32>
-<Cluster>
-<Name>Go and Done Signal</Name>
-<NumElts>2</NumElts>
-<U32>
-<Name>Go Signal</Name>
-<Val>1</Val>
-</U32>
-<U32>
-<Name>Done Signal</Name>
-<Val>0</Val>
-</U32>
-</Cluster>
-<Cluster>
-<Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
-<DBL>
-<Name>Pulse Width (탎)</Name>
-<Val>1000.00000000000000</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
