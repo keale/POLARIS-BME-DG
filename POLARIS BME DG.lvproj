@@ -12,6 +12,7 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="POLARIS BME DG.lvlib" Type="Library" URL="../POLARIS BME DG.lvlib"/>
 		<Item Name="temp map test params.vi" Type="VI" URL="../DG Classes/BME_DG_System/temp map test params.vi"/>
+		<Item Name="Remove empty Errors.vi" Type="VI" URL="../Remove empty Errors.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read Characters From File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Characters From File.vi"/>

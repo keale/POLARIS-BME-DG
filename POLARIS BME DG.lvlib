@@ -44,6 +44,8 @@
 		<Item Name="BME_DG_SetCalibrationLevel.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetCalibrationLevel.vi"/>
 		<Item Name="BME_DG_Set_G02_Chnl.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Set_G02_Chnl.vi"/>
 		<Item Name="BME_DG_Set_G05_Chnl.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Set_G05_Chnl.vi"/>
+		<Item Name="BME_DG_LoadAllCardParameters.vi" Type="VI" URL="../LV-BME Interface/BME_DG_LoadAllCardParameters.vi"/>
+		<Item Name="BME_DG_LoadCardParameters.vi" Type="VI" URL="../LV-BME Interface/BME_DG_LoadCardParameters.vi"/>
 	</Item>
 	<Item Name="Applied Energetics Stuff" Type="Folder">
 		<Item Name="SubVI" Type="Folder">
