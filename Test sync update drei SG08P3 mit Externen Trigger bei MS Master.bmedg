@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>-1476395008</Val>
+<Val>402653184</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-871748963</Val>
+<Val>-871747215</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -415,11 +415,11 @@
 </Boolean>
 <DBL>
 <Name>Inhibit(탎)</Name>
-<Val>99999.89999999999400</Val>
+<Val>9999.89999999999962</Val>
 </DBL>
 <DBL>
 <Name>TriggerLevel</Name>
-<Val>1.20010000000000</Val>
+<Val>2.40010000000000</Val>
 </DBL>
 <I32>
 <Name>PresetValue</Name>
@@ -523,7 +523,7 @@
 <NumElts>4</NumElts>
 <U32>
 <Name>Trigger on MS Bus</Name>
-<Val>5639</Val>
+<Val>37895</Val>
 </U32>
 <DBL>
 <Name>Force Trigger (탎)</Name>
@@ -679,7 +679,7 @@
 <NumElts>4</NumElts>
 <U32>
 <Name>Trigger on MS Bus</Name>
-<Val>5639</Val>
+<Val>37895</Val>
 </U32>
 <DBL>
 <Name>Force Trigger (탎)</Name>
@@ -723,7 +723,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -1215,7 +1215,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>10000.10000000000030</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1236,18 +1236,18 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>10000.1</Val>
+<Val>0</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>1</Val>
+<Val>11</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>32769</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1299,7 +1299,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>8980.10000000000035</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1320,18 +1320,18 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>mc-1000</Val>
+<Val>0</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>1</Val>
+<Val>100</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>32769</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1383,7 +1383,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>9980.10000000000035</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1404,7 +1404,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>ma-20</Val>
+<Val>0</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1467,7 +1467,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>10980.10000000000030</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1488,7 +1488,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>mc+1000</Val>
+<Val>0</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1551,7 +1551,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>10990.10000000000030</Val>
+<Val>10.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1635,7 +1635,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>11000.10000000000030</Val>
+<Val>20.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1719,7 +1719,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>11010.10000000000030</Val>
+<Val>30.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1744,14 +1744,14 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>1</Val>
+<Val>11</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>16</Val>
+<Val>32784</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1803,7 +1803,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>11020.10000000000030</Val>
+<Val>40.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1828,14 +1828,14 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>1</Val>
+<Val>11</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>16</Val>
+<Val>32784</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1887,7 +1887,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>11030.10000000000030</Val>
+<Val>50.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1971,7 +1971,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>11040.10000000000030</Val>
+<Val>60.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -2055,7 +2055,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>11050.10000000000030</Val>
+<Val>70.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -2139,7 +2139,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>11060.10000000000030</Val>
+<Val>80.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
