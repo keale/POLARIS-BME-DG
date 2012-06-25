@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>402653184</Val>
+<Val>1342177280</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-871747215</Val>
+<Val>-871486781</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -523,7 +523,7 @@
 <NumElts>4</NumElts>
 <U32>
 <Name>Trigger on MS Bus</Name>
-<Val>37895</Val>
+<Val>210</Val>
 </U32>
 <DBL>
 <Name>Force Trigger (탎)</Name>
@@ -583,7 +583,7 @@
 </I32>
 <Boolean>
 <Name>InternalTrigger?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>InternalArm?</Name>
@@ -679,7 +679,7 @@
 <NumElts>4</NumElts>
 <U32>
 <Name>Trigger on MS Bus</Name>
-<Val>37895</Val>
+<Val>210</Val>
 </U32>
 <DBL>
 <Name>Force Trigger (탎)</Name>
@@ -723,7 +723,7 @@
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>25OhmOutput?</Name>
@@ -736,7 +736,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>4</Val>
+<Val>1</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -752,10 +752,10 @@
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>1.50000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -772,14 +772,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -799,11 +791,11 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
@@ -827,7 +819,7 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -836,10 +828,10 @@
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.50000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -856,14 +848,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -883,11 +867,11 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
@@ -911,7 +895,7 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -920,10 +904,10 @@
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.50000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -940,14 +924,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -967,11 +943,11 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
@@ -995,7 +971,7 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1004,10 +980,10 @@
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.50000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -1024,14 +1000,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1051,11 +1019,11 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
@@ -1079,7 +1047,7 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1088,10 +1056,10 @@
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.50000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -1108,14 +1076,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1135,11 +1095,11 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
-<Val>1</Val>
+<Val>0</Val>
 </Boolean>
 <Boolean>
 <Name>50OhmTerminated? </Name>
@@ -1163,7 +1123,7 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1172,10 +1132,10 @@
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.50000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -1192,14 +1152,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1236,7 +1188,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>0</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1251,12 +1203,12 @@
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
 <Val>1000.00000000000000</Val>
@@ -1276,14 +1228,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1320,7 +1264,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>0</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1335,12 +1279,12 @@
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
 <Val>1000.00000000000000</Val>
@@ -1360,14 +1304,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1404,7 +1340,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>0</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1415,7 +1351,7 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1424,10 +1360,10 @@
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.10000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -1444,14 +1380,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1488,7 +1416,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>0</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1499,19 +1427,19 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.10000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -1528,14 +1456,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1551,7 +1471,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>10.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1572,7 +1492,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>md+10</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1583,19 +1503,19 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.10000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -1612,14 +1532,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1635,7 +1547,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>20.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1656,7 +1568,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>me+10</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1667,19 +1579,19 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.10000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -1696,14 +1608,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1719,7 +1623,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>30.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1740,7 +1644,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>mf+10</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1755,12 +1659,12 @@
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
 <Val>1000.00000000000000</Val>
@@ -1780,14 +1684,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1803,7 +1699,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>40.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1824,7 +1720,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>sa+10</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1839,12 +1735,12 @@
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
 <Val>1000.00000000000000</Val>
@@ -1865,14 +1761,6 @@
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
 </Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
-</Boolean>
 </Cluster>
 </Cluster>
 <Cluster>
@@ -1887,7 +1775,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>50.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1908,7 +1796,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>sb+10</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1923,15 +1811,15 @@
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.10000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -1948,14 +1836,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -1971,7 +1851,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>60.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1992,7 +1872,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>sc+10</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -2007,15 +1887,15 @@
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.10000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -2032,14 +1912,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -2055,7 +1927,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>70.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -2076,7 +1948,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>sd+10</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -2091,15 +1963,15 @@
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.10000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -2116,14 +1988,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
@@ -2139,7 +2003,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>80.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -2160,7 +2024,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>se+10</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -2175,15 +2039,15 @@
 </U32>
 <U32>
 <Name>Done Signal</Name>
-<Val>0</Val>
+<Val>16</Val>
 </U32>
 </Cluster>
 <Cluster>
 <Name>G08_Chnl_Settings</Name>
-<NumElts>7</NumElts>
+<NumElts>5</NumElts>
 <DBL>
 <Name>Pulse Width (탎)</Name>
-<Val>0.10000000000000</Val>
+<Val>5.00000000000000E-3</Val>
 </DBL>
 <U32>
 <Name>Output Offset</Name>
@@ -2200,14 +2064,6 @@
 <Boolean>
 <Name>Input Positive (E,F)</Name>
 <Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>Param Change</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Inhibit internal clock</Name>
-<Val>0</Val>
 </Boolean>
 </Cluster>
 </Cluster>
