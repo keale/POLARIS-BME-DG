@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>268435456</Val>
+<Val>1476395008</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-871228397</Val>
+<Val>-871227441</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -415,7 +415,7 @@
 </Boolean>
 <DBL>
 <Name>Inhibit(µs)</Name>
-<Val>9999.89999999999962</Val>
+<Val>99999.89999999999400</Val>
 </DBL>
 <DBL>
 <Name>TriggerLevel</Name>
@@ -1192,14 +1192,14 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>11</Val>
+<Val>10</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>32769</Val>
+<Val>1</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1268,14 +1268,14 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>100</Val>
+<Val>10</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>32769</Val>
+<Val>1</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1344,14 +1344,14 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>1</Val>
+<Val>100</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>16</Val>
+<Val>32784</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1648,7 +1648,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>11</Val>
+<Val>100</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -1724,7 +1724,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>11</Val>
+<Val>100</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>

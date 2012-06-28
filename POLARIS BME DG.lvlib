@@ -187,7 +187,7 @@ BME_DG_Base  Variablen:c
 		<Item Name="BME_DG_SetTriggerParameters.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetTriggerParameters.vi"/>
 		<Item Name="BME_DG_SetClock.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetClock.vi"/>
 		<Item Name="BME_Set_OutputLevel.vi" Type="VI" URL="../LV-BME Interface/BME_Set_OutputLevel.vi"/>
-		<Item Name="BME_DG_ResetTriggerCounter.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ResetTriggerCounter.vi"/>
+		<Item Name="BME_DG_ResetCounters.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ResetCounters.vi"/>
 		<Item Name="BME_DG_ResetModuloCounter.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ResetModuloCounter.vi"/>
 		<Item Name="BME_Set_G05.vi" Type="VI" URL="../LV-BME Interface/BME_Set_G05.vi"/>
 		<Item Name="BME_DG_Deactivate.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Deactivate.vi"/>
