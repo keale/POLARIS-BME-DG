@@ -105,7 +105,7 @@ BME_DG_Base  Variablen:c
 	</Item>
 	<Item Name="Doku" Type="Folder">
 		<Item Name="Bme_g0x.hlp" Type="Document" URL="../LV-BME Interface/Bme_g0x.hlp"/>
-		<Item Name="Doku.odt" Type="Document" URL="../Doku.odt"/>
+		<Item Name="POLARIS BME DG Docu.odt" Type="Document" URL="../Docu/POLARIS BME DG Docu.odt"/>
 	</Item>
 	<Item Name="Low Level VIs" Type="Folder">
 		<Item Name="Applied Energetics Stuff" Type="Folder">
