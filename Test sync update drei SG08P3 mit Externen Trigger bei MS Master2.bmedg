@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>1476395008</Val>
+<Val>1811939328</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-871227441</Val>
+<Val>-871144184</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -113,7 +113,7 @@
 </Cluster>
 </Array>
 <Array>
-<Name>Systems</Name>
+<Name>DGSystems</Name>
 <Dimsize>2</Dimsize>
 <Cluster>
 <Name>System</Name>
@@ -225,7 +225,7 @@
 </Cluster>
 </Array>
 <Array>
-<Name>Card Config</Name>
+<Name>Cards</Name>
 <Dimsize>3</Dimsize>
 <Cluster>
 <Name>Card Config</Name>
@@ -415,7 +415,7 @@
 </Boolean>
 <DBL>
 <Name>Inhibit(탎)</Name>
-<Val>99999.89999999999400</Val>
+<Val>9999.89999999999962</Val>
 </DBL>
 <DBL>
 <Name>TriggerLevel</Name>
@@ -700,7 +700,7 @@
 <Name>Chnls</Name>
 <Dimsize>18</Dimsize>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -776,7 +776,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -852,7 +852,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -928,7 +928,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1004,7 +1004,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1080,7 +1080,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1156,7 +1156,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1167,7 +1167,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>0.00000000000000</Val>
+<Val>10000.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1188,18 +1188,18 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val></Val>
+<Val>10000</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>10</Val>
+<Val>11</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>1</Val>
+<Val>32769</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1232,87 +1232,11 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
 <Val>mb</Val>
-</String>
-<Cluster>
-<Name>ChnParameter</Name>
-<NumElts>5</NumElts>
-<DBL>
-<Name> Delay (탎)</Name>
-<Val>0.00000000000000</Val>
-</DBL>
-<Boolean>
-<Name>On?</Name>
-<Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>PositiveVoltage?</Name>
-<Val>1</Val>
-</Boolean>
-<Boolean>
-<Name>50OhmTerminated? </Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>25OhmOutput?</Name>
-<Val>0</Val>
-</Boolean>
-</Cluster>
-<String>
-<Name>DelayFormula</Name>
-<Val></Val>
-</String>
-<I32>
-<Name>OutputModulo</Name>
-<Val>10</Val>
-</I32>
-<Cluster>
-<Name>Go and Done Signal</Name>
-<NumElts>2</NumElts>
-<U32>
-<Name>Go Signal</Name>
-<Val>1</Val>
-</U32>
-<U32>
-<Name>Done Signal</Name>
-<Val>16</Val>
-</U32>
-</Cluster>
-<Cluster>
-<Name>G08_Chnl_Settings</Name>
-<NumElts>5</NumElts>
-<DBL>
-<Name>Pulse Width (탎)</Name>
-<Val>1000.00000000000000</Val>
-</DBL>
-<U32>
-<Name>Output Offset</Name>
-<Val>0</Val>
-</U32>
-<Boolean>
-<Name>Disconnect (E,F)</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Onto MsBus (E,F)</Name>
-<Val>0</Val>
-</Boolean>
-<Boolean>
-<Name>Input Positive (E,F)</Name>
-<Val>1</Val>
-</Boolean>
-</Cluster>
-</Cluster>
-<Cluster>
-<Name>Cluster</Name>
-<NumElts>6</NumElts>
-<String>
-<Name>Channel Name</Name>
-<Val>mc</Val>
 </String>
 <Cluster>
 <Name>ChnParameter</Name>
@@ -1351,7 +1275,83 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>32784</Val>
+<Val>32769</Val>
+</U32>
+<U32>
+<Name>Done Signal</Name>
+<Val>16</Val>
+</U32>
+</Cluster>
+<Cluster>
+<Name>G08_Chnl_Settings</Name>
+<NumElts>5</NumElts>
+<DBL>
+<Name>Pulse Width (탎)</Name>
+<Val>1000.00000000000000</Val>
+</DBL>
+<U32>
+<Name>Output Offset</Name>
+<Val>0</Val>
+</U32>
+<Boolean>
+<Name>Disconnect (E,F)</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>Onto MsBus (E,F)</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>Input Positive (E,F)</Name>
+<Val>1</Val>
+</Boolean>
+</Cluster>
+</Cluster>
+<Cluster>
+<Name>ChnlParam</Name>
+<NumElts>6</NumElts>
+<String>
+<Name>Channel Name</Name>
+<Val>mc</Val>
+</String>
+<Cluster>
+<Name>ChnParameter</Name>
+<NumElts>5</NumElts>
+<DBL>
+<Name> Delay (탎)</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<Boolean>
+<Name>On?</Name>
+<Val>1</Val>
+</Boolean>
+<Boolean>
+<Name>PositiveVoltage?</Name>
+<Val>1</Val>
+</Boolean>
+<Boolean>
+<Name>50OhmTerminated? </Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>25OhmOutput?</Name>
+<Val>0</Val>
+</Boolean>
+</Cluster>
+<String>
+<Name>DelayFormula</Name>
+<Val></Val>
+</String>
+<I32>
+<Name>OutputModulo</Name>
+<Val>1</Val>
+</I32>
+<Cluster>
+<Name>Go and Done Signal</Name>
+<NumElts>2</NumElts>
+<U32>
+<Name>Go Signal</Name>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1384,7 +1384,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1460,7 +1460,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1536,7 +1536,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1612,7 +1612,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1648,7 +1648,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>100</Val>
+<Val>11</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -1688,7 +1688,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1724,7 +1724,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>100</Val>
+<Val>11</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -1764,7 +1764,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1840,7 +1840,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1916,7 +1916,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
@@ -1992,7 +1992,7 @@
 </Cluster>
 </Cluster>
 <Cluster>
-<Name>Cluster</Name>
+<Name>ChnlParam</Name>
 <NumElts>6</NumElts>
 <String>
 <Name>Channel Name</Name>
