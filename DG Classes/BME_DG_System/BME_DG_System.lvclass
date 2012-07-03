@@ -182,7 +182,7 @@
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
 			<Property Name="NI.ClassItem.MethodScope" Type="UInt">4</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1082139138</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1082130944</Property>
 			<Property Name="NI.LibItem.Scope" Type="Int">4</Property>
 		</Item>
 		<Item Name="Update Delays.vi" Type="VI" URL="../Update Delays.vi">
@@ -205,14 +205,14 @@
 			<Property Name="NI.ClassItem.State" Type="Int">1082130960</Property>
 			<Property Name="NI.LibItem.Scope" Type="Int">4</Property>
 		</Item>
-		<Item Name="Check new DelayFormula and Update Delays.vi" Type="VI" URL="../Check new DelayFormula and Update Delays.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'I!!!!$Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!!Z!-0````]%4G&amp;N:1!!(E"!!!(`````!!525(*P9GRF&lt;3"$;'ZM=S"P&gt;81!3%"Q!"Y!!#Q55%^-16**5S"#455A2%=O&lt;(:M;7)61EV&amp;8U2(8V.Z=X2F&lt;3ZM&gt;G.M98.T!!!21EV&amp;8U2(8V.Z=X2F&lt;3"P&gt;81!%5!+!!J"9H-O)%2F&lt;'&amp;Z!!!/1#%*68"E982F)%B8!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!&amp;E!Q`````QV%:7RB?3"'&lt;X*N&gt;7RB!"*!-0````])1WBO&lt;%ZB&lt;75!!%B!=!!?!!!M&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC&amp;5*.26^%2V^4?8.U:7UO&lt;(:D&lt;'&amp;T=Q!!%%*.26^%2V^4?8.U:7UA;7Y!!$Q!]!!-!!-!"!!'!!=!#!!%!!1!#1!+!!M!$!!.!Q!!?!U)!!!*!!U,#1!!!!!!#!!+!!I!#!!3!!!!!!%!$A!!!!!</Property>
+		<Item Name="Check new DelayFormula and Update DelaysHW.vi" Type="VI" URL="../Check new DelayFormula and Update DelaysHW.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'Q!!!!$Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!!Z!-0````]%4G&amp;N:1!!(E"!!!(`````!!525(*P9GRF&lt;3"$;'ZM=S"P&gt;81!3%"Q!"Y!!#Q55%^-16**5S"#455A2%=O&lt;(:M;7)61EV&amp;8U2(8V.Z=X2F&lt;3ZM&gt;G.M98.T!!!21EV&amp;8U2(8V.Z=X2F&lt;3"P&gt;81!%5!+!!J"9H-O)%2F&lt;'&amp;Z!!!71#%268"E982F)%B80SBG97RT:3E!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!71$$`````$52F&lt;'&amp;Z)%:P=GVV&lt;'%!%E!Q`````QB$;'ZM4G&amp;N:1!!3%"Q!"Y!!#Q55%^-16**5S"#455A2%=O&lt;(:M;7)61EV&amp;8U2(8V.Z=X2F&lt;3ZM&gt;G.M98.T!!!11EV&amp;8U2(8V.Z=X2F&lt;3"J&lt;A!!0!$Q!!Q!!Q!%!!9!"Q!)!!1!"!!*!!I!#Q!-!!U$!!"Y$1A!!!E!$1M*!!!!!!!)!!I!#A!1!")!!!!!!1!/!!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
 			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1342710290</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
 		</Item>
 	</Item>
 	<Item Name="HW Access" Type="Folder">

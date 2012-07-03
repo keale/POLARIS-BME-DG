@@ -1,12 +1,40 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Library LVVersion="9008000">
-	<Property Name="NI.Lib.Description" Type="Str">Diese Biblithek bietet LVOOP Klassen für die BME PCI Delaygeneratoren (i.w. DG). 
+	<Property Name="NI.Lib.Description" Type="Str">GERMAN
+
+Diese Bibliothek bietet LVOOP Klassen für die BME PCI Delaygeneratoren (i.w. DG). 
 Momentan werden die Produkte SG02P2, SG05P1, SG05P3, SG08P2 unterstützt. 
 Die Klassen können auch mit  anderen Versionen arbeiten, dafür ist aber ein Test mit der jeweiligen Hardware (i.w. HW) erforderlich.
 
 Die Basisklassen sind BME_DG_Base, welche die gemeinsamen Funktionen und Parameter für alle DGs  bereitstellen und BME_DG_Chnl entsprechend für Kanäle (i.w. Chnl).
 
-BME_DG_Base  Variablen:c
+
+
+ENGLISH
+
+This Library offers some LVOOP classes for BME PCI Delay Generators (DG). Currently the types SG02P2, SG05P1, SG05P3, SG08P2  are supported. The operation with other types is possible, but requires intensive test.
+
+
+
+author: Alexander Kessler, Helmholtz-Institut-Jena 
+maintainer: Alexander Kessler: alexander.kessler@uni-jena.de
+
+Last Change: 2012-07-03
+
+
+License Agreement for this software:
+
+Copyright (C)
+Helmholtz-Institut-Jena
+Fröbelsteg 3
+07743 Jena
+Germany
+
+Contact: alexander.kessler@uni-jena.de
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the license, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General License for more details (http://www.gnu.org).
 
 </Property>
 	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
@@ -258,15 +286,19 @@ BME_DG_Base  Variablen:c
 	</Item>
 	<Item Name="DG Classes" Type="Folder">
 		<Item Name="BME_DG_Base.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Base/BME_DG_Base.lvclass"/>
-		<Item Name="BME_DG_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Chnl/BME_DG_Chnl.lvclass"/>
 		<Item Name="BME_DG_G02.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G02/BME_DG_G02.lvclass"/>
-		<Item Name="BME_DG_G02_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G02_Chnl/BME_DG_G02_Chnl.lvclass"/>
 		<Item Name="BME_DG_G05.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05/BME_DG_G05.lvclass"/>
-		<Item Name="BME_DG_G05_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05_Chnl/BME_DG_G05_Chnl.lvclass"/>
 		<Item Name="BME_DG_G05P2.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05P2/BME_DG_G05P2.lvclass"/>
-		<Item Name="BME_DG_G05P2_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05P2_Chnl/BME_DG_G05P2_Chnl.lvclass"/>
 		<Item Name="BME_DG_G08.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08/BME_DG_G08.lvclass"/>
+	</Item>
+	<Item Name="DG Channel classes" Type="Folder">
+		<Item Name="BME_DG_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Chnl/BME_DG_Chnl.lvclass"/>
+		<Item Name="BME_DG_G02_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G02_Chnl/BME_DG_G02_Chnl.lvclass"/>
+		<Item Name="BME_DG_G05_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05_Chnl/BME_DG_G05_Chnl.lvclass"/>
+		<Item Name="BME_DG_G05P2_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G05P2_Chnl/BME_DG_G05P2_Chnl.lvclass"/>
 		<Item Name="BME_DG_G08_Chnl.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_G08_Chnl/BME_DG_G08_Chnl.lvclass"/>
+	</Item>
+	<Item Name="DG System class" Type="Folder">
 		<Item Name="BME_DG_System.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_System/BME_DG_System.lvclass"/>
 	</Item>
 	<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
