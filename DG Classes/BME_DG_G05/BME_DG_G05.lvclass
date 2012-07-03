@@ -2,6 +2,31 @@
 <LVClass LVVersion="9008000">
 	<Property Name="NI.Lib.ContainingLib" Type="Str">POLARIS BME DG.lvlib</Property>
 	<Property Name="NI.Lib.ContainingLibPath" Type="Str">../../../POLARIS BME DG.lvlib</Property>
+	<Property Name="NI.Lib.Description" Type="Str">The class for SG05 BME DGs, inhirits from BME_DG_Base 
+
+It has aditional set of trigger and gate parameters ( V2 Trigger Settings). It overides:
+ - initilize.vi
+ - SetTriggerHW.vi
+ - Init Obj From Cnfg File.vi
+
+
+author: Alexander Kessler, Helmholtz-Institut-Jena 
+maintainer: Alexander Kessler: alexander.kessler@uni-jena.de
+
+Last Change:
+License Agreement for this software:
+
+Copyright (C)
+Helmholtz-Institut-Jena
+Fröbelsteg 3
+07743 Jena
+Germany
+
+Contact: alexander.kessler@uni-jena.de
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the license, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General License for more details (http://www.gnu.org).</Property>
 	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
 	<Property Name="NI.Lib.Icon" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)?!!!*Q(C=\&gt;4"4=.!%)8B"_,!.2WAN0";3!NJ96L)F7.;G"&lt;31M\=JI7UE"&lt;-\W5322%C3)$AQ*I.]&lt;.X^MN[:7GU2_F"U[XW]G(\T07X)K&gt;3@&gt;:@2J``TH8[L*/,[Z@DX][PRE_H];&gt;[U\PTHW?:LPXP`.SP``Y&lt;4@`NP`VO?\[Z38^]T^ZJ@B(2CZ\UI&amp;PT6&amp;/2&amp;XG2&amp;XG2&amp;XG3*XG3*XG3*XG1"XG1"XG1"\H*47ZSEZP=Z/-A&amp;\H)21[JG,S9K#B;&amp;#BOBK,CI`!5HM*4?$B6Y3E]B;@Q&amp;"ZO5?%J0)7H]"1?BKHQ&amp;*\#5XA+$[7'J-:"DK@Q5&amp;[**`%EHM34?*B3C3="**-FB:-C-*2=4,YEHM34?0CKR*.Y%E`C34R=6O**0)EH]31?BIR6S;':$X)]F&amp;(A#4S"*`!%(EIL]!3?Q".Y!A`4+@!%HA!24"A5B["A5("$="*Y!A``&amp;(A#4_!*0)'(3_-*R6C:74-@Z(C-RXC-RXC-BR)S(O-R(O-R(ML+?)T(?)T(?*B+RG-]RG-A:F+GFSFG"JK&lt;4'!]`)X&gt;YP'5=EA]$KEXLXJ4KD?&lt;?B/J.Y@[I;M@JPIBK2&gt;@P;DKR6)PAPL(K&gt;&amp;KD(I3^?$Z2BXZ0.$X^"V^3^`1V`16@5F@T%/`_=&lt;D];D$Y;$^@K`&gt;&lt;K@N&gt;KP.:K0V?KX6;K8F=KH&amp;9H&amp;_$4RRH&amp;])@_'^^#=-^\KMSRK^!GA[0)%!!!!!</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.1</Property>
