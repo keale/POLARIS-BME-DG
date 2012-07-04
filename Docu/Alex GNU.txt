@@ -1,0 +1,20 @@
+
+---------------
+
+author: Alexander Kessler, Helmholtz-Institut-Jena 
+maintainer: Alexander Kessler: alexander.kessler@uni-jena.de
+
+
+License Agreement for this software:
+
+Copyright (C)
+Helmholtz-Institut-Jena
+Fröbelsteg 3
+07743 Jena
+Germany
+
+Contact: alexander.kessler@uni-jena.de
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the license, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General License for more details (http://www.gnu.org).
