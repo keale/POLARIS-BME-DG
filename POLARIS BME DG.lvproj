@@ -80,7 +80,7 @@
 			<Item Name="MGI Change Detector (T).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (T).vi"/>
 			<Item Name="MGI Change Detector (F).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (F).vi"/>
 			<Item Name="Enable Interrupts.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Enable Interrupts.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../../../../../Programme/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
