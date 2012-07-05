@@ -1,0 +1,1275 @@
+/*----------------------------------------------------------------------------
+		Bergmann Messgeraete Entwicklung
+		Bahnhofstr. 14
+		D-82418 Murnau
+
+		Tel. 08841 - 5487
+		Fax. 08841 - 90134
+
+    module:										 Constants and types for Delay Generator
+    category:                  
+    purpose:
+
+    description:               
+                               .
+
+    parameters:                none
+
+    returnvalue:               none
+
+    caution !                  none
+
+    programming language:      Microsoft Visual C/C++  V1.52
+    operating system:          MS DOS        
+    programmer:                Thorald Bergmann
+    Version:                   V1.0
+    Update:                    22. December 1998
+    copyright:                 (c) 1998 by BME
+
+----------------------------------------------------------------------------*/
+
+// define the constants for the different delay generator products
+
+#define SRS_DG135									1
+#define BME_DP01									2
+#define BME_G02V3									3
+#define BME_SG02V4								4
+#define BME_G04										5
+#define BME_G02V1									6
+#define BME_G02V2									7
+#define BME_SG02V1								8
+#define BME_SG02V2								9
+#define BME_SG02V3								10
+#define BME_G03V1									11
+#define BME_G03V2									12
+#define BME_SG02V5								13
+#define BME_G03V3									14
+#define BME_G03V4									15
+#define BME_SG02V6								16
+#define BME_G03V5									17
+#define BME_G05V1									18
+#define BME_G05V2									19
+#define BME_G05V3									20
+#define BME_SG02V7								21
+
+#define BME_SG02P1								31
+#define BME_G03P1									32
+#define BME_G05P1									33
+#define BME_SG02P2								34
+#define BME_G03P2									35
+#define BME_SG02P3								36
+#define BME_SG05P1								37
+#define BME_G05P2									38
+#define BME_SG05P2								39
+#define BME_G05P3									40
+#define BME_SG02P4								41
+#define BME_SG02P5								42
+#define BME_SG05P3								43
+#define BME_SG08P1								44
+#define BME_SG08P2								45
+
+#define MasterModule							1
+#define SlaveModule								2
+
+#define CrystalOscillator					1
+#define TriggerInput							2
+#define TriggerAndOscillator			3
+#define MasterSlaveBus						4
+
+#define CalibrateNone							0
+#define CalibrateIncrement				1
+#define CalibrateOffset						2
+
+#define DelayChannel_T0						1
+#define DelayChannel_A						2	
+#define DelayChannel_B						3
+#define DelayChannel_C						4	
+#define DelayChannel_D						5
+#define DelayChannel_E						6	
+#define DelayChannel_F						7
+
+#define TTL_VoltageLevel					1
+#define NIM_VoltageLevel					2
+#define ECL_VoltageLevel					3
+
+#define LocalPrimary							0x1
+#define LocalSecondary						0x2
+#define LocalForce								0x4
+#define Resynchronize							0x8
+#define MasterPrimary							0x10
+#define MasterSecondary						0x20
+#define MasterForce								0x40
+#define SystemClock								0x80
+#define DelayClock								0x100
+#define InhibitLocal							0x200
+#define StartLocal								0x400
+#define StartBus									0x800
+#define StepBackLocal							0x1000
+#define StepBackBus								0x2000
+#define RunCircle									0x4000
+#define SynchReload								0x8000
+
+#define EnableFromE								0x10000
+#define EnableFromF								0x20000
+#define EnableFromBus							0x40000
+
+#define StepBackOnBus							0x10
+#define StartOnBus								0x20
+#define InhibitOnBus							0x40
+#define LoadDataOnBus							0x80
+#define GateOnBusPositive					0x100
+#define GateOnBusNegative					0x200
+#define GateBurstSynch						0x800
+
+#define GateXOR										0x0
+#define GateOR										0x1000
+#define GateAND										0x2000
+#define GateNONE									0x3000
+
+#define AB_OR										  0x10000
+#define AB_AND										0x20000
+#define AB_XOR										0x30000
+#define CD_OR										  0x40000
+#define CD_AND										0x80000
+#define CD_XOR										0xC0000
+#define EF_OR										  0x100000
+#define EF_AND										0x200000
+#define EF_XOR										0x300000
+
+#define MemLength									252
+#define MemDepth									512
+
+#define QlDgType									0
+#define XxDgType0									2
+
+
+#define MaxSRDelayRange						6500.0
+#define MaxBME_DP01Range					6500.0
+#define MaxBME_G0XRange						400000000.0
+
+
+
+#define BME_SG02_ZeroTime			0.045
+#define BME_SG02_p1Time				0.1
+#define BME_SG02_p2Time				0.2
+
+#define BME_SG02V2_p1Time			0.08
+#define BME_SG02V2_p2Time			0.172
+
+#define BME_SG02V1_GoTime			0.135
+#define BME_SG02V1_p1Time			0.172
+#define BME_SG02V1_p2Time			0.272
+
+#define BME_G02_ZeroTime			0.045
+#define BME_G02_p1Time				0.2
+#define BME_G02_p2Time				0.3
+
+#define BME_G03_ZeroTime			0.05
+#define BME_G03_p1Time				0.31
+#define BME_G03_p2Time				0.41
+#define BME_G03_ResetTime			-0.025
+
+#define SlaveClockDelay				0.005
+#define SlaveTriggerDelay			0.005
+
+#define OscillatorFrequency		10.0
+
+
+
+
+//Note: 
+//			the delay times of all delay generators except BME_G03 
+//			are directly determined by the value loaded into their 
+//      counter preset (in units of 100 nsec)
+//
+//			the BME_G03 has one main 32-bit counter that starts with
+//			the main trigger of the delay generator(s). Any output of these
+//			delay generators is generated by comparing (Xor-ing) the value of
+//			the main counter with a set 32-bit registers. When the present
+//			value in the main counter equals to one of these register, the
+//			corresponding output is generated.
+
+
+//		DelayChannel:
+//
+// the structure ''DelayChannel'' has the controls for the
+// output channels of the delay generator:
+// Analog:		loads a 12-bit value into the analog delay DAC
+//            for the BME_SG08 the name is DacList[].
+//						the lower word has the DAC valule, the higher word the Backstep address
+//
+// Digital:				main delay time in units of the internal clock period (100 nsec).
+//								note: for BME_G03 this is a value
+//									loaded into the corresponding Xor register 
+//								the BME_SG08 uses the array DelayList[]
+// PulseWidth[]:	the BME_SG08 can set the pulse width for each channel individually.
+// ListLength:		length of the delay list, DacList, DelayList, PulseWidth
+// DigOff:				Sets the T0 output off when the main counter reaches this value
+//								(only BME_G03, unused for BME_G02, BME_SG02)
+//								For the BME_G03V4 version this variable gives the time
+//								also in units of 100nsec.
+//
+// OutputModulo:	the output is only fired every nth trigger (only BME_G05, BME_SG05, BME_SG08)
+// OutputOffset:	when the modulo counter is active, the offset of the counters relative
+//								to each other.
+//
+// GoSignal:		the bits of this unsigned long define which of the trigger signals
+//							starts the delay channel
+//							LocalPrimary =		 0x1	:		the primary trigger signal is used to 
+//																					start the channel
+//							LocalSecondary =	 0x2	:		the secondary trigger signal is used to 
+//																					start the channel
+//							LocalForce =			 0x4	:   the signal from the force trigger counter is 
+//																					used to start the channel
+//							MasterPrimay =		0x10	:		the primary triggersignal from the master/slave-bus 
+//																					is used to start the channel. 
+//							MasterSecondary =	0x20	:		the secondary trigger signal from the master/slave-bus  
+//																					is used to start the channel
+//							MasterForce =			0x40	:		the signal from the force trigger counter of the master
+//																					is used to start the channel
+//							SystemClock		=		0x80	:   the clock of the delay generator is routed
+//																					to the output of this channel according to 
+//																					the selection of the DelayClock bit
+//																					(only possible for the T channel of the 
+//																					versions BME_SG05P2, BME_SG05P3, 
+//																					BME_SG02P4, BME_SG02P5)
+//							DelayClock		=	 0x100	:		if this bit is set together with the 
+//																					SystemClock, the delay clock of the 
+//																					delay generator is routed to the output of 
+//																					this channel, otherwise the system clock 
+//																					will be routed to the output of this 
+//																					channel
+//																					(only possible for the T channel of the 
+//																					versions BME_SG05P3, BME_SG02P5)
+//							InhibitLocal	=	 0x200	:		when the delay generator runs from an external clock,
+//																					backed up by the local oscillator, this channel will
+//																					only give an output when running from the local oscillator, 
+//																					if this bit has not been set.
+//							StartLocal		=	 0x400	:		when this bit is set, the signal from the local F output
+//																					connector is used to set the delay lists the their start position.
+//							StartBus			=	 0x800	:		when this bit is set, the signal from the F output connector
+//																					of the master card is used to set the delay lists the their start position.
+//							StepBackLocal	=	 0x1000	:		when this bit is set, the signal from the local step back counter
+//																					is used to step the delay lists back as prescribed by the
+//																					value in the high word of the DacList array.
+//							StepBackBus		=	 0x2000	:		when this bit is set, the signal from the step back counter of the master card
+//																					is used to step the delay lists back as prescribed by the
+//																					value in the high word of the DacList array.
+//							RunCircle			=	 0x4000	:		when this bit is set, the delay lists is not run from start to end, but when
+//																					the end is reached, the next item to be used in the delay list is referenced by the
+//																					step back pointer.
+//							SynchReload		=  0x8000	:		when this bit is set, new operational parameters can only be loaded into the
+//																					delay generator when the modulo counter of this channel has reached zero.
+//							EnableFromE		=	 0x10000:		when this bit is set, the delay channel will only produce an output signal 
+//																					when the signal coming from the E output connector is true.
+//							EnableFromF		=	 0x20000:		when this bit is set, the delay channel will only produce an output signal 
+//																					when the signal coming from the F output connector is true.
+//							EnableFromBus	=	 0x40000:		when this bit is set, the delay channel will only produce an output signal 
+//																					when the signal coming from the master/slave bus is true.
+// DoneSignal:		the bits of this unsigned long define which of the trigger signals
+//								is immediatly acknowledged by a delay channel
+// Positive:			set this flag to TRUE for positive polarity of output
+//								set this flag to FALSE for negative polarity of output
+//								(applies to BME_G03V4, BME_SG02V5)
+// Terminate:			TRUE to apply an internal termination to the output channel.
+//								(not yet implemented on hardware)
+// HighDrive:			TRUE to supply extra current for a 25 ohm load.
+//								(not yet implemented on hardware)
+// FtActive:			set this flag to TRUE if an output signal is to generated
+//								in the case a forced trigger event occurs. This flag is
+//								presently only used for the BME_SG02P3
+// Disconnect:		set this flag to TRUE for channels E or F of the BME_SG08 card
+//								if the output driver should be disconnected from the connector
+//								at the slot. The output driver must be disconnected, if some
+//								external signal is to be entered.
+// OntoMsBus:			set this flag to TRUE for channels E or F of the BME_SG08 card
+//								if the signal from this connector should be placed onto the 
+//								master/slave bus for use at the slave cards
+// InputPositive:	set this flag to FLASE for channels E or F of the BME_SG08 card
+//	              if the signal should ber inverted before it is used e.g. as enable
+
+typedef struct
+{
+	union
+	{
+		unsigned long DacList[MemDepth];
+		unsigned long	AnalogData;
+		struct
+		{
+			unsigned short Analog;
+			unsigned short BackStep;
+		};
+	};
+	union
+	{
+		unsigned long DelayList[MemDepth];
+		unsigned long	Digital;
+		struct
+		{
+			unsigned short Digital_LW;
+			unsigned short Digital_HW;
+		};
+	};
+	unsigned long PulseWidth[MemDepth];
+	signed long ListLength;
+	unsigned long DigOff;
+	union
+	{
+		signed long	OutputModulo;
+		struct
+		{
+			unsigned short ModCounter;
+			unsigned short ModOffset;
+		};
+	};
+	signed long OutputOffset;
+	unsigned long GoSignal;
+	unsigned long DoneSignal;
+	BOOL Positive;
+	BOOL Terminate;
+	BOOL HighDrive;
+	BOOL Disconnect;
+	BOOL OntoMsBus;
+	BOOL InputPositive;
+} DelayChannel;
+
+
+//		MainCounterType:
+//
+// the structure ''MainCounterType'' has the controls for the main counter,
+// which is used in the BME_G03 delay generators. 
+//
+// Digital:		preset of the main (down-)counter in the BME_G03 version.
+//						for the BME_G02, BME_SG02V5 version this value is the delay of the
+//						auxiliary delay counter (which can be used to fire an interrupt).
+//						The BME_SG02 does not have this auxiliary delay counter
+// int3:			fires an interrupt when the main counter reaches this value
+//						(only BME_G03, unused for BME_G02, BME_SG02)
+//
+// Active:		set this flag to TRUE if main counter or 
+//						interrupt counter is used
+//						set this flag to FALSE  if main counter and/or 
+//						interrupt counter are not used
+
+typedef struct
+{
+	unsigned long Digital;
+	unsigned long Int3;
+	BOOL Active;
+	BOOL ReserveFlag;
+} MainCounterType;
+
+//		DelayTriggerType:
+//
+// the structure ''DelayTriggerType'' has the controls for the trigger system,
+// and trigger counters
+//
+// TriggerLevel:			defines the trigger threshold. 0 corresponds to -2.5V,
+//										4095 to +2.5V. For the BME_SG08 card, the lower word
+//										defines the trigger threshold, the higher word the
+//										threshold of the gate input.
+// RepCounter:				defines the repetition rate for internal trigger mode
+//										(period = internal period(e.g. 100nsec) * (RepCounter + 2))
+// InhibitTrigger:		inhibits the Trigger or
+//										defines the repetition rate for internal trigger mode
+//										(period = internal period(e.g. 100nsec) * (InhibitTrigger + 3))
+// ForceTrigger:			time after a valid trigger event, when the delays
+//										should be retriggered.
+//										(period = internal period(e.g. 100nsec) * (ForceTrigger + 3))
+// StepBackCounter:		time after a valid trigger event, when the delay list
+//										are stepped back
+//										(period = internal period(e.g. 100nsec) * (StepBackCounter + 3))
+// BurstCounter:			number of pulses after a valid external trigger event.
+// GateDelay:					number of clock cycles that an external trigger event is delayed
+// PresetLong:				64-bit version of PresetValue
+// PresetValue:				internal trigger or event counter, (up-)counter that
+//										counts the number of triggers that have occurred.
+//										internal trigger is disabled when PresetValue is reached
+//										and StopOnPreset flag is set to TRUE.
+// DivideBy:					the crystal oscillator will be divided by this number
+// TriggerDivider:		the external clock will be divided by this number
+// TriggerMultiplier:	the external clock will be multiplied by this number
+// ClockSource:				defines which signal to use as clock source,
+//										CrystalOscillator = 1 :    crystal oscillator only
+//										TriggerInput = 2 :         trigger input only
+//										TriggerAndOscillator = 3 : trigger input backed up 
+//																						 by the crystal oscillator
+//										(The corresponding constants are defined in DG_Data.h)
+// GateDivider:				the external gate signal will be divided by this number.
+//										(This function will be implemented in the next hardware release)
+// MS_Bus:						The bits of this unsigned long variable define which of 
+//										the trigger signals is placed on the master/slave bus,
+//										or which events must be synchronized for a reload event.
+//										See the definitions of LocalPrimary, LocalSecondary, LocalForce,
+//										Resynchronize, StepBackOnBus, StartOnBus, InhibitOnBus, LoadDataOnBus
+//										GateOnBusPositive, and GateOnBusNegative.
+//										LocalPrimary =			0x1		:		the primary trigger signal is placed
+//																									on the master/slave bus
+//										LocalSecondary =		0x2		:		the secondary trigger signal is placed
+//																									on the master/slave bus
+//										LocalForce =				0x4		:   the signal from the force trigger counter is placed
+//																									on the master/slave bus
+//										Resynchronize =			0x8		:   the internal clock, i.e. prescaler is resynchronized
+//																									with every trigger event
+//										StepBackOnBus =			0x10	:		the step back signal is placed
+//																									on the master/slave bus
+//										StartOnBus =				0x20	:		the start signal is placed
+//																									on the master/slave bus
+//										InhibitOnBus =			0x40	:   the inhibit signal is placed
+//																									on the master/slave bus
+//										LoadDataOnBus =			0x80	:   the signal causing synchronuous activation of data preloaded 
+//																									into the registers of the delay generators is placed
+//																									on the master/slave bus
+//										GateOnBusPositive =	0x100	:		a signal, which is high when the trigger system is active
+//																									is placed as Start signal on the MS bus with positive polarity
+//										GateOnBusNegative =	0x200	:		a signal, which is high when the trigger system is active
+//																									is placed as Start signal on the MS bus with negative polarity
+//										GateBurstSynch =		0x800	:		when this bit is set, new operational parameters can only be loaded 
+//																									into the delay generator when the direct gate or burst are incative
+// PositiveGate:			set this flag to TRUE, if a positive signal on the gate input
+//										should enable the trigger circuit, otherwise FALSE
+// IgnoreGate:				set this flag to TRUE, if a gate signal should be ignored
+//										as long as the InhibitTrigger counter has not yet elapsed.
+//										Set this flag to FALSE, if a valid gate signal should
+//										be memorized until the InhibitTrigger counter has elapsed.
+// SynchronizeGate:		this flag defines the way the time difference is measured
+//										between primary and secondary gate signal. Provided, the 
+//										oscillator frequency to which the gate signal is referenced,
+//										is above 70MHz, it is possible to provide a unique function
+//										(number of oscillator cycles counter) <--> gate width
+// ClockEnable:				set this flag to TRUE to enable the clock circuit
+//
+// InternalTrigger:		set this flag to TRUE, if internal triggering is used
+//										Internal trigger exists only in the BME_G02, BME_SG02 and BME_G03
+//										versions of the delay generator.
+// InternalArm:				set this flag to TRUE, if internal rate counter is used to arm
+//										the external trigger.
+//										Internal trigger exists only in the BME_G02, BME_SG02 and BME_G03
+//										versions of the delay generator.
+// SoftwareTrigger:		set this flag to TRUE, if delay generator is to be triggered
+//										by software command.
+// RisingEdge:				TRUE triggers on rising edge of external trigger, 
+//										FALSE triggers on falling edge of external trigger.
+// StopOnPreset:			TRUE if trigger is to be disabled once preset of
+//										TriggerCounter is reached.
+// ResetWhenDone:			TRUE if all delay channels should be reset to the
+//										ready state once all delays have elapsed.
+// TriggerEnable:			TRUE to activate trigger circuit. This signal is or'ed with 
+//										the signal coming from the external gate input. Actually,
+//										the rising edge of the (divided) gate signal clocks a flip-flop
+//										allowing a trigger. After a trigger has occurred, the flip-flop
+//										is reset.
+// Terminate:					TRUE to terminate the trigger input with 50 ohms. FALSE
+//										for high-Z input. (Applies to BME_G03V4, BME_SG02V5)
+// GateTerminate:			TRUE to terminate the gate input with 50 ohms. FALSE
+//										for high-Z input. (Applies to BME_SG08)
+// UseF:							set this flag to TRUE, if the gate signal should be derived
+//										the F output connector instead of the regular gate input. (Applies to BME_SG08)
+
+typedef struct
+{
+	union
+	{
+		unsigned long	TriggerLevel;
+		struct
+		{
+			unsigned short TriggerDAC;
+			unsigned short GateDAC;
+		};
+	};
+	union
+	{
+		unsigned long RepCounter;
+		unsigned long InhibitTrigger;
+	};
+	unsigned long InhibitSecondary;
+	unsigned long ForceTrigger;
+	unsigned long StepBackCounter;
+	unsigned long BurstCounter;
+	unsigned long DelaySecondary;
+	unsigned long GateDelay;
+	union
+	{
+		_int64 PresetLong;
+		unsigned long PresetValue;
+	};
+	union
+	{
+		unsigned long	DivideBy;
+		struct
+		{
+			unsigned short OscillatorDivider;
+			unsigned short TriggerDivider;
+		};
+	};
+	unsigned long TriggerMultiplier;
+	unsigned long ClockSource;
+	unsigned long GateDivider;
+	unsigned long MS_Bus;
+	BOOL PositiveGate;
+	BOOL IgnoreGate;
+	BOOL SynchronizeGate;
+	BOOL ClockEnable;
+	BOOL InternalTrigger;
+	BOOL InternalArm;
+	BOOL SoftwareTrigger;
+	BOOL RisingEdge;
+	BOOL StopOnPreset;
+	BOOL ResetWhenDone;
+	BOOL TriggerEnable;
+	BOOL Terminate;
+	BOOL GateTerminate;
+	BOOL UseF;
+} DelayTriggerType;
+
+//		DG_BME_Registers:
+//
+// the structure ''DG_BME_Registers'' passed with the Set_DG_BME procedure
+// sets all the parameters of the BME delay generators
+//
+// GateFunction:	when Gate_AB is set to TRUE, the bits of this number define how the
+//								signals of channel  A and B are logically combined. See the
+//								definitions of GateXOR, GateOR, and GateAND above.
+//								The BME_SG08 card only uses this variable to define the Gate/Delay
+//								Function, while the older cards also use the following BOOL Gate_AB
+// Gate_AB:				TRUE is outputs A and B are to be combined to form a gate output
+// OutputLevel:		write the corresponding constant for output voltage level
+//								(TTL_VoltageLevel, NIM_VoltageLevel, ECL_VoltageLevel)
+// DG_Product:    write the corresponding constant to this variable
+//							  (BME_G02, BME_SG02, BME_G03, etc.)
+// PulseWidth:		width of the output pulses in units of clock cycles
+//								(applies only to BME_G02, BME_SG02, and BME_G05)
+
+typedef struct 
+{
+	//ReferenceChannel T0;
+	DelayChannel T0,A,B,C,D,E,F;
+	MainCounterType MC;
+	DelayTriggerType DT;
+	BOOL Gate_AB;
+	unsigned long GateFunction;
+	unsigned long OutputLevel;
+	unsigned long DG_Product;
+	unsigned long PulseWidth;
+} DG_BME_Registers;
+
+
+
+//		TriggerSelectType:
+//
+// the structure ''TriggerSelectType'' is used to define trigger sources
+// and done-signals for the delay channels. It is also used to define, which
+// trigger signals are places on the master/slave bus of a group of delay generators
+
+//		DelayChannelData:
+//
+// the structure ''DelayChannelData'' has the settings for the T0, A, B.
+// output of the delay generator:
+//
+// FireFirst:			main delay time in units of microsec.
+// DelayTime[]:		main delay time in units of microsec.
+// PulseWidth[]:	the BME_SG08 can set the pulse width for each channel individually.
+// StepBack[]:		when the StepBack counter has elepsed, this is the address in the
+//								delay list from where the next delay time is taken.
+// ListLength:		length of the delay list, DacList, DelayList, PulseWidth
+// SetBack:				time when the output is reset (in units of microsec).
+//								(only BME_G03, ignored for BME_G02, BME_SG02)
+//
+// OutputModulo:	the output is only fired every nth trigger (only BME_G05 and BME_SG05)
+// OutputOffset:	the output fires the first time after this number of triggers.
+//								this parameter can be used to set channels to fire alternatingly.
+//
+// GoSignal:		the bits of this unsigned long define which of the trigger signals
+//							starts the delay channel
+//							LocalPrimary =		 0x1	:		the primary trigger signal is used to 
+//																					start the channel
+//							LocalSecondary =	 0x2	:		the secondary trigger signal is used to 
+//																					start the channel
+//							LocalForce =			 0x4	:   the signal from the force trigger counter is 
+//																					used to start the channel
+//							MasterPrimay =		0x10	:		the primary triggersignal from the master/slave-bus 
+//																					is used to start the channel. 
+//							MasterSecondary =	0x20	:		the secondary trigger signal from the master/slave-bus  
+//																					is used to start the channel
+//							MasterForce =			0x40	:		the signal from the force trigger counter of the master
+//																					is used to start the channel
+//							SystemClock		=		0x80	:   the clock of the delay generator is routed
+//																					to the output of this channel according to 
+//																					the selection of the DelayClock bit
+//																					(only possible for the T channel of the 
+//																					versions BME_SG05P2, BME_SG05P3, 
+//																					BME_SG02P4, BME_SG02P5, and the A and B channel
+//																					of the version BME_SG08P1)
+//							DelayClock		=	 0x100	:		if this bit is set together with the 
+//																					SystemClock, the delay clock of the 
+//																					delay generator is routed to the output of 
+//																					this channel, otherwise the system clock 
+//																					will be routed to the output of this 
+//																					channel
+//																					(only possible for the T channel of the 
+//																					versions BME_SG05P3, BME_SG02P5, and the A and B channel
+//																					of the version BME_SG08P1)
+//							InhibitLocal	=	 0x200	:		when the delay generator runs from an external clock,
+//																					backed up by the local oscillator, this channel will
+//																					only give an output when running from the local oscillator, 
+//																					if this bit has not been set.
+//							StartLocal		=	 0x400	:		when this bit is set, the signal from the local F output
+//																					connector is used to set the delay lists to their start position.
+//							StartBus			=	 0x800	:		when this bit is set, the signal from the F output connector
+//																					of the master card is used to set the delay lists the their start position.
+//							StepBackLocal	=	 0x1000	:		when this bit is set, the signal from the local step back counter
+//																					is used to step the delay lists back as prescribed by the
+//																					value in the Step Back array.
+//							StepBackBus		=	 0x2000	:		when this bit is set, the signal from the step back counter of the master card
+//																					is used to step the delay lists back as prescribed by the
+//																					value in the Step Back array.
+//							RunCircle			=	 0x4000	:		when this bit is set, the delay lists is not run from start to end, but when
+//																					the end is reached, the next item to be used in the delay list is referenced by the
+//																					step back pointer.
+//							SynchReload		=  0x8000	:		when this bit is set, new operational parameters can only be loaded into the
+//																					delay generator when the modulo counter of this channel has reached zero.
+//							EnableFromE		=	 0x10000:		when this bit is set, the delay channel will only produce an output signal 
+//																					when the signal coming from the E output connector is true.
+//							EnableFromF		=	 0x20000:		when this bit is set, the delay channel will only produce an output signal 
+//																					when the signal coming from the F output connector is true.
+//							EnableFromBus	=	 0x40000:		when this bit is set, the delay channel will only produce an output signal 
+//																					when the signal coming from the master/slave bus is true.
+// DoneSignal:	the bits of this unsigned long define which of the trigger signals
+//							is immediatly acknowledged by a delay channel
+// Positive:		set this flag to TRUE for positive polarity of output
+//							set this flag to FALSE for negative polarity of output
+//							(applies to BME_G03V4, BME_SG02V5)
+// Terminate:		TRUE to apply an internal termination to the output channel.
+//							(not yet implemented on hardware)
+// HighDrive:		TRUE to supply extra current for a 25 ohm load.
+//							(not yet implemented on hardware)
+// Disconnect:		set this flag to TRUE for channels E or F of the BME_SG08 card
+//								if the output driver should be disconnected from the connector
+//								at the slot. The output driver must be disconnected, if some
+//								external signal is to be entered.
+// OntoMsBus:			set this flag to TRUE for channels E or F of the BME_SG08 card
+//								if the signal from this connector should be placed onto the 
+//								master/slave bus for use at the slave cards
+// InputPositive:	set this flag to FALSE for channels E or F of the BME_SG08 card
+//	              if the signal should be inverted before it is used e.g. as enable
+
+typedef struct
+{
+	union
+	{
+		double FireFirst;
+		double DelayTime[MemDepth];
+	};
+	double PulseWidth[MemDepth];
+	double SetBack;
+	unsigned long StepBack[MemDepth];
+	signed long ListLength;
+	signed long	OutputModulo;
+	signed long	OutputOffset;
+	unsigned long GoSignal;
+	unsigned long DoneSignal;
+	BOOL Positive;
+	BOOL Terminate;
+	BOOL HighDrive;
+	BOOL Disconnect;
+	BOOL OntoMsBus;
+	BOOL InputPositive;
+} DelayChannelData;
+
+//		DelayTriggerData:
+//
+// the structure ''DelayTriggerType'' has the controls for the trigger system,
+// and trigger counters
+//
+// TriggerLevel:			trigger threshold in Volt. 
+// GateLevel:					gate threshold in Volt (only for BME_SG08)
+//							
+// InternalClock:			period of the internal clock in microseconds
+// InhibitTrigger:		time for which the trigger circuit should be deactivated
+//										after a valid trigger event. 
+// ForceTrigger:			time after a valid trigger event, when the delays
+//										should be retriggered.
+// StepBackTime:			time after a valid trigger event, when the delay list
+//										are stepped back
+// BurstCounter:			number of pulses after a valid external trigger event.
+// GateDelay:					time that an external trigger event is delayed
+// PresetLong:				64-bit version of PresetValue
+// PresetValue:				preset value for the internal event counter. When
+//										this number of triggers has occurred, the trigger will
+//										be disabled, if the StopOnPreset flag is set.
+// DivideBy:					the crystal oscillator will be divided by this number
+// TriggerDivider:		the external clock will be divided by this number
+// TriggerMultiplier:	the external clock will be multiplied by this number
+// ClockSource:				defines which signal to use as clock source,
+//										CrystalOscillator = 1 :    crystal oscillator only
+//										TriggerInput = 2 :         trigger input only
+//										TriggerAndOscillator = 3 : trigger input backed up 
+//																						 by the crystal oscillator
+//										(The corresponding constants are defined in DG_Data.h)
+// GateDivider:				the external gate signal will be divided by this number.
+//										A zero will mean that the state of the gate signal, as defined
+//										by the PositiveGate flag will enable the trigger circuit.
+//										A nonzero number always means the edge as defined by the
+//										PositiveGate flag.
+// MS_Bus:						The bits of this unsigned long variable define which of 
+//										the trigger signals is placed on the master/slave bus,
+//										or which events must be synchronized for a reload event.
+//										See the definitions of LocalPrimary, LocalSecondary, LocalForce,
+//										Resynchronize, StepBackOnBus, StartOnBus, InhibitOnBus, LoadDataOnBus
+//										GateOnBusPositive, and GateOnBusNegative.
+//										LocalPrimary =			0x1		:		the primary trigger signal is placed
+//																									on the master/slave bus
+//										LocalSecondary =		0x2		:		the secondary trigger signal is placed
+//																									on the master/slave bus
+//										LocalForce =				0x4		:   the signal from the force trigger counter is placed
+//																									on the master/slave bus
+//										Resynchronize =			0x8		:   the internal clock, i.e. prescaler is resynchronized
+//																									with every trigger event
+//										StepBackOnBus =			0x10	:		the step back signal is placed
+//																									on the master/slave bus
+//										StartOnBus =				0x20	:		the start signal is placed
+//																									on the master/slave bus
+//										InhibitOnBus =			0x40	:   the inhibit signal is placed
+//																									on the master/slave bus
+//										LoadDataOnBus =			0x80	:   the signal causing synchronuous activation of data preloaded 
+//																									into the registers of the delay generators is placed
+//																									on the master/slave bus
+//										GateOnBusPositive =	0x100	:		a signal, which is high when the trigger system is active
+//																									is placed as Start signal on the MS bus with positive polarity
+//										GateOnBusNegative =	0x200	:		a signal, which is high when the trigger system is active
+//																									is placed as Start signal on the MS bus with negative polarity
+//										GateBurstSynch =		0x800	:		when this bit is set, new operational parameters can only be loaded 
+//																									into the delay generator when the direct gate or burst are incative
+// PositiveGate:			set this flag to TRUE, if a positive signal on the gate input
+//										should enable the trigger circuit, otherwise FALSE
+// IgnoreGate:				set this flag to TRUE, if a gate signal should be ignored
+//										as long as the InhibitTrigger counter has not yet elapsed.
+//										Set this flag to FALSE, if a valid gate signal should
+//										be memorized until the InhibitTrigger counter has elapsed.
+// SynchronizeGate:		this flag defines the way the time difference is measured
+//										between primary and secondary gate signal. Provided, the 
+//										oscillator frequency to which the gate signal is referenced,
+//										is above 70MHz, it is possible to provide a unique function
+//										(number of oscillator cycles counter) <--> gate width
+// ClockEnable:				set this flag to TRUE to enable the clock circuit
+//                  
+// InternalTrigger:		set this flag to TRUE, if internal triggering is used
+//										Internal trigger exists only in the BME_G02, BME_SG02 and BME_G03
+//										versions of the delay generator.
+// InternalArm:				set this flag to TRUE, if internal rate counter is used to arm
+//										the external trigger.
+//										Internal trigger exists only in the BME_G02, BME_SG02 and BME_G03
+//										versions of the delay generator.
+// SoftwareTrigger:		set this flag to TRUE, if delay generator is to be triggered
+//										by software command.
+// RisingEdge:				TRUE triggers on rising edge of external trigger, 
+//										FALSE triggers on falling edge of external trigger.
+// StopOnPreset:			TRUE if trigger is to be disabled once preset of
+//										TriggerCounter is reached.
+// ResetWhenDone:			TRUE if all delay channels should be reset to the
+//										ready state once all delays have elapsed.
+// TriggerEnable:			TRUE to activate trigger circuit. This signal is or'ed with 
+//										the signal coming from the external gate input. Actually,
+//										the rising or falling edge of the (divided) gate signal clocks 
+//										a flip-flop allowing a trigger. After a trigger has occurred,
+//										the flip-flop is reset.
+// Terminate:					TRUE to terminate the trigger input with 50 ohms. FALSE
+//										for high-Z input. (Applies to BME_G03V4, BME_SG02V5)
+// GateTerminate:			TRUE to terminate the gate input with 50 ohms. FALSE
+//										for high-Z input. (Applies to BME_SG08)
+// UseF:							set this flag to TRUE, if the gate signal should be derived
+//										the F output connector instead of the regular gate input. (Applies to BME_SG08)
+
+typedef struct
+{
+	double TriggerLevel;
+	double GateLevel;
+	union
+	{
+		double InternalClock;
+		double InhibitTrigger;
+	};
+	double InhibitSecondary;
+	double ForceTrigger;
+	double StepBackTime;
+	double GateDelay;
+	unsigned long BurstCounter;
+	unsigned long DelaySecondary;
+	union
+	{
+		_int64 PresetLong;
+		unsigned long PresetValue;
+	};
+	union
+	{
+		unsigned long	DivideBy;
+		struct
+		{
+			unsigned short OscillatorDivider;
+			unsigned short TriggerDivider;
+		};
+	};
+	unsigned long TriggerMultiplier;
+	unsigned long ClockSource;
+	unsigned long GateDivider;
+	unsigned long MS_Bus;
+	BOOL PositiveGate;
+	BOOL IgnoreGate;
+	BOOL SynchronizeGate;
+	BOOL ClockEnable;
+	BOOL InternalTrigger;
+	BOOL InternalArm;
+	BOOL SoftwareTrigger;
+	BOOL RisingEdge;
+	BOOL StopOnPreset;
+	BOOL ResetWhenDone;
+	BOOL TriggerEnable;
+	BOOL Terminate;
+	BOOL GateTerminate;
+	BOOL UseF;
+} DelayTriggerData;
+
+//		DG_BME_control:
+//
+// the structure ''DG_BME_control'' passed with the SetDelayGenerator procedure
+// sets all the parameters of the BME delay generators
+//
+// GateFunction:	when Gate_AB is set to TRUE, the bits of this number define how the
+//								signals of channel  A and B are logically combined. See the
+//								definitions of GateXOR, GateOR, and GateAND above.
+//								The BME_SG08 card only uses this variable to define the Gate/Delay
+//								Function, while the older cards also use the following BOOL Gate_AB
+// Gate_AB:				TRUE is outputs A and B are to be combined to form a gate output
+// OutputLevel:		write the corresponding constant for output voltage level
+//								(TTL_VoltageLevel, NIM_VoltageLevel, ECL_VoltageLevel)
+// DG_Product:		write the corresponding constant to this variable
+//								(BME_G02, BME_SG02, BME_G03)
+// PulseWidth:		width of the output pulses in units of clock cycles
+//								(applies only to BME_G02, BME_SG02, and BME_G05)
+
+typedef struct 
+{
+	DelayChannelData T0,A,B,C,D,E,F;
+	DelayTriggerData DT;
+	BOOL Gate_AB;
+	unsigned long GateFunction;
+	unsigned long OutputLevel;
+	unsigned long DG_Product;
+	unsigned long PulseWidth;
+} DG_BME_Control;
+
+//		DG_BME_State:
+//
+// the structure ''DG_BME_State'' contains complete information
+// of all control parameters of a delay generator plus a few variables needed for initialization
+//
+// BaseAddress:    the number of the slot that a PCI delay generator has been inserted.
+// DG_Product:		this variable contains an integer constant defining the type of delay generator.
+//								(BME_G02, BME_SG02, BME_G03)
+// Master:		    TRUE, if this card is standalone or master of a group of delay generators, 
+//								otherwise FALSE
+// BusNumber:			the number of the PCI bus, on which the slot is located
+
+typedef struct 
+{
+	DG_BME_Control Control;
+	int				BaseAddress;
+	int				DG_Product;
+	BOOL			Master;
+	int				BusNumber;
+	char			ip_address[40];
+} DG_BME_State;
+
+
+// below are a few structures that have been used in earlier
+// versions of the software. Should you have saved data using these
+// structures, use the conversion routine 
+// ''long CopyControl(DG_BME_Control* p_Control, DG_BME_Control_V1* p_Control_V1)''
+// ''long CopyControl_V2(DG_BME_Control* p_Control, DG_BME_Control_V2* p_Control_V2)''
+// of the DLL
+
+typedef struct
+{
+	union
+	{
+		unsigned long	TriggerLevel;
+		struct
+		{
+			unsigned short TriggerDAC;
+			unsigned short Unused;
+		};
+	};
+	unsigned long RepCounter;
+	unsigned long PresetValue;
+	union
+	{
+		unsigned long	DivideBy;
+		struct
+		{
+			unsigned short OscillatorDivider;
+			unsigned short TriggerDivider;
+		};
+	};
+	unsigned long ClockSource;
+	unsigned long GateDivider;
+	BOOL PositiveGate;
+	BOOL ClockEnable;
+	BOOL InternalTrigger;
+	BOOL InternalArm;
+	BOOL SoftwareTrigger;
+	BOOL RisingEdge;
+	BOOL StopOnPreset;
+	BOOL ResetWhenDone;
+	BOOL TriggerEnable;
+	BOOL Terminate;
+} DelayTriggerType_V1;
+
+typedef struct 
+{
+	//ReferenceChannel T0;
+	DelayChannel T0,A,B;
+	MainCounterType MC;
+	DelayTriggerType_V1 DT;
+	BOOL Gate_AB;
+	unsigned long OutputLevel;
+	unsigned long DG_Product;
+	unsigned long PulseWidth;
+} DG_BME_Registers_V1;
+
+
+typedef struct
+{
+	union
+	{
+		unsigned long	AnalogData;
+		struct
+		{
+			unsigned short Analog;
+			unsigned short Unused;
+		};
+	};
+	union
+	{
+		unsigned long	Digital;
+		struct
+		{
+			unsigned short Digital_LW;
+			unsigned short Digital_HW;
+		};
+	};
+	unsigned long DigOff;
+	unsigned long DigSecond;
+	unsigned long OutputModulo;
+	BOOL Active;
+	BOOL Positive;
+	BOOL Terminate;
+	BOOL HighDrive;
+	BOOL FtActive;
+} DelayChannel_V2;
+
+typedef struct
+{
+	union
+	{
+		unsigned long	TriggerLevel;
+		struct
+		{
+			unsigned short TriggerDAC;
+			unsigned short Unused;
+		};
+	};
+	union
+	{
+		unsigned long RepCounter;
+		unsigned long InhibitTrigger;
+	};
+	unsigned long ForceTrigger;
+	unsigned long PresetValue;
+	union
+	{
+		unsigned long	DivideBy;
+		struct
+		{
+			unsigned short OscillatorDivider;
+			unsigned short TriggerDivider;
+		};
+	};
+	unsigned long ClockSource;
+	unsigned long GateDivider;
+	BOOL PositiveGate;
+	BOOL IgnoreGate;
+	BOOL ClockEnable;
+	BOOL InternalTrigger;
+	BOOL InternalArm;
+	BOOL SoftwareTrigger;
+	BOOL RisingEdge;
+	BOOL StopOnPreset;
+	BOOL ResetWhenDone;
+	BOOL TriggerEnable;
+	BOOL Terminate;
+} DelayTriggerType_V2;
+
+typedef struct 
+{
+	//ReferenceChannel T0;
+	DelayChannel_V2 T0,A,B;
+	MainCounterType MC;
+	DelayTriggerType_V2 DT;
+	BOOL Gate_AB;
+	unsigned long OutputLevel;
+	unsigned long DG_Product;
+	unsigned long PulseWidth;
+} DG_BME_Registers_V2;
+
+typedef struct
+{
+	double TriggerLevel;
+	double GateLevel;
+	union
+	{
+		double InternalClock;
+		double InhibitTrigger;
+	};
+	double ForceTrigger;
+	double StepBackTime;
+	double GateDelay;
+	unsigned long BurstCounter;
+	union
+	{
+		_int64 PresetLong;
+		unsigned long PresetValue;
+	};
+	union
+	{
+		unsigned long	DivideBy;
+		struct
+		{
+			unsigned short OscillatorDivider;
+			unsigned short TriggerDivider;
+		};
+	};
+	unsigned long TriggerMultiplier;
+	unsigned long ClockSource;
+	unsigned long GateDivider;
+	unsigned long MS_Bus;
+	BOOL PositiveGate;
+	BOOL IgnoreGate;
+	BOOL SynchronizeGate;
+	BOOL ClockEnable;
+	BOOL InternalTrigger;
+	BOOL InternalArm;
+	BOOL SoftwareTrigger;
+	BOOL RisingEdge;
+	BOOL StopOnPreset;
+	BOOL ResetWhenDone;
+	BOOL TriggerEnable;
+	BOOL Terminate;
+	BOOL GateTerminate;
+	BOOL UseF;
+} DelayTriggerData_V4;
+
+typedef struct 
+{
+	DelayChannelData T0,A,B,C,D,E,F;
+	DelayTriggerData_V4 DT;
+	BOOL Gate_AB;
+	unsigned long GateFunction;
+	unsigned long OutputLevel;
+	unsigned long DG_Product;
+	unsigned long PulseWidth;
+} DG_BME_Control_V4;
+
+typedef struct
+{
+	double FireFirst;
+	double SetBack;
+	double FireSecond;
+	unsigned long	OutputModulo;
+	unsigned long	OutputOffset;
+	unsigned long GoSignal;
+	unsigned long DoneSignal;
+	BOOL Positive;
+	BOOL Terminate;
+	BOOL HighDrive;
+	BOOL Disconnect;
+} DelayChannelData_V3;
+
+typedef struct
+{
+	double TriggerLevel;
+	union
+	{
+		double InternalClock;
+		double InhibitTrigger;
+	};
+	double ForceTrigger;
+	unsigned long PresetValue;
+	union
+	{
+		unsigned long	DivideBy;
+		struct
+		{
+			unsigned short OscillatorDivider;
+			unsigned short TriggerDivider;
+		};
+	};
+	unsigned long ClockSource;
+	unsigned long GateDivider;
+	unsigned long MS_Bus;
+	BOOL PositiveGate;
+	BOOL IgnoreGate;
+	BOOL SynchronizeGate;
+	BOOL ClockEnable;
+	BOOL InternalTrigger;
+	BOOL InternalArm;
+	BOOL SoftwareTrigger;
+	BOOL RisingEdge;
+	BOOL StopOnPreset;
+	BOOL ResetWhenDone;
+	BOOL TriggerEnable;
+	BOOL Terminate;
+	BOOL Reserve;
+} DelayTriggerData_V3;
+
+typedef struct 
+{
+	DelayChannelData_V3 T0,A,B;
+	DelayTriggerData_V3 DT;
+	BOOL Gate_AB;
+	unsigned long GateFunction;
+	unsigned long OutputLevel;
+	unsigned long DG_Product;
+	unsigned long PulseWidth;
+} DG_BME_Control_V3;
+
+typedef struct
+{
+	double FireFirst;
+	double SetBack;
+	double FireSecond;
+	unsigned long OutputModulo;
+	BOOL Active;
+	BOOL Positive;
+	BOOL Terminate;
+	BOOL HighDrive;
+	BOOL FtActive;
+} DelayChannelData_V2;
+
+typedef struct
+{
+	double TriggerLevel;
+	union
+	{
+		double InternalClock;
+		double InhibitTrigger;
+	};
+	double ForceTrigger;
+	unsigned long PresetValue;
+	union
+	{
+		unsigned long	DivideBy;
+		struct
+		{
+			unsigned short OscillatorDivider;
+			unsigned short TriggerDivider;
+		};
+	};
+	unsigned long ClockSource;
+	unsigned long GateDivider;
+	BOOL PositiveGate;
+	BOOL IgnoreGate;
+	BOOL ClockEnable;
+	BOOL InternalTrigger;
+	BOOL InternalArm;
+	BOOL SoftwareTrigger;
+	BOOL RisingEdge;
+	BOOL StopOnPreset;
+	BOOL ResetWhenDone;
+	BOOL TriggerEnable;
+	BOOL Terminate;
+	BOOL Reserve;
+} DelayTriggerData_V2;
+
+typedef struct 
+{
+	DelayChannelData_V2 T0,A,B;
+	DelayTriggerData_V2 DT;
+	BOOL Gate_AB;
+	unsigned long OutputLevel;
+	unsigned long DG_Product;
+	unsigned long PulseWidth;
+} DG_BME_Control_V2;
+
+typedef struct
+{
+	double TriggerLevel;
+	double InternalClock;
+	unsigned long PresetValue;
+	union
+	{
+		unsigned long	DivideBy;
+		struct
+		{
+			unsigned short OscillatorDivider;
+			unsigned short TriggerDivider;
+		};
+	};
+	unsigned long ClockSource;
+	unsigned long GateDivider;
+	BOOL PositiveGate;
+	BOOL ClockEnable;
+	BOOL InternalTrigger;
+	BOOL InternalArm;
+	BOOL SoftwareTrigger;
+	BOOL RisingEdge;
+	BOOL StopOnPreset;
+	BOOL ResetWhenDone;
+	BOOL TriggerEnable;
+	BOOL Terminate;
+} DelayTriggerData_V1;
+
+
+typedef struct 
+{
+	DelayChannelData_V2 T0,A,B;
+	DelayTriggerData_V1 DT;
+	BOOL Gate_AB;
+	unsigned long OutputLevel;
+	unsigned long DG_Product;
+	unsigned long PulseWidth;
+} DG_BME_Control_V1;
+
+
+typedef struct 
+{
+	DG_BME_Control_V1 Control;
+	int								BaseAddress;
+	int								DG_Product;
+	BOOL							Master;
+} DG_BME_State_V1;
+
+typedef struct 
+{
+	DG_BME_Control_V2 Control;
+	int								BaseAddress;
+	int								DG_Product;
+	BOOL							Master;
+} DG_BME_State_V2;
+
+typedef struct 
+{
+	DG_BME_Control_V3 Control;
+	int								BaseAddress;
+	int								DG_Product;
+	BOOL							Master;
+	int								BusNumber;
+} DG_BME_State_V3;
+
+typedef struct 
+{
+	DG_BME_Control_V4 Control;
+	int								BaseAddress;
+	int								DG_Product;
+	BOOL							Master;
+	int								BusNumber;
+} DG_BME_State_V4;
