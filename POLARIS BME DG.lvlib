@@ -135,6 +135,12 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Item Name="Bme_g0x.hlp" Type="Document" URL="../LV-BME Interface/Bme_g0x.hlp"/>
 		<Item Name="POLARIS BME DG Docu.odt" Type="Document" URL="../Docu/POLARIS BME DG Docu.odt"/>
 	</Item>
+	<Item Name="Utility" Type="Folder">
+		<Item Name="Conditional Error to Warning.vi" Type="VI" URL="../utility/Conditional Error to Warning.vi"/>
+		<Item Name="Remove empty Errors.vi" Type="VI" URL="../utility/Remove empty Errors.vi"/>
+		<Item Name="replace dot with coma if loc dez poin used.vi" Type="VI" URL="../utility/replace dot with coma if loc dez poin used.vi"/>
+		<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
+	</Item>
 	<Item Name="Low Level VIs" Type="Folder">
 		<Item Name="Applied Energetics Stuff" Type="Folder">
 			<Item Name="SubVI" Type="Folder">
@@ -229,7 +235,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Item Name="BME_DG_ReadTriggerCounter.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadTriggerCounter.vi"/>
 		<Item Name="BME_DG_ReadTriggerCounter64Bit.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadTriggerCounter64Bit.vi"/>
 		<Item Name="BME_DG_ReadCalibrConst_from_File.vi" Type="VI" URL="../LV-BME Interface/BME_DG_ReadCalibrConst_from_File.vi"/>
-		<Item Name="BME_DG_SetDG_with_FileParameters.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetDG_with_FileParameters.vi"/>
 		<Item Name="BME_DG_CalibrateGroup_from_File.vi" Type="VI" URL="../LV-BME Interface/BME_DG_CalibrateGroup_from_File.vi"/>
 		<Item Name="BME_DG_CalibrateModule.vi" Type="VI" URL="../LV-BME Interface/BME_DG_CalibrateModule.vi"/>
 		<Item Name="BME_DG_SetCalibrationLevel.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetCalibrationLevel.vi"/>
@@ -241,18 +246,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Item Name="BME_DG_SetV2TriggerParameters.vi" Type="VI" URL="../LV-BME Interface/BME_DG_SetV2TriggerParameters.vi"/>
 		<Item Name="BME_DG_GetPCIBusDGInfo.vi" Type="VI" URL="../LV-BME Interface/BME_DG_GetPCIBusDGInfo.vi"/>
 		<Item Name="BME_DG_InitializeMultipleBus.vi" Type="VI" URL="../LV-BME Interface/BME_DG_InitializeMultipleBus.vi"/>
-		<Item Name="BME_DG_Errors.vi" Type="VI" URL="../BME_DG_Errors.vi"/>
+		<Item Name="BME_DG_Errors.vi" Type="VI" URL="../LV-BME Interface/BME_DG_Errors.vi"/>
 	</Item>
 	<Item Name="TypeDefs" Type="Folder">
-		<Item Name="For ReadParameters" Type="Folder">
-			<Item Name="BME_DG_DelayChannelData.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayChannelData.ctl"/>
-			<Item Name="BME_DG_DelayTriggerData.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayTriggerData.ctl"/>
-			<Item Name="BME_DG_BME_State.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_BME_State.ctl"/>
-			<Item Name="BME_DG_State_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_State_V2.ctl"/>
-			<Item Name="BME_DG_DelayChannelData_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayChannelData_V2.ctl"/>
-			<Item Name="BME_DG_DelayTriggerData_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_DelayTriggerData_V2.ctl"/>
-			<Item Name="BME_DG_BME_Control_V2.ctl" Type="VI" URL="../LV-BME Interface/Typedefs For ReadParameters()/BME_DG_BME_Control_V2.ctl"/>
-		</Item>
 		<Item Name="ChnlSettings.ctl" Type="VI" URL="../LV-BME Interface/ChnlSettings.ctl"/>
 		<Item Name="ChnlWithModulo.ctl" Type="VI" URL="../LV-BME Interface/ChnlWithModulo.ctl"/>
 		<Item Name="SignalType.ctl" Type="VI" URL="../LV-BME Interface/SignalType.ctl"/>
@@ -260,29 +256,26 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Item Name="BME_DG_TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_TriggerSettings.ctl"/>
 		<Item Name="BME_G05P1Settings.ctl" Type="VI" URL="../LV-BME Interface/BME_G05P1Settings.ctl"/>
 		<Item Name="BME_DG_MasterOrSlave.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_MasterOrSlave.ctl"/>
-		<Item Name="DetectDG.ctl" Type="VI" URL="../DetectDG.ctl"/>
+		<Item Name="DetectDG.ctl" Type="VI" URL="../LV-BME Interface/DetectDG.ctl"/>
 		<Item Name="UpdateChnlTask.ctl" Type="VI" URL="../DG Classes/BME_DG_System/UpdateChnlTask.ctl"/>
-		<Item Name="System DG Selection.ctl" Type="VI" URL="../System DG Selection.ctl"/>
-		<Item Name="Card Config.ctl" Type="VI" URL="../Card Config.ctl"/>
-		<Item Name="SG08_Settings.ctl" Type="VI" URL="../SG08_Settings.ctl"/>
-		<Item Name="Go_Done_Chnl_Settings.ctl" Type="VI" URL="../Go_Done_Chnl_Settings.ctl"/>
-		<Item Name="SG08_Chnl_Settings.ctl" Type="VI" URL="../SG08_Chnl_Settings.ctl"/>
-		<Item Name="Chnl Settings Complete.ctl" Type="VI" URL="../Chnl Settings Complete.ctl"/>
+		<Item Name="System DG Selection.ctl" Type="VI" URL="../LV-BME Interface/System DG Selection.ctl"/>
+		<Item Name="Card Config.ctl" Type="VI" URL="../LV-BME Interface/Card Config.ctl"/>
+		<Item Name="SG08_Settings.ctl" Type="VI" URL="../LV-BME Interface/SG08_Settings.ctl"/>
+		<Item Name="Go_Done_Chnl_Settings.ctl" Type="VI" URL="../LV-BME Interface/Go_Done_Chnl_Settings.ctl"/>
+		<Item Name="SG08_Chnl_Settings.ctl" Type="VI" URL="../LV-BME Interface/SG08_Chnl_Settings.ctl"/>
+		<Item Name="Chnl Settings Complete.ctl" Type="VI" URL="../LV-BME Interface/Chnl Settings Complete.ctl"/>
 		<Item Name="BME_DG_V2TriggerSettings.ctl" Type="VI" URL="../LV-BME Interface/BME_DG_V2TriggerSettings.ctl"/>
 		<Item Name="ChnlOutputModulo.ctl" Type="VI" URL="../DG Classes/BME_DG_System/ChnlOutputModulo.ctl"/>
 		<Item Name="SG05P2 Clock and Trigger Settings.ctl" Type="VI" URL="../DG Classes/BME_DG_G05P2/SG05P2 Clock and Trigger Settings.ctl"/>
-		<Item Name="ChnlParam.ctl" Type="VI" URL="../ChnlParam.ctl"/>
-		<Item Name="GoSignalBits.ctl" Type="VI" URL="../GoSignalBits.ctl"/>
-		<Item Name="MSBusSignals.ctl" Type="VI" URL="../MSBusSignals.ctl"/>
+		<Item Name="ChnlParam.ctl" Type="VI" URL="../LV-BME Interface/ChnlParam.ctl"/>
+		<Item Name="GoSignalBits.ctl" Type="VI" URL="../LV-BME Interface/GoSignalBits.ctl"/>
+		<Item Name="MSBusSignals.ctl" Type="VI" URL="../LV-BME Interface/MSBusSignals.ctl"/>
 	</Item>
 	<Item Name="Config Files" Type="Folder">
 		<Item Name="Zentral Trigger PC.bmedg" Type="Document" URL="../Zentral Trigger PC.bmedg"/>
-		<Item Name="Test Trigger PC nur EinsamerMaster.bmedg" Type="Document" URL="../Test Trigger PC nur EinsamerMaster.bmedg"/>
-		<Item Name="Test Trigger PC drei SG08P3.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3.bmedg"/>
-		<Item Name="Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg" Type="Document" URL="../Test Trigger PC drei SG08P3 mit Externen Trigger bei MS Master.bmedg"/>
-		<Item Name="Modules.cal" Type="Document" URL="../Modules.cal"/>
-		<Item Name="BME_G0x.cal" Type="Document" URL="../BME_G0x.cal"/>
-		<Item Name="Test sync update drei SG08P3 mit Externen Trigger bei MS Master.bmedg" Type="Document" URL="../Test sync update drei SG08P3 mit Externen Trigger bei MS Master.bmedg"/>
+		<Item Name="Modules.cal" Type="Document" URL="../ParameterFiles/Modules.cal"/>
+		<Item Name="BME_G0x.cal" Type="Document" URL="../ParameterFiles/BME_G0x.cal"/>
+		<Item Name="Test sync update drei SG08P3 mit Externen Trigger bei MS Master.bmedg" Type="Document" URL="../ParameterFiles/Test sync update drei SG08P3 mit Externen Trigger bei MS Master.bmedg"/>
 	</Item>
 	<Item Name="DG Classes" Type="Folder">
 		<Item Name="BME_DG_Base.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Base/BME_DG_Base.lvclass"/>
@@ -301,9 +294,5 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 	<Item Name="DG System class" Type="Folder">
 		<Item Name="BME_DG_System.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_System/BME_DG_System.lvclass"/>
 	</Item>
-	<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
-	<Item Name="replace dot with coma if loc dez poin used.vi" Type="VI" URL="../replace dot with coma if loc dez poin used.vi"/>
 	<Item Name="Test PC from CnfgFile.vi" Type="VI" URL="../Test PC from CnfgFile.vi"/>
-	<Item Name="Remove empty Errors.vi" Type="VI" URL="../Remove empty Errors.vi"/>
-	<Item Name="Conditional Error to Warning.vi" Type="VI" URL="../Conditional Error to Warning.vi"/>
 </Library>
