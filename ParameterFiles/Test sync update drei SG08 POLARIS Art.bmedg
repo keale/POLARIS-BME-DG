@@ -12,11 +12,11 @@
 </I32>
 <I32>
 <Name></Name>
-<Val>1342177280</Val>
+<Val>1207959552</Val>
 </I32>
 <I32>
 <Name></Name>
-<Val>-870625998</Val>
+<Val>-870190299</Val>
 </I32>
 <I32>
 <Name></Name>
@@ -1167,11 +1167,11 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>1000.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -1188,11 +1188,11 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>1000</Val>
+<Val>00000</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>50</Val>
+<Val>10</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -1243,7 +1243,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>2000.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1264,7 +1264,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>ma+1000</Val>
+<Val>ma</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1319,7 +1319,7 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>1900.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
@@ -1340,7 +1340,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>mb-100</Val>
+<Val>mb</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1551,7 +1551,7 @@
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -1572,7 +1572,7 @@
 </String>
 <I32>
 <Name>OutputModulo</Name>
-<Val>100</Val>
+<Val>50</Val>
 </I32>
 <Cluster>
 <Name>Go and Done Signal</Name>
@@ -1623,11 +1623,11 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>2100.00000000000000</Val>
+<Val>100.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -1655,7 +1655,7 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>32784</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1699,11 +1699,11 @@
 <NumElts>5</NumElts>
 <DBL>
 <Name> Delay (탎)</Name>
-<Val>1.00000000000000</Val>
+<Val>0.00000000000000</Val>
 </DBL>
 <Boolean>
 <Name>On?</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Boolean>
 <Name>PositiveVoltage?</Name>
@@ -1720,7 +1720,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>ma-999</Val>
+<Val>ma</Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
@@ -1731,7 +1731,7 @@
 <NumElts>2</NumElts>
 <U32>
 <Name>Go Signal</Name>
-<Val>32784</Val>
+<Val>16</Val>
 </U32>
 <U32>
 <Name>Done Signal</Name>
@@ -1796,7 +1796,7 @@
 </Cluster>
 <String>
 <Name>DelayFormula</Name>
-<Val>0</Val>
+<Val></Val>
 </String>
 <I32>
 <Name>OutputModulo</Name>
