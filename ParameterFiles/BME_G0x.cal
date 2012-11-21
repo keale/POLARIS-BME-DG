@@ -15,5 +15,5 @@
   -0.025000      BME_G03 set back shift
    0.005000      Clock delay on slave modules
    0.005000      delay of direct Trigger on slave modules
-   80.000000      internal oscillator frequency
-   75.263734      external oscillator frequency
+   160.000000      internal oscillator frequency
+   18.763734      external oscillator frequency

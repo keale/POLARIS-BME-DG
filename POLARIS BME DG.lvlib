@@ -272,10 +272,11 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Item Name="MSBusSignals.ctl" Type="VI" URL="../LV-BME Interface/MSBusSignals.ctl"/>
 	</Item>
 	<Item Name="Config Files" Type="Folder">
-		<Item Name="Zentral Trigger PC.bmedg" Type="Document" URL="../Zentral Trigger PC.bmedg"/>
 		<Item Name="Modules.cal" Type="Document" URL="../ParameterFiles/Modules.cal"/>
 		<Item Name="BME_G0x.cal" Type="Document" URL="../ParameterFiles/BME_G0x.cal"/>
 		<Item Name="Test sync update drei SG08P3 mit Externen Trigger bei MS Master.bmedg" Type="Document" URL="../ParameterFiles/Test sync update drei SG08P3 mit Externen Trigger bei MS Master.bmedg"/>
+		<Item Name="Zentral Trigger PC.bmedg" Type="Document" URL="../ParameterFiles/Zentral Trigger PC.bmedg"/>
+		<Item Name="M M_S Trigger Test PC.bmedg" Type="Document" URL="../ParameterFiles/M M_S Trigger Test PC.bmedg"/>
 	</Item>
 	<Item Name="DG Classes" Type="Folder">
 		<Item Name="BME_DG_Base.lvclass" Type="LVClass" URL="../DG Classes/BME_DG_Base/BME_DG_Base.lvclass"/>
