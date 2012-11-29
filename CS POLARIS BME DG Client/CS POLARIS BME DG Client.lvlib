@@ -33,7 +33,7 @@
 		<Item Name="CS POLARIS BME DG Client_db.ini" Type="Document" URL="../CS POLARIS BME DG Client_db.ini"/>
 	</Item>
 	<Item Name="Menu" Type="Folder">
-		<Item Name="CS POLARIS BME DG Client.panel..rtm" Type="Document" URL="../CS POLARIS BME DG Client.panel..rtm"/>
+		<Item Name="CS POLARIS BME DG Client.panel.rtm" Type="Document" URL="../CS POLARIS BME DG Client.panel.rtm"/>
 	</Item>
 	<Item Name="cource ns us ns LV.vi" Type="VI" URL="../cource ns us ns LV.vi"/>
 	<Item Name="cource ns us ns.vi" Type="VI" URL="../cource ns us ns.vi"/>
