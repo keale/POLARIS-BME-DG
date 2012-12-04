@@ -41,5 +41,4 @@
 	<Item Name="ms us ns 2 double.vi" Type="VI" URL="../ms us ns 2 double.vi"/>
 	<Item Name="test.vi" Type="VI" URL="../test.vi"/>
 	<Item Name="CS POLARIS BME DG Client.contents.vi" Type="VI" URL="../CS POLARIS BME DG Client.contents.vi"/>
-	<Item Name="double 2 ms us ns LVConform.vi" Type="VI" URL="../double 2 ms us ns LVConform.vi"/>
 </Library>
