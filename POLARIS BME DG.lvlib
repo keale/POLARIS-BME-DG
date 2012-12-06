@@ -140,6 +140,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Item Name="Remove empty Errors.vi" Type="VI" URL="../utility/Remove empty Errors.vi"/>
 		<Item Name="replace dot with coma if loc dez poin used.vi" Type="VI" URL="../utility/replace dot with coma if loc dez poin used.vi"/>
 		<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
+		<Item Name="TRACE.vi" Type="VI" URL="../utility/TRACE.vi"/>
 	</Item>
 	<Item Name="Low Level VIs" Type="Folder">
 		<Item Name="Applied Energetics Stuff" Type="Folder">
