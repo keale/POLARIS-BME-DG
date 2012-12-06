@@ -141,6 +141,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Item Name="replace dot with coma if loc dez poin used.vi" Type="VI" URL="../utility/replace dot with coma if loc dez poin used.vi"/>
 		<Item Name="TriggerModuloLCMultiple.vi" Type="VI" URL="../DG Classes/BME_DG_System/TriggerModuloLCMultiple.vi"/>
 		<Item Name="TRACE.vi" Type="VI" URL="../utility/TRACE.vi"/>
+		<Item Name="POLARIS BME DG.OK Popup Msg.vi" Type="VI" URL="../utility/POLARIS BME DG.OK Popup Msg.vi"/>
+		<Item Name="GFVTraced.vi" Type="VI" URL="../utility/GFVTraced.vi"/>
 	</Item>
 	<Item Name="Low Level VIs" Type="Folder">
 		<Item Name="Applied Energetics Stuff" Type="Folder">
@@ -157,7 +159,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 					<Item Name="Set BME G08.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/G08/Set BME G08.vi"/>
 					<Item Name="Set G08 Clock Parameters.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/G08/Set G08 Clock Parameters.vi"/>
 					<Item Name="Set G08 Delay.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/G08/Set G08 Delay.vi"/>
-					<Item Name="Set G08 Trigger Parameters.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/G08/Set G08 Trigger Parameters.vi"/>
 					<Item Name="Set Gate Function.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/G08/Set Gate Function.vi"/>
 					<Item Name="Test BME G08.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/G08/Test BME G08.vi"/>
 				</Item>
