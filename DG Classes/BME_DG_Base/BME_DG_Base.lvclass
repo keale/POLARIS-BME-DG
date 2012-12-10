@@ -276,6 +276,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		</Item>
 	</Item>
 	<Item Name="HW Access" Type="Folder">
+		<Item Name="DeactivateChnl HW.vi" Type="VI" URL="../DeactivateChnl HW.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%`!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!%2!=!!?!!!K&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%U*.26^%2V^#98.F,GRW9WRB=X-!!!^#456@2%&gt;@1G&amp;T:3"P&gt;81!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!31$$`````#5.I&lt;GQA4G&amp;N:1"%1(!!(A!!+B214UR"5EF4)%*.23"%2SZM&gt;GRJ9B.#456@2%&gt;@1G&amp;T:3ZM&gt;G.M98.T!!!/1EV&amp;8U2(8U*B=W5A;7Y!!$Q!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"Q!)!Q!!?!U)!!!!!)U,!!!!!!!!!!!+!!!!#A#3!!!!!!%!#1!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+		</Item>
 		<Item Name="Read Trigger Counter HW.vi" Type="VI" URL="../Read Trigger Counter HW.vi">
 			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;0!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!"6!"!!/6(*J:W&gt;F=E.P&gt;7ZU:8)!!%2!=!!?!!!K&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%U*.26^%2V^#98.F,GRW9WRB=X-!!!^#456@2%&gt;@1G&amp;T:3"P&gt;81!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1"%1(!!(A!!+B214UR"5EF4)%*.23"%2SZM&gt;GRJ9B.#456@2%&gt;@1G&amp;T:3ZM&gt;G.M98.T!!!/1EV&amp;8U2(8U*B=W5A;7Y!!%E!]!!-!!-!"!!&amp;!!9!"!!%!!1!"!!(!!1!"!!)!Q!!?!U)!!!*!!U,!!!!!!!!!!!+!!!!!!!1!!!.!!!!$!!!!!!!!!!!!!!"!!E!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
@@ -433,13 +442,21 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Property Name="NI.LibItem.Scope" Type="Int">3</Property>
 	</Item>
 	<Item Name="UpdateAllChnlParamHW.vi" Type="VI" URL="../UpdateAllChnlParamHW.vi">
-		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%[!!!!#1!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!%2!=!!?!!!K&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%U*.26^%2V^#98.F,GRW9WRB=X-!!!^#456@2%&gt;@1G&amp;T:3"P&gt;81!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1"%1(!!(A!!+B214UR"5EF4)%*.23"%2SZM&gt;GRJ9B.#456@2%&gt;@1G&amp;T:3ZM&gt;G.M98.T!!!/1EV&amp;8U2(8U*B=W5A;7Y!!%E!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"!!(!Q!!?!U)!!!!!!U,!!!!!!!!!!!+!!!!!!!3!!!.!!!!$!!!!!!!!!!!!!!"!!A!!!!!</Property>
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%N!!!!#1!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!%2!=!!?!!!K&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%U*.26^%2V^#98.F,GRW9WRB=X-!!!^#456@2%&gt;@1G&amp;T:3"P&gt;81!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1"%1(!!(A!!+B214UR"5EF4)%*.23"%2SZM&gt;GRJ9B.#456@2%&gt;@1G&amp;T:3ZM&gt;G.M98.T!!!/1EV&amp;8U2(8U*B=W5A;7Y!!$Q!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"!!(!Q!!?!U)!!!!!)U,!!!!!!!!!!!+!!!!!!#3!!!!!!%!#!!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-		<Property Name="NI.ClassItem.Flags" Type="Int">1073741826</Property>
-		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
-		<Property Name="NI.ClassItem.MethodScope" Type="UInt">4</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
+	</Item>
+	<Item Name="ActivateChnl HW.vi" Type="VI" URL="../ActivateChnl HW.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%`!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!%2!=!!?!!!K&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%U*.26^%2V^#98.F,GRW9WRB=X-!!!^#456@2%&gt;@1G&amp;T:3"P&gt;81!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!31$$`````#5.I&lt;GQA4G&amp;N:1"%1(!!(A!!+B214UR"5EF4)%*.23"%2SZM&gt;GRJ9B.#456@2%&gt;@1G&amp;T:3ZM&gt;G.M98.T!!!/1EV&amp;8U2(8U*B=W5A;7Y!!$Q!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"Q!)!Q!!?!U)!!!!!)U,!!!!!!!!!!!+!!!!#A#3!!!!!!%!#1!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">2</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1074541072</Property>
-		<Property Name="NI.LibItem.Scope" Type="Int">4</Property>
 	</Item>
 </LVClass>

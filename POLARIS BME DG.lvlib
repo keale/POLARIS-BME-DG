@@ -130,6 +130,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 			<Item Name="StringRout_C.h" Type="Document" URL="../BME_Source/Csource/StringRout_C.h"/>
 		</Item>
 		<Item Name="DelayGenerator.dll" Type="Document" URL="../BME DLL/DelayGenerator.dll"/>
+		<Item Name="PlxApi641.dll" Type="Document" URL="../BME DLL/PlxApi641.dll"/>
 	</Item>
 	<Item Name="Doku" Type="Folder">
 		<Item Name="Bme_g0x.hlp" Type="Document" URL="../LV-BME Interface/Bme_g0x.hlp"/>

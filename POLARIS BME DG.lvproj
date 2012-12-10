@@ -256,18 +256,6 @@
 			</Item>
 			<Item Name="Initialize Report.vi" Type="VI" URL="/E/Program Files/National Instruments/LabVIEW 2009/examples/reports/TextReport.llb/Initialize Report.vi"/>
 			<Item Name="DeviceBase.lvlib" Type="Library" URL="../../../CSApplicationBaseClasses/DeviceBase/DeviceBase.lvlib"/>
-			<Item Name="ResetModuloCounters.vi" Type="VI" URL="../DG Classes/BME_DG_System/ResetModuloCounters.vi"/>
-			<Item Name="Activate All.vi" Type="VI" URL="../DG Classes/BME_DG_System/Activate All.vi"/>
-			<Item Name="Enable Interrupts.vi" Type="VI" URL="../DG Classes/BME_DG_System/Enable Interrupts.vi"/>
-			<Item Name="Deactivate All.vi" Type="VI" URL="../DG Classes/BME_DG_System/Deactivate All.vi"/>
-			<Item Name="ChnlParam.ctl" Type="VI" URL="../ChnlParam.ctl"/>
-			<Item Name="DetectPCIDGs and Initialize System.vi" Type="VI" URL="../DG Classes/BME_DG_System/DetectPCIDGs and Initialize System.vi"/>
-			<Item Name="CalibrateHW.vi" Type="VI" URL="../DG Classes/BME_DG_System/CalibrateHW.vi"/>
-			<Item Name="InitDGObj and HW.vi" Type="VI" URL="../DG Classes/BME_DG_System/InitDGObj and HW.vi"/>
-			<Item Name="Check new DelayFormula and Update Delays.vi" Type="VI" URL="../DG Classes/BME_DG_System/Check new DelayFormula and Update Delays.vi"/>
-			<Item Name="ReserveMemory.vi" Type="VI" URL="../DG Classes/BME_DG_System/ReserveMemory.vi"/>
-			<Item Name="ReadHWState.vi" Type="VI" URL="../DG Classes/BME_DG_System/ReadHWState.vi"/>
-			<Item Name="SetChnlsOutputModuliHW.vi" Type="VI" URL="../DG Classes/BME_DG_System/SetChnlsOutputModuliHW.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="POLARIS_BME_DG" Type="EXE">
@@ -294,7 +282,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../NI_AB_PROJECTNAME/builds/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{F4B861A5-E404-4EB6-A8EE-A342EBD41519}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{5DBA80BC-CBDA-48A8-94D7-0D1A58F3B398}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/POLARIS BME DG.lvlib/DG System class/BME_DG_System.lvclass/Configure Systems.vi</Property>
@@ -313,7 +301,10 @@
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[4].itemID" Type="Ref">/My Computer/POLARIS BME DG.lvlib/Binaries and C/CpSource/DG_Data.h</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">5</Property>
+				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/POLARIS BME DG.lvlib/Binaries and C/PlxApi641.dll</Property>
+				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">6</Property>
 			</Item>
 		</Item>
 	</Item>

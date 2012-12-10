@@ -90,6 +90,15 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 			<Property Name="NI.ClassItem.State" Type="Int">1342710272</Property>
 		</Item>
 	</Item>
+	<Item Name="UpdateAllChnlParamHW.vi" Type="VI" URL="../UpdateAllChnlParamHW.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%H!!!!#1!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!%*!=!!?!!!J&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%E*.26^%2V^(-$AO&lt;(:D&lt;'&amp;T=Q!/1EV&amp;8U2(8U=Q/#"P&gt;81!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!1%"Q!"Y!!#E55%^-16**5S"#455A2%=O&lt;(:M;7)31EV&amp;8U2(8U=Q/#ZM&gt;G.M98.T!!V#456@2%&gt;@2T!Y)'FO!$Q!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"!!(!Q!!?!U)!!!!!)U,!!!!!!!!!!!+!!!!!!#3!!!!!!%!#!!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+	</Item>
 	<Item Name="Initialize.vi" Type="VI" URL="../Initialize.vi">
 		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%S!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!%*!=!!?!!!J&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%E*.26^%2V^(-$AO&lt;(:D&lt;'&amp;T=Q!/1EV&amp;8U2(8U=Q/#"P&gt;81!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!#U!$!!6%2S"/=A"!1(!!(A!!+2214UR"5EF4)%*.23"%2SZM&gt;GRJ9B*#456@2%&gt;@2T!Y,GRW9WRB=X-!$5*.26^%2V^(-$AA;7Y!0!$Q!!Q!!Q!%!!1!"1!%!!1!"!!%!!9!"!!(!!A$!!"Y$1A!!!!!D1M!!!!!!!!!!!I!!!!)!*)!!!!!!1!*!!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
@@ -136,5 +145,33 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 		<Property Name="NI.ClassItem.State" Type="Int">1350574608</Property>
+	</Item>
+	<Item Name="SetOnlyDelaysHW.vi" Type="VI" URL="../SetOnlyDelaysHW.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%H!!!!#1!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!%*!=!!?!!!J&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%E*.26^%2V^(-$AO&lt;(:D&lt;'&amp;T=Q!/1EV&amp;8U2(8U=Q/#"P&gt;81!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!1%"Q!"Y!!#E55%^-16**5S"#455A2%=O&lt;(:M;7)31EV&amp;8U2(8U=Q/#ZM&gt;G.M98.T!!V#456@2%&gt;@2T!Y)'FO!$Q!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"!!(!Q!!?!U)!!!!!)U,!!!!!!!!!!!+!!!!!!#3!!!!!!%!#!!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">3</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1351361040</Property>
+		<Property Name="NI.LibItem.Scope" Type="Int">3</Property>
+	</Item>
+	<Item Name="ActivateChnl HW.vi" Type="VI" URL="../ActivateChnl HW.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%Z!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!%*!=!!?!!!J&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%E*.26^%2V^(-$AO&lt;(:D&lt;'&amp;T=Q!/1EV&amp;8U2(8U=Q/#"P&gt;81!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!%E!Q`````QF$;'ZM)%ZB&lt;75!1%"Q!"Y!!#E55%^-16**5S"#455A2%=O&lt;(:M;7)31EV&amp;8U2(8U=Q/#ZM&gt;G.M98.T!!V#456@2%&gt;@2T!Y)'FO!$Q!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"Q!)!Q!!?!U)!!!!!)U,!!!!!!!!!!!+!!!!#A#3!!!!!!%!#1!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
+	</Item>
+	<Item Name="DeactivateChnl HW.vi" Type="VI" URL="../DeactivateChnl HW.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%Z!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!%*!=!!?!!!J&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%E*.26^%2V^(-$AO&lt;(:D&lt;'&amp;T=Q!/1EV&amp;8U2(8U=Q/#"P&gt;81!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!%E!Q`````QF$;'ZM)%ZB&lt;75!1%"Q!"Y!!#E55%^-16**5S"#455A2%=O&lt;(:M;7)31EV&amp;8U2(8U=Q/#ZM&gt;G.M98.T!!V#456@2%&gt;@2T!Y)'FO!$Q!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"Q!)!Q!!?!U)!!!!!)U,!!!!!!!!!!!+!!!!#A#3!!!!!!%!#1!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1351361040</Property>
 	</Item>
 </LVClass>
