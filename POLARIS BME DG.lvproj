@@ -180,6 +180,8 @@
 				<Item Name="Write File+ (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write File+ (string).vi"/>
 				<Item Name="compatWriteText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatWriteText.vi"/>
 				<Item Name="NI_report.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Utility/NIReport.llb/NI_report.lvclass"/>
+				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+				<Item Name="Create Directory Recursive.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Create Directory Recursive.vi"/>
 				<Item Name="NI_ReportGenerationCore.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/NIReport.llb/NI_ReportGenerationCore.lvlib"/>
 				<Item Name="NI_HTML.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Utility/NIReport.llb/HTML/NI_HTML.lvclass"/>
 				<Item Name="Write JPEG File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/jpeg.llb/Write JPEG File.vi"/>
@@ -229,8 +231,6 @@
 				<Item Name="Create Mask By Alpha.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Create Mask By Alpha.vi"/>
 				<Item Name="Bit-array To Byte-array.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/Bit-array To Byte-array.vi"/>
 				<Item Name="Color to RGB.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/colorconv.llb/Color to RGB.vi"/>
-				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
-				<Item Name="Create Directory Recursive.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Create Directory Recursive.vi"/>
 			</Item>
 			<Item Name="Falling Edge Change Detector.vi" Type="VI" URL="../Applied Energetics Stuff/Extra/Falling Edge Change Detector.vi"/>
 			<Item Name="Rising Edge Change Detector.vi" Type="VI" URL="../Applied Energetics Stuff/Extra/Rising Edge Change Detector.vi"/>
@@ -248,14 +248,14 @@
 			<Item Name="libNodeInfo.so" Type="Document" URL="../../../../../../../../C/GPL/Projects/NodeMon/bin/libNodeInfo.so"/>
 			<Item Name="PRIVATE.i attribute.ctl" Type="VI" URL="../../A3-HumGUI/inheritance/PRIVATE.i attribute.ctl"/>
 			<Item Name="PRIVATE.i attribute.vi" Type="VI" URL="../../A3-HumGUI/inheritance/PRIVATE.i attribute.vi"/>
+			<Item Name="Initialize Report.vi" Type="VI" URL="/E/Program Files/National Instruments/LabVIEW 2009/examples/reports/TextReport.llb/Initialize Report.vi"/>
+			<Item Name="DeviceBase.lvlib" Type="Library" URL="../../../CSApplicationBaseClasses/DeviceBase/DeviceBase.lvlib"/>
 			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Initialize Report.vi" Type="VI" URL="/E/Program Files/National Instruments/LabVIEW 2009/examples/reports/TextReport.llb/Initialize Report.vi"/>
-			<Item Name="DeviceBase.lvlib" Type="Library" URL="../../../CSApplicationBaseClasses/DeviceBase/DeviceBase.lvlib"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="POLARIS_BME_DG" Type="EXE">

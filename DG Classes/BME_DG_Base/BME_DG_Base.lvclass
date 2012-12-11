@@ -403,13 +403,13 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 		<Property Name="NI.ClassItem.State" Type="Int">1350574608</Property>
 	</Item>
 	<Item Name="CommonTrigger.vi" Type="VI" URL="../CommonTrigger.vi">
-		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'(!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!'5!%!".$&lt;X6O&gt;(.5;7RM1W^N&lt;7^O6(*H!"F!"!!46(*J:W&gt;F=EVP:(6M&lt;UR$486M&gt;!"%1(!!(A!!+B214UR"5EF4)%*.23"%2SZM&gt;GRJ9B.#456@2%&gt;@1G&amp;T:3ZM&gt;G.M98.T!!!01EV&amp;8U2(8U*B=W5A&lt;X6U!!1!!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!"N!"!!547&amp;T&gt;'6S6(*J:W&gt;F=E.P&gt;7ZU:8)!!%2!=!!?!!!K&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%U*.26^%2V^#98.F,GRW9WRB=X-!!!Z#456@2%&gt;@1G&amp;T:3"J&lt;A!!31$Q!!Q!!Q!%!!5!"A!(!!=!"Q!(!!A!"Q!*!!I$!!"Y$1A*!!E!$1M!!!!!!!!!!!I!!!!3!"!!!!U!!!!-!!!!!!!!!!!!!!%!#Q!!!!!</Property>
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">#1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'(!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!'5!%!".$&lt;X6O&gt;(.5;7RM1W^N&lt;7^O6(*H!"F!"!!46(*J:W&gt;F=EVP:(6M&lt;UR$486M&gt;!"%1(!!(A!!+B214UR"5EF4)%*.23"%2SZM&gt;GRJ9B.#456@2%&gt;@1G&amp;T:3ZM&gt;G.M98.T!!!01EV&amp;8U2(8U*B=W5A&lt;X6U!!1!!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!"N!"!!547&amp;T&gt;'6S6(*J:W&gt;F=E.P&gt;7ZU:8)!!%2!=!!?!!!K&amp;&amp;"04%&amp;336-A1EV&amp;)%2(,GRW&lt;'FC%U*.26^%2V^#98.F,GRW9WRB=X-!!!Z#456@2%&gt;@1G&amp;T:3"J&lt;A!!31$Q!!Q!!Q!%!!5!"A!(!!=!"Q!(!!A!"Q!*!!I$!!"Y$1A.#AE!$1M!!!!!!!!!!!I!!!!3!"!!!!U!!!!-!!!!!!!!!!!!!!%!#Q!!!!!</Property>
 		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 		<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
 		<Property Name="NI.ClassItem.MethodScope" Type="UInt">4</Property>
 		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-		<Property Name="NI.ClassItem.State" Type="Int">1082130960</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1107821072</Property>
 		<Property Name="NI.LibItem.Scope" Type="Int">4</Property>
 	</Item>
 	<Item Name="Initialize.vi" Type="VI" URL="../Initialize.vi">
