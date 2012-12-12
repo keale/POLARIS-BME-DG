@@ -253,7 +253,9 @@
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="PRIVATE.i attribute.ctl" Type="VI" URL="../../A3-HumGUI/inheritance/PRIVATE.i attribute.ctl"/>
+			<Item Name="PRIVATE.i attribute.vi" Type="VI" URL="../../A3-HumGUI/inheritance/PRIVATE.i attribute.vi"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Programme/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="POLARIS_BME_DG" Type="EXE">
