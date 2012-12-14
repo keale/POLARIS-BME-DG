@@ -239,15 +239,12 @@
 			<Item Name="MGI Change Detector (T).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (T).vi"/>
 			<Item Name="MGI Change Detector (F).vi" Type="VI" URL="../Applied Energetics Stuff/Extra/MGI Change Detector (F).vi"/>
 			<Item Name="Enable Interrupts.vi" Type="VI" URL="../Applied Energetics Stuff/SubVI/Enable Interrupts.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="/C/Programme/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 			<Item Name="wsock32.dll" Type="Document" URL="wsock32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="libc-2.10.1.so" Type="Document" URL="/lib/libc-2.10.1.so"/>
 			<Item Name="libNodeInfo.dll" Type="Document" URL="../../../../../../../../C/GPL/Projects/NodeMon/bin/libNodeInfo.dll"/>
 			<Item Name="libNodeInfo.so" Type="Document" URL="../../../../../../../../C/GPL/Projects/NodeMon/bin/libNodeInfo.so"/>
-			<Item Name="PRIVATE.i attribute.ctl" Type="VI" URL="../../A3-HumGUI/inheritance/PRIVATE.i attribute.ctl"/>
-			<Item Name="PRIVATE.i attribute.vi" Type="VI" URL="../../A3-HumGUI/inheritance/PRIVATE.i attribute.vi"/>
 			<Item Name="Initialize Report.vi" Type="VI" URL="/E/Program Files/National Instruments/LabVIEW 2009/examples/reports/TextReport.llb/Initialize Report.vi"/>
 			<Item Name="DeviceBase.lvlib" Type="Library" URL="../../../CSApplicationBaseClasses/DeviceBase/DeviceBase.lvlib"/>
 			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
@@ -256,6 +253,9 @@
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="PRIVATE.i attribute.ctl" Type="VI" URL="../../A3-HumGUI/inheritance/PRIVATE.i attribute.ctl"/>
+			<Item Name="PRIVATE.i attribute.vi" Type="VI" URL="../../A3-HumGUI/inheritance/PRIVATE.i attribute.vi"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Programme/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="POLARIS_BME_DG" Type="EXE">
